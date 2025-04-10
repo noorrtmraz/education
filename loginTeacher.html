@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>spark education</title>
+
+        <!-- font awesome cdn link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" rel="stylesheet" />
+       
+        <!-- custom css file link -->
+        <link rel="stylesheet" href="css/rtl.css">
+    </head>
+
+    <body>
+
+        <!---header section starts-->
+        <header class="header">
+            <section class="flex">
+                <a href="loginstd.html" class="logo"><img src="images/spark.png" alt="spark education"></a> 
+                <button id="menu-btn" class="menu-icon fas fa-bars"></button>
+
+                <nav class="navbar">
+                    <a href="#" id="lang-btn" title="تغيير اللغة" class="fas fa-language"></a>
+                    <a href="about.html" id="about-btn" title="من نحن" class="fas fa-question"></a>
+                    <a href="#" id="contact-btn" title="اتصل بنا" class="fas fa-phone"></a>
+                </nav>
+            </section>
+        </header>
+        <!---header section ends-->
+
+        <section class="login0">
+
+                <div class="form-container3">
+                    <!-- نموذج تسجيل المعلم (افتراضي) -->
+                    <form id="teacherForm" class="form" style="display: block;">
+                        <h3>تسجيل دخول المعلم</h3>
+                        <input type="text" placeholder=" ادخل رقم الهوية" class="input-box-teacher">
+                        <input type="password" placeholder=" ادخل كلمة المرور" class="input-box-teacher2">
+                        <button class="login-btn-teacher">تسجيل الدخول</button>
+                    </form>
+
+                    <!-- نموذج تسجيل المدير -->
+                    <form id="adminForm" class="form" style="display: none;">
+                        <h3>تسجيل دخول المدير</h3>
+                        <input type="text" placeholder=" ادخل رقم الهوية" class="input-box-teacher">
+                        <input type="password" placeholder=" ادخل كلمة المرور" class="input-box-teacher2">
+                        <button class="login-btn-teacher">تسجيل الدخول</button>
+                    </form>
+
+                    <div class="icons">
+                        <a href="#" class="icon active-icon" id="icon1"  onclick="showForm('teacher',this)"><img src="images/teacher.png" alt="Teacher" title="تسجيل دخول المعلم"></a>
+                        <a href="#" class="icon" id="icon2" onclick="showForm('admin', this)"><img src="images/manager-off.png" alt="Admin" title="تسجيل دخول المدير"></a>
+                    </div>
+
+        
+                </div>
+        </section>
+
+        <!--- footer start -->
+        <footer class="footer">
+            &copy; جميع الحقوق محفوظة  | <span>spark education</span>  حقوق الطبع والنشر بواسطة 
+        </footer>
+        <!--- footer ends -->
+
+    
+
+        <script src="js/script.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        
+    </body>
+</html>
