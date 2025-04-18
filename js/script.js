@@ -129,3 +129,4 @@ function showForm(userType, element) {
     document.getElementById('icon2').querySelector('img').src = userType === 'admin' ? "images/manager.png" : "images/manager-off.png";
 }
 
+
