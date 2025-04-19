@@ -63,88 +63,77 @@
   
     <!-- Start Projects Table -->
         <div class="projects p-20 bg-white rad-10 m-20">
-          <h2 class="mt-0 mb-20">سجل الطلاب</h2>
+          <h2 class="mt-0 mb-20">الواجبات</h2>
           <div class="responsive-table">
-            <div class="header_sections_teacher ">
-              <input class="search-box" type="text" placeholder="ابحث">
-            </div>
-
-
-           <!-- مربع عرض تفاصيل الطالب -->
-            <div id="studentModal" class="modal">
-              <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h3>تفاصيل الطالب</h3>
-                <p id="studentDetails"></p>
+            <div class="header_sections ">
+                <a href="#">اضافة واجب جديد</a>
+                <input class="search-box" type="text" placeholder="ابحث">
               </div>
-            </div>
-
-            
             <table class="fs-15 w-full">
               <thead>
                 <tr>
                   <td>الاجراءات</td>
+                  <td>عدد الاسئلة</td>
+                  <td> مدة الاختبار</td>
                   <td>الشعبة</td>
                   <td>الصف</td>
                   <td>المرحلة الدراسية</td>
-                  <td>الجنس</td>
-                  <td>رقم الهوية</td>
-                  <td>الاسم</td>
+                  <td>مادة الاختبار</td>
                   <td>#</td>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"
-                    onclick="showStudentDetails(this)"
-                    data-name="0000000"
-                    data-id="9999999999"
-                    data-gender="ذكر"
-                    data-grade="الثاني"
-                    data-level="الابتدائي"
-                    data-class="أ"></i</td>
+                  <td>
+                    <i class="fas fa-trash-alt action-icon delete-icon" title="حذف"></i>
+                    <i class="fas fa-question-circle action-icon question-icon" title="عرض الاسئلة"></i>
+                    <i class="fas fa-edit action-icon edit-icon" title="تعديل"></i>
+                    <i class="fas fa-users students-icon action-icon std-icon" title="عرض الطلاب"></i>
+                    
+                  </td>
+                  <td>20</td>
+                  <td>دقيقة 15</td>
                   <td>أ</td>
-                  <td>الثاني</td>
-                  <td>الابتدائي</td>
-                  <td>ذكر</td>
-                  <td>9999999999</td>
-                  <td>علي</td>
+                  <td>الخامس</td>
+                  <td>الاعدادي</td>
+                  <td>لغة عربية</td>
                   <td>1</td>
                 </tr>
                 <tr>
-                  <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"
-                    onclick="showStudentDetails(this)"
-                    data-name="0000000"
-                    data-id="9999999999"
-                    data-gender="ذكر"
-                    data-grade="الثاني"
-                    data-level="الابتدائي"
-                    data-class="أ"></i</td>
-                  <td>أ</td>
-                  <td>الثاني</td>
-                  <td>الابتدائي</td>
-                  <td>ذكر</td>
-                  <td>9999999999</td>
-                  <td>علي</td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                  <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"
-                    onclick="showStudentDetails(this)"
-                    data-name="0000000"
-                    data-id="9999999999"
-                    data-gender="ذكر"
-                    data-grade="الثاني"
-                    data-level="الابتدائي"
-                    data-class="أ"></i</td>
-                  <td>أ</td>
-                  <td>الثاني</td>
-                  <td>الابتدائي</td>
-                  <td>ذكر</td>
-                  <td>9999999999</td>
-                  <td>علي</td>
-                  <td>1</td>
-                </tr>
+                    <td>
+                        <i class="fas fa-trash-alt action-icon delete-icon" title="حذف"></i>
+                        <i class="fas fa-question-circle action-icon question-icon" title="عرض الاسئلة"></i>
+                        <i class="fas fa-edit action-icon edit-icon" title="تعديل"></i>
+                        <i class="fas fa-users students-icon action-icon std-icon" title="عرض الطلاب"></i>
+                        
+                      </td>
+                    <td>20</td>
+                    <td>دقيقة 15</td>
+                    <td>أ</td>
+                    <td>الخامس</td>
+                    <td>الاعدادي</td>
+                    <td>لغة عربية</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <i class="fas fa-trash-alt action-icon delete-icon" title="حذف"></i>
+                        <i class="fas fa-question-circle action-icon question-icon" title="عرض الاسئلة"></i>
+                        <i class="fas fa-edit action-icon edit-icon" title="تعديل"></i>
+                        <i class="fas fa-users students-icon action-icon std-icon" title="عرض الطلاب"></i>
+                        
+                      </td>
+                    <td>20</td>
+                    <td>دقيقة 15</td>
+                    <td>أ</td>
+                    <td>الخامس</td>
+                    <td>الاعدادي</td>
+                    <td>لغة عربية</td>
+                    <td>1</td>
+                  </tr>
+              
+               
+               
               </tbody>
             </table>
 
