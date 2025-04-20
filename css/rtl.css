@@ -809,10 +809,6 @@ transform: scale(1.1);
   padding: 10px;
 }
 
-.sidebar {
-  padding: 20px;
-}
-
   /********** End Sidebar **********8*/
 
 /* start contenet teacher dashboard  */
@@ -896,6 +892,10 @@ transform: scale(1.1);
     font-size: 1.1rem;
     text-align: right;
   }
+
+  .sidebar , .projects , .tickets , .box , .intro {
+    padding: 20px;
+  }
   
 
 /*  contenet teacher dashboard ends */
@@ -945,11 +945,6 @@ transform: scale(1.1);
   
   .projects tbody tr:hover td {
     background-color: #faf7f7;
-  }
-
-
-  .projects {
-    padding: 20px;
   }
   
 
