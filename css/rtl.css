@@ -259,11 +259,43 @@ header.header {
     width: 40px;
     margin-top: 1rem;
 }
+
+
 /* .register-link {
     color: var(--main-color);
     text-decoration: none;
     font-weight: bold;
 } */
+
+
+
+.right-section .login-box .icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.right-section .login-box.icon.active-icon {
+opacity: 1;
+transform: scale(1.1);
+}
+.right-section .login-box .icons img {
+  width: 40px;
+  margin-top: 1rem;
+}
+
+.right-section .login-box .form {
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.right-section .login-box .form.active-form {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /***student & parent login section ends**/
 
 
@@ -546,7 +578,7 @@ header.header {
   font-size: 1.2rem;
 }
 
-/*********this is actions icon in the tables ends***********/
+/*********the actions icon in the tables ends***********/
 
 
 
@@ -773,6 +805,14 @@ header.header {
   color: var(--main-color); 
 }
 
+.sidebar ul li a {
+  padding: 10px;
+}
+
+.sidebar {
+  padding: 20px;
+}
+
   /********** End Sidebar **********8*/
 
 /* start contenet teacher dashboard  */
@@ -797,6 +837,13 @@ header.header {
   .wrapper .welcome {
     overflow: hidden;
   }
+
+  .welcome .intro {
+    background-color: rgba(88, 159, 67, 0.2); 
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+  }
+
   .wrapper .welcome .intro img {
     width: 200px;
     margin-bottom: -10px;
@@ -822,6 +869,35 @@ header.header {
     font-size: 1rem;
   }
 
+  .box i {
+    color: var(--main-color);
+    font-size: 2rem;
+  }
+ 
+  .box a span {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+  }
+
+  .welcome-teacher h2 {
+    margin: 0;
+    font-size: 2.1rem;
+    color: var(--secondary-color);
+    text-align: right;
+  }
+  
+  
+  .welcome-teacher p {
+    color: var(--grey-color);
+    font-size: 1.1rem;
+    text-align: right;
+  }
+  
+
 /*  contenet teacher dashboard ends */
   
   /******** Tables design starts in teacher dashboard******/
@@ -830,7 +906,7 @@ header.header {
     text-align: right;
     font-size: 2rem;
     color: var(--main-color);
-    margin-right: 1rem;
+    margin-right: 1.5rem;
     margin-bottom: 1rem;
     gap: 5px;
     font-weight: bold;
@@ -843,6 +919,7 @@ header.header {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: var(--white);
+    margin: 1rem;
 
   }
   .projects table {
@@ -870,7 +947,18 @@ header.header {
     background-color: #faf7f7;
   }
 
-/******* Tables design starts in teacher dashboard******/
+
+  .projects {
+    padding: 20px;
+  }
+  
+
+/******* Tables design ends in teacher dashboard******/
+
+
+
+
+
 
 
 /** start student page in teacher dashboard**/
@@ -1000,134 +1088,8 @@ header.header {
     }
   }
   /* End Box */
-  /* Start Padding + Margin */
-  .p-10 {
-    padding: 10px;
-  }
-  .p-15 {
-    padding: 15px;
-  }
-  .p-20 {
-    padding: 20px;
-  }
-  .pt-10 {
-    padding-top: 10px;
-  }
-  .pt-15 {
-    padding-top: 15px;
-  }
-  .pt-20 {
-    padding-top: 20px;
-  }
-  .pb-10 {
-    padding-bottom: 10px;
-  }
-  .pb-15 {
-    padding-bottom: 15px;
-  }
-  .pb-20 {
-    padding-bottom: 20px;
-  }
-  .pl-15 {
-    padding-left: 15px;
-  }
-  .m-0 {
-    margin: 0;
-    font-size: 2.1rem;
-    color: var(--secondary-color);
-    text-align: right;
-  }
-  .m-15 {
-    margin: 15px;
-  }
-  .m-20 {
-    margin: 20px;
-  }
-  .mt-0 {
-    margin-top: 0;
-  }
-  .mt-5 {
-    margin-top: 5px;
-  }
-  .mt-10 {
-    margin-top: 10px;
-  }
-  .mt-15 {
-    margin-top: 15px;
-  }
-  .mt-20 {
-    margin-top: 20px;
-  }
-  .mt-25 {
-    margin-top: 25px;
-  }
-  .mr-10 {
-    margin-right: 10px;
-  }
-  .mr-15 {
-    margin-right: 15px;
-  }
-  .mb-5 {
-    margin-bottom: 5px;
-  }
-  .mb-10 {
-    margin-bottom: 10px;
-  }
-  .mb-15 {
-    margin-bottom: 15px;
-  }
-  .mb-20 {
-    margin-bottom: 20px;
-  }
-  .mb-25 {
-    margin-bottom: 25px;
-  }
-  /* End Padding + Margin */
-  /* Start Color */
-  .c-black {
-    color: black;
-  }
-  .c-white {
-    color: white;
-  }
-  .c-grey {
-    color: var(--grey-color);
-    font-size: 1.1rem;
-    text-align: right;
-  }
-  .c-red {
-    color: var(--red-color);
-  }
-  .c-green {
-    color: var(--green-color);
-  }
-  .c-blue {
-    color: var(--main-color);
-    font-size: 2rem;
-  }
-  .c-orange {
-    color: var(--main-color);
-    font-size: 2rem;
-  }
-  .bg-red {
-    background-color: var(--red-color);
-  }
-  .bg-green {
-    background-color: var(--green-color);
-  }
-  .bg-blue {
-    background-color: var(--blue-color);
-  }
-  .bg-orange {
-    background-color: var(--orange-color);
-  }
-  .bg-white {
-    background-color: white;
-  }
-  .bg-eee {
-    background-color: rgba(88, 159, 67, 0.2); 
-  }
-  /* End Color */
+
+
   /* Start Position */
   .p-relative {
     position: relative;
@@ -1152,13 +1114,7 @@ header.header {
   .fs-25 {
     font-size: 25px;
   }
-  .fw-bold {
-    font-weight: bold;
-    font-size: 2rem;
-    line-height: 1rem;
-    margin-top: 1.5rem;
-    color: var(--secondary-color);
-  }
+ 
   @media (max-width: 767px) {
     .txt-c-mobile {
       text-align: center;

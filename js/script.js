@@ -131,6 +131,47 @@ function showForm(userType, element) {
 
 
 
+
+
+// script for login student and parent page 
+
+
+function showForm(userType, element) {
+    // إخفاء جميع النماذج مع تأثير سلس
+    document.querySelectorAll('.form').forEach(form => {
+        form.style.opacity = '0';
+        form.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+            form.style.display = 'none';
+        }, 300);
+    });
+
+    // إظهار النموذج المطلوب مع تأثير
+    setTimeout(() => {
+        let activeForm = userType === 'student' ? document.getElementById('stdForm') : document.getElementById('parentForm');
+        activeForm.style.display = 'block';
+        setTimeout(() => {
+            activeForm.style.opacity = '1';
+            activeForm.style.transform = 'translateY(0)';
+        }, 50);
+    }, 300);
+
+    // تحديث الأيقونات (إزالة التفعيل عن الجميع)
+    document.querySelectorAll('.icon').forEach(icon => {
+        icon.classList.remove('active-icon');
+    });
+
+    // تفعيل الأيقونة المختارة
+    element.classList.add('active-icon');
+
+    // تغيير صور الأيقونات بناءً على الاختيار
+    document.getElementById('icon1').querySelector('img').src = userType === 'student' ? "images/std-on.png" : "images/std-off.png";
+    document.getElementById('icon2').querySelector('img').src = userType === 'parent' ? "images/par-on.png" : "images/par-off.png";
+}
+
+
+
+
 /***** Student data**** */
 
 function showStudentDetails(icon) {
