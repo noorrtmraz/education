@@ -7,7 +7,11 @@
     --light-bg:#eee;
     --border:1rem solid rgba(0,0,0,.2);
     --red:#d35000;
+    --whitegrey: #f0f0f0;
+    --ddd : #ddd;
 }
+
+
 
 *{
 
@@ -23,7 +27,7 @@
 
 *::selection{
     background-color: var(--main-color);
-    color: #fff;
+    color: var(--white);
 }
 
 *::-webkit-scrollbar{
@@ -49,6 +53,7 @@ html{
 
  body {
 
+  background-color: var(--white);
     height: 100%;
     margin: 0;
     padding-top: 65px;
@@ -56,6 +61,8 @@ html{
     overflow: auto; /* لتمكين التمرير عند الحاجة */
    
 }
+
+
 
 /*** header starts ***/
 
@@ -65,7 +72,7 @@ header.header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #fff;
+  background-color: var(--white);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -184,7 +191,7 @@ header.header {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 30px;
     height: 33rem;
     width: 5rem;
@@ -232,7 +239,7 @@ header.header {
 
 .login .container .right-section .login-box .login-btn {
     background-color: var(--main-color);
-    color: white;
+    color: var(--white);
     padding: 7px;
     border: none;
     border-bottom-left-radius: 20px;
@@ -261,11 +268,6 @@ header.header {
 }
 
 
-/* .register-link {
-    color: var(--main-color);
-    text-decoration: none;
-    font-weight: bold;
-} */
 
 
 
@@ -490,7 +492,7 @@ transform: scale(1.1);
 .login-teacher .form-container3 .form .login-btn-teacher{
 
     background-color: var(--main-color);
-    color: white;
+    color: var(--white);
     padding: 7px;
     border: none;
     border-bottom-left-radius: 20px;
@@ -578,6 +580,12 @@ transform: scale(1.1);
   font-size: 1.2rem;
 }
 
+.download-icon{
+  color: var(--main-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+}
+
 /*********the actions icon in the tables ends***********/
 
 
@@ -631,6 +639,32 @@ transform: scale(1.1);
 }
 
 
+#msg-btn {
+  position: relative;
+  font-size: 1.5rem;
+  color: var(--black);
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+#msg-btn::after {
+  content: "1"; /* عدد الإشعارات */
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 0.8rem;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+
 #bell-btn {
     position: relative;
     font-size: 1.5rem;
@@ -645,7 +679,7 @@ transform: scale(1.1);
     top: -5px;
     right: -5px;
     background: var(--red);
-    color: white;
+    color: var(--white);
     font-size: 0.8rem;
     width: 18px;
     height: 18px;
@@ -716,7 +750,7 @@ transform: scale(1.1);
     border-radius: .5rem;
     padding: .5rem 1rem;
     font-size: 1.2rem;
-    color: #fff;
+    color: var(--white);
     cursor: pointer;
     text-align: center;
 }
@@ -733,7 +767,7 @@ transform: scale(1.1);
 
 .sidebar {
     width: 250px;
-    box-shadow: 0 0 10px #ddd;
+    box-shadow: 0 0 10px var(--ddd);
   }
 
   .sidebar ul{
@@ -771,7 +805,7 @@ transform: scale(1.1);
   position: absolute;
   top: 0;
   right: 100%; 
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   padding: 10px 0;
@@ -793,7 +827,7 @@ transform: scale(1.1);
 }
 
 .dropdown-menu li a:hover {
-  background-color: #f0f0f0;
+  background-color: var(--whitegrey);
 }
 
 .dropdown .arrow {
@@ -822,6 +856,15 @@ transform: scale(1.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.fc-ltr .fc-basic-view .fc-day-top .fc-day-number {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+
+
   .page .wrapper {
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     margin-left: 20px;
@@ -836,8 +879,8 @@ transform: scale(1.1);
 
   .welcome .intro {
     background-color: rgba(88, 159, 67, 0.2); 
-    border-top-right-radius: 7px;
-    border-top-left-radius: 7px;
+    box-shadow:0 0 5px var(--ddd);
+
   }
 
   .wrapper .welcome .intro img {
@@ -847,10 +890,10 @@ transform: scale(1.1);
   .wrapper .welcome .avatar {
     width: 49px;
     height: 49px;
-    border: 1px solid white;
+    border: 1px solid var(--white);
     border-radius: 50%;
     padding: 1px;
-    box-shadow: 0 0 5px #ddd;
+    box-shadow: 0 0 5px var(--ddd);
     margin-right: 20px;
     margin-top: -39px;
     float: right;
@@ -858,16 +901,23 @@ transform: scale(1.1);
 
 
   .tickets .box {
-    border: 1px solid #ccc;
     width: calc(100% - 10px);
     height: 12rem;
     text-align: center;
     font-size: 1rem;
+    box-shadow: 0 0 5px var(--ddd);
+    
+  }
+
+  .tickets .box:hover{
+    transition: transform 0.3s;
+    transform: scale(1.05);
   }
 
   .box i {
     color: var(--main-color);
     font-size: 2rem;
+    text-shadow: 1px 1px 2px rgba(88, 159, 67, 0.2); 
   }
  
   .box a span {
@@ -938,8 +988,8 @@ transform: scale(1.1);
     padding: 10px;
   }
   .projects tbody td {
-    border-bottom: 2px solid #eee;
-    border-left: 2px solid #eee;
+    border-bottom: 2px solid var(--light-bg);
+    border-left: 2px solid var(--light-bg);
     transition: 0.3s;
   }
   
@@ -949,11 +999,6 @@ transform: scale(1.1);
   
 
 /******* Tables design ends in teacher dashboard******/
-
-
-
-
-
 
 
 /** start student page in teacher dashboard**/
@@ -1049,8 +1094,23 @@ transform: scale(1.1);
 
 /********ends student page in teacher dashboard***********/
 
+/***** start books page in teacher dashboard *********/
+.modal-content p{
+  font-size: 1.5rem;
+}
+
+.modal-content button{
+  background-color: var(--main-color);
+  color: var(--white);
+  padding: 6px;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 5rem;
+  font-weight: bold;
+}
 
 
+/***** end books page in teacher dashboard *********/
  
   /* Start Box */
   .d-flex {
@@ -1133,7 +1193,7 @@ transform: scale(1.1);
     border: 1px solid #ccc;
   }
   .border-eee {
-    border: 1px solid #eee;
+    border: 1px solid var(--light-bg);
   }
   
   /* End Border */
@@ -1362,6 +1422,14 @@ transform: scale(1.1);
     border-top: 3px solid var(--main-color);
    }
 
+     .header_sections {
+    display: flex;
+    justify-content: space-between; /* توزيع العناصر بين اليسار واليمين */
+    align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+    width: 100%; /* حجز العرض الكامل */
+    padding: 2rem;
+  }
+
    .header_sections a{
     background-color: var(--main-color);
     padding: 5px 10px 5px 10px;
@@ -1375,6 +1443,15 @@ transform: scale(1.1);
     background-color: var(--secondary-color);
     transition: .8s linear;
    }
+
+   /* تصميم مربع البحث */
+  .header_sections .search-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: right;
+
+}
    
 
    /******** end classroom page in admin dashboard*********/

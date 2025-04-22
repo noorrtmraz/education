@@ -49,50 +49,6 @@ document.querySelector('.side-bar .close-btn').onclick = () =>{
 }
 
 
-let toggleBtn = document.querySelector('#toggle-btn');
-let darkMode = localStorage.getItem('dark-mode');
-let logoImg = document.querySelector(".logo img"); // تعريف الشعار
-
-
-const enabelDarkMode = () =>{
-    toggleBtn.classList.replace('fa-sun' , 'fa-moon');
-    body.classList.add('dark');
-    logoImg.src = "images/logo-dark.png"; // استبدال الشعار في الوضع الداكن
-    localStorage.setItem('dark-mode', 'enabled');
-   
-
-}
-
-
-const disableDarkMode = () =>{
-    toggleBtn.classList.replace('fa-moon' , 'fa-sun');
-    body.classList.remove('dark');
-    logoImg.src = "images/spark.png"; // استبدال الشعار في الوضع الداكن
-    localStorage.setItem('dark-mode', 'disabled');
-   
-
-}
-
-if(darkMode === 'enabled'){
-    enabelDarkMode();
-}
-
-toggleBtn.onclick = (e) =>{
-    let darkMode = localStorage.getItem('dark-mode');
-    if(darkMode === 'disabled'){
-        enabelDarkMode();
-    }else{
-        disableDarkMode();
-    }
-}
-
-
-
-
-
-
-
-
 // script for login teacher and admin page 
 
 
@@ -201,3 +157,20 @@ function showStudentDetails(icon) {
   
 
   /**********  end std data */
+  function openModal(bookId) {
+    // فتح المودال عند الضغط على حذف الكتاب
+    document.getElementById("confirmationModal").style.display = "block";
+    // تخزين معرف الكتاب الذي سيتم حذفه
+    window.selectedBookId = bookId;
+  }
+
+  function closeModal() {
+    // إغلاق المودال
+    document.getElementById("confirmationModal").style.display = "none";
+  }
+
+  function confirmDelete(bookId) {
+    // هنا يمكن تنفيذ عملية حذف الكتاب باستخدام bookId
+    alert("تم حذف الكتاب رقم: " + bookId);
+    closeModal(); // إغلاق المودال بعد الحذف
+  }

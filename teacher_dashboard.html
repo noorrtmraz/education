@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>spark education</title>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
          <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,22 +15,23 @@
         <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
+
         <link rel="stylesheet" href="css/rtl.css">
     </head>
-    <body>
+    <body class="darkmode">
         <!---header section starts-->
         <header class="header">
           <section class="flex">
             <div class="icons">
               <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
-              <div id="search-btn" class="fas fa-search"></div>
-              <div id="user-btn" class="fas fa-user"></div>
-              <div id="bell-btn" class="fas fa-bell"></div>
-              <div id="msg-btn" class="fa-solid fa-message"></div>
-
+              <div id="lang-btn" class="fas fa-language" title="تغيير اللغة"></div>
+              <div id="search-btn" class="fas fa-search" title="بحث"></div>
+              <div id="user-btn" class="fas fa-user" title="المستخدم"></div>
+              <div id="bell-btn" class="fas fa-bell" title="الاشعارات"></div>
+              <div id="msg-btn" class="fa-solid fa-message" title="الرسائل"></div>
             </div>
             <form action="" method="post" class="search-form">
-              <input type="text" name="search_box" placeholder="عن ماذا تبحث .." required maxlength="100">
+              <input type="text" name="search_box" placeholder=".. عن ماذا تبحث" required maxlength="100">
               <button type="submit" class="fas fa-search" name="search_box"></button>
             </form>
             
@@ -52,13 +54,14 @@
       <div class="content w-full">
         <div class="wrapper d-grid gap-20">
             <div id="calendar"></div> 
+            
             <!-- Start Welcome Widget -->
             <div class="welcome bg-white rad-10 txt-c-mobile block-mobile">
               <div class="intro p-20 d-flex space-between bg-eee">
               <img class="hide-mobile" src="images/welcome.png" alt="" />
-              <div class="welcome-teacher">
-                <h2>اهلاً بك</h2>
-                <p>ميادة مغاري</p>
+              <div>
+                <h2 class="m-0">اهلاً بك</h2>
+                <p class="c-grey mt-5">ميادة مغاري</p>
               </div>
             </div>
             <img src="images/avatar.png" alt="" class="avatar" />
@@ -71,7 +74,7 @@
                     عدد الطلاب
                 </div>
                 <div class="box p-20 rad-10 fs-13 c-grey">
-                  <i class="fa-regular fa-folder-open fa-2x mb-10"></i>
+                  <i class="fa-regular fa-folder-open fa-2x mb-10 c-blue"></i>
                   <a href="#"><span class="d-block c-black fw-bold fs-25 mb-5">500</span></a>
                     عدد الأقسام
                 </div>
@@ -106,14 +109,14 @@
               
             </a>
             <ul class="dropdown-menu">
-              <li><a href="subject1.html">الابتدائي</a></li>
-              <li><a href="subject2.html"> الاعدادي</a></li>
+              <li><a href="teacher_primaryGrade.html">الابتدائي</a></li>
+              <li><a href="teacher_middleGrade.html"> الاعدادي</a></li>
             </ul>
           </li>
 
           <li>
-            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_books.html">
-                <span>الصفوف </span>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_classrooms.html">
+                <span>الصفوف</span>
                 <i class="fas fa-book"></i>
             </a>
           </li>
@@ -126,8 +129,8 @@
               
             </a>
             <ul class="dropdown-menu">
-              <li><a href="subject1.html">الدروس</a></li>
-              <li><a href="subject2.html"> الواجبات</a></li>
+              <li><a href="teacher_subjects.html">الدروس</a></li>
+              <li><a href="teacher_hw.html"> الواجبات</a></li>
               <li><a href="teacher_exams.html">الاختبارات</a></li>
             </ul>
           </li>
@@ -162,8 +165,9 @@
         </ul>
       </div>
     </div>
+    
 
-    <script src="js/script.js" defer></script>
+    <script src="js/script.js"></script>
     
   </body>
 </html>
