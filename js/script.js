@@ -49,86 +49,79 @@ document.querySelector('.side-bar .close-btn').onclick = () =>{
 }
 
 
-// script for login teacher and admin page 
 
+//  كود تبديل الفورم تبع المديير والمعلم وولي الامر والطالب كلهن في نفس الكود 
 
 function showForm(userType, element) {
-    // إخفاء جميع النماذج مع تأثير سلس
     document.querySelectorAll('.form').forEach(form => {
-        form.style.opacity = '0';
-        form.style.transform = 'translateY(-10px)';
-        setTimeout(() => {
-            form.style.display = 'none';
-        }, 300);
+        form.classList.remove('active-form');
+        form.style.display = 'none'; 
     });
 
-    // إظهار النموذج المطلوب مع تأثير
-    setTimeout(() => {
-        let activeForm = userType === 'teacher' ? document.getElementById('teacherForm') : document.getElementById('adminForm');
-        activeForm.style.display = 'block';
-        setTimeout(() => {
-            activeForm.style.opacity = '1';
-            activeForm.style.transform = 'translateY(0)';
-        }, 50);
-    }, 300);
+    let activeForm = null;
+    if (userType === 'teacher') {
+        activeForm = document.getElementById('teacherForm');
+    } else if (userType === 'admin') {
+        activeForm = document.getElementById('adminForm');
+    } else if (userType === 'student') {
+        activeForm = document.getElementById('stdForm');
+    } else if (userType === 'parent') {
+        activeForm = document.getElementById('parentForm');
+    }
 
-    // تحديث الأيقونات (إزالة التفعيل عن الجميع)
+    setTimeout(() => {
+        activeForm.style.display = 'block';
+        activeForm.classList.add('active-form');
+
+        activeForm.style.opacity = '1';
+        activeForm.style.transform = 'translateX(0)';
+    }, 50);
+
+        
     document.querySelectorAll('.icon').forEach(icon => {
         icon.classList.remove('active-icon');
     });
 
-    // تفعيل الأيقونة المختارة
     element.classList.add('active-icon');
 
-    // تغيير صور الأيقونات بناءً على الاختيار
-    document.getElementById('icon1').querySelector('img').src = userType === 'teacher' ? "images/teacher.png" : "images/teacher-off.png";
-    document.getElementById('icon2').querySelector('img').src = userType === 'admin' ? "images/manager.png" : "images/manager-off.png";
+    if (userType === 'teacher') {
+        document.getElementById('icon1').querySelector('img').src = "images/teacher.png";
+        document.getElementById('icon2').querySelector('img').src = "images/manager-off.png";  
+    } else if (userType === 'admin') {
+        document.getElementById('icon2').querySelector('img').src = "images/manager.png";
+        document.getElementById('icon1').querySelector('img').src = "images/teacher-off.png";  
+    } else if (userType === 'student') {
+        document.getElementById('icon3').querySelector('img').src = "images/std-on.png";
+        document.getElementById('icon4').querySelector('img').src = "images/par-off.png";  
+    } else if (userType === 'parent') {
+        document.getElementById('icon4').querySelector('img').src = "images/par-on.png";
+        document.getElementById('icon3').querySelector('img').src = "images/std-off.png";  
+    }
+}
+
+window.onload = function() {
+    const currentPage = window.location.pathname;
+
+    if (currentPage.includes("teacher") || currentPage.includes("admin")) {
+        const defaultForm = localStorage.getItem('defaultForm') || 'teacher';  
+        showForm(defaultForm, document.getElementById('icon1'));  
+    } else if (currentPage.includes("student") || currentPage.includes("parent")) {
+        // إذا كانت الصفحة هي صفحة الطالب أو ولي الأمر
+        const defaultForm = localStorage.getItem('defaultForm') || 'student';
+        showForm(defaultForm, document.getElementById('icon3'));  
+    }
+}
+
+function saveDefaultForm(userType) {
+    localStorage.setItem('defaultForm', userType);
 }
 
 
 
 
 
-// script for login student and parent page 
 
-
-function showForm(userType, element) {
-    // إخفاء جميع النماذج مع تأثير سلس
-    document.querySelectorAll('.form').forEach(form => {
-        form.style.opacity = '0';
-        form.style.transform = 'translateY(-10px)';
-        setTimeout(() => {
-            form.style.display = 'none';
-        }, 300);
-    });
-
-    // إظهار النموذج المطلوب مع تأثير
-    setTimeout(() => {
-        let activeForm = userType === 'student' ? document.getElementById('stdForm') : document.getElementById('parentForm');
-        activeForm.style.display = 'block';
-        setTimeout(() => {
-            activeForm.style.opacity = '1';
-            activeForm.style.transform = 'translateY(0)';
-        }, 50);
-    }, 300);
-
-    // تحديث الأيقونات (إزالة التفعيل عن الجميع)
-    document.querySelectorAll('.icon').forEach(icon => {
-        icon.classList.remove('active-icon');
-    });
-
-    // تفعيل الأيقونة المختارة
-    element.classList.add('active-icon');
-
-    // تغيير صور الأيقونات بناءً على الاختيار
-    document.getElementById('icon1').querySelector('img').src = userType === 'student' ? "images/std-on.png" : "images/std-off.png";
-    document.getElementById('icon2').querySelector('img').src = userType === 'parent' ? "images/par-on.png" : "images/par-off.png";
-}
-
-
-
-
-/***** Student data**** */
+/***** Student data modle**** */
 
 function showStudentDetails(icon) {
     const name = icon.dataset.name;
@@ -156,7 +149,10 @@ function showStudentDetails(icon) {
   }
   
 
-  /**********  end std data */
+  /**********  end std data *******/
+
+/****** delete modle for boods starts****** */
+
   function openModal(bookId) {
     // فتح المودال عند الضغط على حذف الكتاب
     document.getElementById("confirmationModal").style.display = "block";
@@ -174,3 +170,4 @@ function showStudentDetails(icon) {
     alert("تم حذف الكتاب رقم: " + bookId);
     closeModal(); // إغلاق المودال بعد الحذف
   }
+  /****** delete modle for boods ends****** */

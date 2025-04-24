@@ -268,9 +268,6 @@ header.header {
 }
 
 
-
-
-
 .right-section .login-box .icons {
   margin-top: 10px;
   display: flex;
@@ -286,16 +283,21 @@ transform: scale(1.1);
   width: 40px;
   margin-top: 1rem;
 }
+.right-section .login-box .icons .icon.active-icon img{
+  transform: scale(1.1);  /* تكبير الأيقونة عند التفعيل */
+    opacity: 1;
+    transition: transform 0.3s, opacity 0.3s; 
+}
 
 .right-section .login-box .form {
   transform: translateY(-10px);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .right-section .login-box .form.active-form {
   display: block;
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 /***student & parent login section ends**/
@@ -411,6 +413,8 @@ transform: scale(1.1);
 
 /******about page ends*****/
 
+
+
 /****** footer section starts ********/
 .footer{
     position: sticky;
@@ -509,30 +513,39 @@ transform: scale(1.1);
 
 
 .login-teacher .form-container3 .icons {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 .login-teacher .form-container3 .icon.active-icon {
   opacity: 1;
   transform: scale(1.1);
 }
+
+.login-teacher .form-container3 .icon.active-icon img {
+ 
+  transform: scale(1);
+  opacity: 1;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
 .login-teacher .form-container3 .icons img {
-    width: 40px;
-    margin-top: 1rem;
+  width: 40px;
+  margin-top: 1rem;
+  transition: transform 0.3s, opacity 0.3s;
 }
 
 .login-teacher .form-container3 .form {
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform: translateY(-20px);  /* الحركة الابتدائية (خارج الشاشة) */
 }
 
 .login-teacher .form-container3 .form.active-form {
-    display: block;
-    opacity: 1;
-    transform: translateX(0);
+  display: block;  /* إظهار النموذج */
+  opacity: 1;
+  transform: translateY(0);  
 }
 
 /******teacher & admin login page ends**/
