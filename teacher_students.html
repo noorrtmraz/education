@@ -20,43 +20,36 @@
         </head>
         <body>
             
-        <!---header section starts-->
+      <!---header section starts-->
+      <header class="header">
+        <section class="flex">
+          <div class="icons">
+            <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
+            <div id="lang-btn" class="fas fa-language" title="تغيير اللغة"></div>
+            <div id="search-btn" class="fas fa-search" title="بحث"></div>
+            <div id="user-btn" class="fas fa-user" title="المستخدم"></div>
+            <div id="bell-btn" class="fas fa-bell" title="الاشعارات"></div>
+            <div id="msg-btn" class="fa-solid fa-message" title="الرسائل"></div>
+          </div>
+          <form action="" method="post" class="search-form">
+            <input type="text" name="search_box" placeholder=".. عن ماذا تبحث" required maxlength="100">
+            <button type="submit" class="fas fa-search" name="search_box"></button>
+          </form>
+          
+          <a href="home.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
 
-        <header class="header">
-
-            <section class="flex">
-
-                <div class="icons">
-                    <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
-                    <div id="search-btn" class="fas fa-search"></div>
-                    <div id="user-btn" class="fas fa-user"></div>
-                    <div id="bell-btn" class="fas fa-bell"></div>
-                    <div id="msg-btn" class="fa-solid fa-message"></div>
-
-                </div>
-                <form action="" method="post" class="search-form">
-                     <input type="text" name="search_box" placeholder="عن ماذا تبحث .."
-                     required maxlength="100">
-                     <button type="submit" class="fas fa-search" name="search_box"></button>
-                </form>
-                
-                <a href="home.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
-
-                <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
-                    <h3>ميادة مغاري</h3>
-                    <span>معلم</span>
-                  
-                    <div class="flex-btn">
-                        <br>
-                        <a href="login.html" class="option-btn">تسجيل خروج</a>
-                    </div>
-                </div>
-                
-            </section>
-
-        </header>
-        <!---header section ends-->
+              <div class="profile">
+                  <img src="images/pic-1.jpg" alt="">
+                  <h3>ميادة مغاري</h3>
+                  <span>معلم</span>
+                  <div class="flex-btn">
+                      <br>
+                      <a href="login.html" class="option-btn">تسجيل خروج</a>
+                  </div>
+              </div>
+          </section>
+      </header>
+      <!---header section ends-->
     <div class="page d-flex">
       
     <div class="content w-full">
@@ -73,7 +66,7 @@
            <!-- مربع عرض تفاصيل الطالب -->
             <div id="studentModal" class="modal">
               <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
+                <span class="close" onclick="closeModalStd()">&times;</span>
                 <h3>تفاصيل الطالب</h3>
                 <p id="studentDetails"></p>
               </div>
@@ -147,6 +140,8 @@
                 </tr>
               </tbody>
             </table>
+
+            
 
             <div class="pagination">
               <button class="inactive">4</button>
@@ -229,13 +224,7 @@
               
             </a>
           </li>
-          <li>
-            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_reports.html">
-                <span>التقارير</span>
-                <i class="fa-solid fa-chart-bar"></i>
-   
-            </a>
-          </li>
+         
           <li>
             <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
                 <span>الملف الشخصي</span>
@@ -246,6 +235,14 @@
         </ul>
       </div>
     </div>
+
+         <!--- footer start-->
+         <footer class="footer">
+
+          &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
+       
+       </footer>
+      <!--- footer ends-->
 
     <script src="js/script.js" defer></script>
     

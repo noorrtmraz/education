@@ -20,43 +20,36 @@
         </head>
         <body>
             
-        <!---header section starts-->
+      <!---header section starts-->
+      <header class="header">
+        <section class="flex">
+          <div class="icons">
+            <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
+            <div id="lang-btn" class="fas fa-language" title="تغيير اللغة"></div>
+            <div id="search-btn" class="fas fa-search" title="بحث"></div>
+            <div id="user-btn" class="fas fa-user" title="المستخدم"></div>
+            <div id="bell-btn" class="fas fa-bell" title="الاشعارات"></div>
+            <div id="msg-btn" class="fa-solid fa-message" title="الرسائل"></div>
+          </div>
+          <form action="" method="post" class="search-form">
+            <input type="text" name="search_box" placeholder=".. عن ماذا تبحث" required maxlength="100">
+            <button type="submit" class="fas fa-search" name="search_box"></button>
+          </form>
+          
+          <a href="home.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
 
-        <header class="header">
-
-            <section class="flex">
-
-                <div class="icons">
-                    <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
-                    <div id="search-btn" class="fas fa-search"></div>
-                    <div id="user-btn" class="fas fa-user"></div>
-                    <div id="bell-btn" class="fas fa-bell"></div>
-                    <div id="msg-btn" class="fa-solid fa-message"></div>
-
-                </div>
-                <form action="" method="post" class="search-form">
-                     <input type="text" name="search_box" placeholder="عن ماذا تبحث .."
-                     required maxlength="100">
-                     <button type="submit" class="fas fa-search" name="search_box"></button>
-                </form>
-                
-                <a href="home.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
-
-                <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
-                    <h3>ميادة مغاري</h3>
-                    <span>معلم</span>
-                  
-                    <div class="flex-btn">
-                        <br>
-                        <a href="login.html" class="option-btn">تسجيل خروج</a>
-                    </div>
-                </div>
-                
-            </section>
-
-        </header>
-        <!---header section ends-->
+              <div class="profile">
+                  <img src="images/pic-1.jpg" alt="">
+                  <h3>ميادة مغاري</h3>
+                  <span>معلم</span>
+                  <div class="flex-btn">
+                      <br>
+                      <a href="login.html" class="option-btn">تسجيل خروج</a>
+                  </div>
+              </div>
+          </section>
+      </header>
+      <!---header section ends-->
     <div class="page d-flex">
       
     <div class="content w-full">
@@ -66,7 +59,7 @@
           <h2 class="mt-0 mb-20">الواجبات</h2>
           <div class="responsive-table">
             <div class="header_sections ">
-                <a href="#">اضافة واجب جديد</a>
+                <a href="add_hw_teacher.html">اضافة واجب جديد</a>
                 <input class="search-box" type="text" placeholder="ابحث">
               </div>
             <table class="fs-15 w-full">
@@ -85,45 +78,10 @@
               <tbody>
                 <tr>
                   <td>
-                    <i class="fas fa-trash-alt action-icon delete-icon" title="حذف"></i>
-                    <i class="fas fa-edit action-icon edit-icon" title="تعديل"></i>
-                    <i class="fas fa-question-circle action-icon question-icon" title="عرض الاسئلة"></i>
-                    <i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i>
-                    <i class="fas fa-users students-icon action-icon std-icon" title="عرض الطلاب"></i>
-                    
-                  </td>
-                  <td>20</td>
-                  <td>12-3-2025</td>
-                  <td>أ</td>
-                  <td>الخامس</td>
-                  <td>لغة عربية</td>
-                  <td>واجب الوحدة الاولى</td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                  <td>
-                    <i class="fas fa-trash-alt action-icon delete-icon" title="حذف"></i>
-                    <i class="fas fa-edit action-icon edit-icon" title="تعديل"></i>
-                    <i class="fas fa-question-circle action-icon question-icon" title="عرض الاسئلة"></i>
-                    <i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i>
-                    <i class="fas fa-users students-icon action-icon std-icon" title="عرض الطلاب"></i>
-                    
-                  </td>
-                  <td>20</td>
-                  <td>12-3-2025</td>
-                  <td>أ</td>
-                  <td>الخامس</td>
-                  <td>لغة عربية</td>
-                  <td>واجب الوحدة الاولى</td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                  <td>
-                    <i class="fas fa-trash-alt action-icon delete-icon" title="حذف"></i>
-                    <i class="fas fa-edit action-icon edit-icon" title="تعديل"></i>
-                    <i class="fas fa-question-circle action-icon question-icon" title="عرض الاسئلة"></i>
-                    <i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i>
-                    <i class="fas fa-users students-icon action-icon std-icon" title="عرض الطلاب"></i>
+                    <a href="#"><i class="fas fa-trash-alt action-icon delete-icon" title="حذف الواجب"></i></a>
+                    <a href="edit_hw_teacher.html"><i class="fas fa-edit action-icon edit-icon" title="تعديل الواجب"></i></a>
+                    <a href="#"><i class="fa-solid fa-eye action-icon eye-icon" title="عرض الواجب"></i></a>
+                    <a href="#"><i class="fas fa-users students-icon action-icon std-icon" title="عرض الطلاب"></i></a>
                     
                   </td>
                   <td>20</td>
@@ -220,13 +178,7 @@
               
             </a>
           </li>
-          <li>
-            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_reports.html">
-                <span>التقارير</span>
-                <i class="fa-solid fa-chart-bar"></i>
-   
-            </a>
-          </li>
+        
           <li>
             <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
                 <span>الملف الشخصي</span>
@@ -238,6 +190,13 @@
       </div>
     </div>
 
+         <!--- footer start-->
+         <footer class="footer">
+
+          &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
+       
+       </footer>
+      <!--- footer ends-->
     <script src="js/script.js" defer></script>
     
   </body>

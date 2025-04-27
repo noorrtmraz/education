@@ -144,7 +144,7 @@ function showStudentDetails(icon) {
     document.getElementById("studentModal").style.display = "block";
   }
   
-  function closeModal() {
+  function closeModalStd() {
     document.getElementById("studentModal").style.display = "none";
   }
   
@@ -170,4 +170,41 @@ function showStudentDetails(icon) {
     alert("تم حذف الكتاب رقم: " + bookId);
     closeModal(); // إغلاق المودال بعد الحذف
   }
+
   /****** delete modle for boods ends****** */
+
+
+
+/***** Books data modle**** */
+
+function showBookDetails(icon) {
+    const name = icon.dataset.name;
+    const grade = icon.dataset.grade;
+    const classroom = icon.dataset.classroom;
+    const description = icon.dataset.description;
+    const date = icon.dataset.date;
+  
+    const details = `
+      <strong>الاسم:</strong> ${name}<br>
+      <strong>المرحلة:</strong> ${grade}<br>
+      <strong>الصف:</strong> ${classroom}<br>
+      <strong>الوصف:</strong> ${description}<br>
+      <strong>تاريخ الاضافة:</strong> ${date}
+    `;
+  
+    document.getElementById("bookDetails").innerHTML = details;
+    document.getElementById("bookModal").style.display = "block";
+  }
+  
+  function closeModalBook() {
+    document.getElementById("bookModal").style.display = "none";
+  }
+  
+
+  /**********  end book data *******/
+
+
+
+
+
+

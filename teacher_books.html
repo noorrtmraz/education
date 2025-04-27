@@ -22,51 +22,57 @@
             
         <!---header section starts-->
 
-        <header class="header">
-
-            <section class="flex">
-
-                <div class="icons">
-                    <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
-                    <div id="search-btn" class="fas fa-search"></div>
-                    <div id="user-btn" class="fas fa-user"></div>
-                    <div id="bell-btn" class="fas fa-bell"></div>
-                    <div id="msg-btn" class="fa-solid fa-message"></div>
-
-                </div>
-                <form action="" method="post" class="search-form">
-                     <input type="text" name="search_box" placeholder="عن ماذا تبحث .."
-                     required maxlength="100">
-                     <button type="submit" class="fas fa-search" name="search_box"></button>
-                </form>
-                
-                <a href="home.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+         <!---header section starts-->
+         <header class="header">
+          <section class="flex">
+            <div class="icons">
+              <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
+              <div id="lang-btn" class="fas fa-language" title="تغيير اللغة"></div>
+              <div id="search-btn" class="fas fa-search" title="بحث"></div>
+              <div id="user-btn" class="fas fa-user" title="المستخدم"></div>
+              <div id="bell-btn" class="fas fa-bell" title="الاشعارات"></div>
+              <div id="msg-btn" class="fa-solid fa-message" title="الرسائل"></div>
+            </div>
+            <form action="" method="post" class="search-form">
+              <input type="text" name="search_box" placeholder=".. عن ماذا تبحث" required maxlength="100">
+              <button type="submit" class="fas fa-search" name="search_box"></button>
+            </form>
+            
+            <a href="home.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
                     <img src="images/pic-1.jpg" alt="">
                     <h3>ميادة مغاري</h3>
                     <span>معلم</span>
-                  
                     <div class="flex-btn">
                         <br>
                         <a href="login.html" class="option-btn">تسجيل خروج</a>
                     </div>
                 </div>
-                
             </section>
-
         </header>
+        <!---header section ends-->
         <!---header section ends-->
     <div class="page d-flex">
       
     <div class="content w-full">
+
+      <div id="bookModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModalBook()">&times;</span>
+          <h2>تفاصيل الكتاب</h2>
+          <img src="images/pdf.svg">
+          <p id="bookDetails"></p>
+        </div>
+      </div>
   
     <!-- Start Projects Table -->
         <div class="projects p-20 bg-white rad-10 m-20">
           <h2 class="mt-0 mb-20">الكتب</h2>
           <div class="responsive-table">
-            <div class="header_sections_teacher ">
-              <input class="search-box" type="text" placeholder="ابحث">
+            <div class="header_sections ">
+              <a href="add_book_teacher.html">اضافة كتاب</a>
+              <input class="search-box" type="text" placeholder=".. ابحث">
             </div>
  
             <table class="fs-15 w-full">
@@ -82,54 +88,29 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                    <td>
-                        <i class="fas fa-trash-alt action-icon delete-icon" title="حذف الكتاب" onclick="openModal(1)"></i>
-                        <i class="fas fa-edit action-icon edit-icon" title="عرض التفاصيل"></i>
-                      <i class="fa-solid fa-eye action-icon eye-icon" title="تعديل الكتاب"></i>
-                      <i class="fa-solid fa-download action-icon download-icon" title="حذف الكتاب"></i>
-                    </td>
-                    <td>2025-04-20</td>
-                    <td>الصف الأول</td>
-                    <td>ابتدائي</td>
-                    <td>كتاب الرياضيات 1</td>
-                    <td>
-                      <img src="images/dll.svg" alt="صورة الكتاب" width="50" height="50" onclick="window.open('path_to_book.pdf', '_blank')" style="cursor: pointer;">
-                    </td>
-                    <td>1</td>
-                  </tr>
                   <tr>
                     <td>
-                        <i class="fas fa-trash-alt action-icon delete-icon" title="حذف الكتاب" onclick="openModal(1)"></i>
-                        <i class="fas fa-edit action-icon edit-icon" title="عرض التفاصيل" onclick="showBookDetails(1)"></i>
-                      <i class="fa-solid fa-eye action-icon eye-icon" title="تعديل الكتاب" onclick="editBook(1)"></i>
-                      <i class="fa-solid fa-download action-icon download-icon" title="حذف الكتاب" onclick="deleteBook(1)"></i>
+                      <a href="#"><i class="fas fa-trash-alt action-icon delete-icon" title="حذف الكتاب" onclick="openModal(1)"></i></a>
+                      <a href="edit_book_teacher.html"><i class="fas fa-edit action-icon edit-icon" title=" تعديل الكتاب"></i></a>
+
+                      <i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"
+                        onclick="showStudentDetails(this)"
+                        data-name="كتاب الرياضيات"
+                        data-grade="ابتدائي"
+                        data-classroom="الثاني"
+                        data-description="الابتدائيالابتدائيالابتدائيالابتدائيالابتائيالابتدائي"
+                        data-date="created-at"></i>
+
+                      <a href="#"><i class="fa-solid fa-download action-icon download-icon" title="تنزيل الكتاب" onclick="deleteBook(1)"></i></a>
                     </td>
                     <td>2025-04-20</td>
                     <td>الصف الأول</td>
                     <td>ابتدائي</td>
                     <td>كتاب الرياضيات 1</td>
                     <td>
-                      <img src="images/pdf.svg" alt="صورة الكتاب" width="50" height="50" onclick="window.open('path_to_book.pdf', '_blank')" style="cursor: pointer;">
+                      <img src="images/pdf.svg" alt="صورة الكتاب" width="50" height="50" style="cursor: pointer;">
                     </td>
                     <td>2</td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <i class="fas fa-trash-alt action-icon delete-icon" title="حذف الكتاب" onclick="openModal(1)"></i>
-                      <i class="fas fa-edit action-icon edit-icon" title="عرض التفاصيل" onclick="showBookDetails(1)"></i>
-                      <i class="fa-solid fa-eye action-icon eye-icon" title="تعديل الكتاب" onclick="editBook(1)"></i>
-                      <i class="fa-solid fa-download action-icon download-icon" title="حذف الكتاب" onclick="deleteBook(1)"></i>
-                    </td>
-                    <td>2025-04-20</td>
-                    <td>الصف الأول</td>
-                    <td>ابتدائي</td>
-                    <td>كتاب الرياضيات 1</td>
-                    <td>
-                      <img src="images/eps.svg" alt="صورة الكتاب" width="50" height="50" onclick="window.open('path_to_book.pdf', '_blank')" style="cursor: pointer;">
-                    </td>
-                    <td>3</td>
                   </tr>
               </tbody>
             </table>
@@ -219,13 +200,7 @@
               
             </a>
           </li>
-          <li>
-            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_reports.html">
-                <span>التقارير</span>
-                <i class="fa-solid fa-chart-bar"></i>
-   
-            </a>
-          </li>
+  
           <li>
             <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
                 <span>الملف الشخصي</span>
@@ -236,6 +211,14 @@
         </ul>
       </div>
     </div>
+
+     <!--- footer start-->
+     <footer class="footer">
+
+      &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
+   
+   </footer>
+  <!--- footer ends-->
 
     <script src="js/script.js" defer></script>
     

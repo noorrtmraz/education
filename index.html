@@ -2,251 +2,120 @@
 <html lang="ar">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>spark education</title>
 
         <!-- font awsam cdn link -->
+        <script src="js/script.js" defer></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
+        
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
          <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Square+Peg&display=swap" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" rel="stylesheet" />
-        <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
-        
+      
+
 
          <!-- custom css file link -->
-          <link rel="stylesheet" href="css/style.css">
+          <link  id="theme-style"  rel="stylesheet" href="css/rtl.css">
+         
     </head>
+
     <body>
         
         <!---header section starts-->
 
+        
         <header class="header">
+         <section class="flex">
+             <button id="menu-btn" class="menu-icon fas fa-bars"></button>
+             <nav class="navbar">
+                 <a href="#" id="lang-btn" title="تغيير اللغة" class="fas fa-language"></a>
+                 <a href="about.html" id="about-btn" title="من نحن" class="fas fa-question"></a>
+                 <a href="#" id="contact-btn" title="اتصل بنا" class="fas fa-phone"></a>
+             </nav>
 
-            <section class="flex">
+             <a href="loginstd.html" class="logo"><img src="images/spark.png" alt="spark education"></a> 
 
-                <div class="icons">
-                    <div id="menu-btn" class="fas fa-bars"></div>
-                    <div id="search-btn" class="fas fa-search"></div>
-                    <div id="user-btn" class="fas fa-user"></div>
-                    <div id="toggle-btn" class="fas fa-sun"></div>
-                    <div id="bell-btn" class="fas fa-bell"></div>
-
-
-                </div>
-                <form action="" method="post" class="search-form">
-                     <input type="text" name="search_box" placeholder="عن ماذا تبحث .."
-                     required maxlength="100">
-                     <button type="submit" class="fas fa-search" name="search_box"></button>
-                </form>
-                
-                <a href="home.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
-
-                <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
-                    <h3>نور تمراز</h3>
-                    <span>طالب</span>
-                    <a href="profile.html" class="btn">صفحتك الشخصية</a>
-                    <div class="flex-btn">
-                        <a href="login.html" class="option-btn">تسجيل الدخول</a>
-                        <a href="register.html" class="option-btn">اشتراك</a>
-
-                    </div>
-                </div>
-                
-            </section>
-
-        </header>
-        <!---header section ends-->
-
-        <!-- side bar section start-->
-        <div class="side-bar">
-
-            <div class="close-btn">
-               <i class="fas fa-times"></i>
-            </div>
-         
-            <div class="profile">
-               <img src="images/pic-1.jpg" class="image" alt="">
-               <h3 class="name">نور تمراز</h3>
-               <p class="role">طالب</p>
-               <a href="profile.html" class="btn">صفحتك الشخصية</a>
-            </div>
-         
-            <nav class="navbar">
-               <a href="home.html"><span>الرئسية</span><i class="fas fa-home"></i></a>
-               <a href="about.html"><span>من نحن</span><i class="fas fa-question"></i></a>
-               <a href="courses.html"><span>المواد الدراسية</span><i class="fas fa-graduation-cap"></i></a>
-               <a href="teachers.html"><span>المعلمين</span><i class="fas fa-chalkboard-user"></i></a>
-               <a href="contact.html"><span>تواصل معنا</span><i class="fas fa-headset"></i></a>
-            </nav>
-         
-         </div>
-        <!-- side bar section end-->
-
-
-
-        <!---quick select section starts-->
-
-        <section class="quick-select">
-            <h1 class="heading">
-                لوحة التحكم
-            </h1>
-
-            <p class="paragraph">استعراض المواد الدراسية</p>
-
-            <div class="box-container">
-
-                <div id="calendar"></div>
-            
-                
-                <div class="box">
-                    <h3 class="title">الأحداث المهمة</h3>
-                    <div class="flex">
-                        <a href="#"><span>اختبار رياضيات</span></a>
-                        <a href="#"><span>واجب لغة انجليزية</span></a>
-                        <a href="#"><span>واجب لغة انجليزية</span></a>
-                        <a href="#"><span>كويز في الوحدة الثانية علوم</span></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <h3 class="title">المواد الدراسية</h3>
-                    <div class="flex">
-                        <a href="#"><span>الرياضيات</span></a>
-                        <a href="#"></i><span>اللغة عربية</span></a>
-                        <a href="#"><span>اللغة إنجليزية</span></a>
-                        <a href="#"><span>العلوم </span></a>
-                        <a href="#"><span>التنشئة</span></a>
-                        <a href="#"><span>التربية الاسلامية</span></a>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!---quick select section ends -->
-
-        <!--- courses section starts-->
-
-        <section class="courses">
-
-            <h1 class="heading">المواد الدراسية </h1>
-         
-            <div class="box-container">
-         
-               <div class="box">
-                  <div class="tutor">
-                    <div class="info">
-                        <h3>أ.محمد أحمد</h3>
-                        <span>21-10-2022</span>
-                     </div>
-                     <img src="images/pic-2.jpg" alt="">
-                  </div>
-                  <div class="thumb">
-                     <img src="images/math.gif" alt="">
-                     <span>دروس 10</span>
-                  </div>
-                  <h3 class="title">دروس الرياضيات</h3>
-                  <a href="playlist.html" class="playlist-btn">عرض الدروس</a>
-               </div>
-         
-               <div class="box">
-                  <div class="tutor">
-                    <div class="info">
-                        <h3>أ.محمد أحمد</h3>
-                        <span>21-10-2022</span>
-                     </div>
-                     <img src="images/pic-3.jpg" alt="">
-                  </div>
-                  <div class="thumb">
-                     <img src="images/arabic.gif" alt="">
-                     <span>دروس 10</span>
-                  </div>
-                  <h3 class="title">دروس اللغة العربية</h3>
-                  <a href="playlist.html" class="playlist-btn">عرض الدروس</a>
-               </div>
-         
-               <div class="box">
-                  <div class="tutor">
-                    
-                     <div class="info">
-                        <h3>أ.محمد أحمد</h3>
-                        <span>21-10-2022</span>
-                     </div>
-                     <img src="images/pic-4.jpg" alt="">
-                  </div>
-                  <div class="thumb">
-                     <img src="images/english.gif" alt="">
-                     <span>دروس 10</span>
-                  </div>
-                  <h3 class="title">دروس اللغة الانجليزية</h3>
-                  <a href="playlist.html" class="playlist-btn">عرض الدروس</a>
-               </div>
-         
-               <div class="box">
-                  <div class="tutor">
-                    <div class="info">
-                        <h3>أ.محمد أحمد</h3>
-                        <span>21-10-2022</span>
-                     </div>
-                     <img src="images/pic-5.jpg" alt="">
-                  </div>
-                  <div class="thumb">
-                     <img src="images/science.gif" alt="">
-                     <span>دروس 10</span>
-                  </div>
-                  <h3 class="title">دروس العلوم</h3>
-                  <a href="playlist.html" class="playlist-btn">عرض الدروس</a>
-               </div>
-         
-               <div class="box">
-                  <div class="tutor">
-                    <div class="info">
-                        <h3>أ.محمد أحمد</h3>
-                        <span>21-10-2022</span>
-                     </div>
-                     <img src="images/pic-6.jpg" alt="">
-                  </div>
-                  <div class="thumb">
-                     <img src="images/islamic.gif" alt="">
-                     <span>دروس 10</span>
-                  </div>
-                  <h3 class="title">دروس التربية الاسلامية</h3>
-                  <a href="playlist.html" class="playlist-btn">عرض الدروس</a>
-               </div>
-         
-               <div class="box">
-                  <div class="tutor">
-                    <div class="info">
-                        <h3>أ.محمد أحمد</h3>
-                        <span>21-10-2022</span>
-                     </div>
-                     <img src="images/pic-7.jpg" alt="">
-                  </div>
-                  <div class="thumb">
-                     <img src="images/tnsh.gif" alt="">
-                     <span>دروس 10</span>
-                  </div>
-                  <h3 class="title">دروس التنشئة </h3>
-                  <a href="playlist.html" class="playlist-btn">عرض الدروس</a>
-               </div>
-         
-            </div>
-         
-            <div class="more-btn">
-               <a href="courses.html" class="inline-option-btn">view all courses</a>
-            </div>
-         
          </section>
-        <!-- courses section ends-->
+     </header>
 
-        <!--- footer start-->
-        <footer class="footer">
+        
+<section class="about">
+
+   <div class="row">
+
+      <div class="content">
+         <h3>لماذا نحن ؟</h3>
+        <p>نحن منصة تعليمية رقمية متكاملة تهدف إلى تمكين الطلاب من مواصلة تعليمهم في أي وقت ومن أي مكان، خاصة في الأوقات الصعبة مثل الحروب، الكوارث الطبيعية، والأزمات الصحية. نسعى إلى تقديم بيئة تعليمية مرنة تدعم التعلم عن بُعد من خلال فصول افتراضية، دروس مسجلة، وإمكانية الوصول إلى المحتوى دون اتصال بالإنترنت. كما نوفر أدوات متطورة تساعد المعلمين على إدارة المحتوى التعليمي بكفاءة، إلى جانب ميزات تفاعلية لتعزيز التواصل بين الطلاب والمعلمين. نؤمن بأن التعليم حق أساسي للجميع، لذلك نلتزم بتقديم حلول تقنية مبتكرة لضمان استمرارية التعلم في جميع الظروف، مع التركيز على الأمان، الخصوصية، وسهولة الاستخدام. هدفنا هو بناء مستقبل تعليمي رقمي مستدام يتيح الفرص للجميع دون قيود جغرافية أو تقنية.
+
+        </p>
+      </div>
+
+      <div class="image">
+         <img src="images/about.png" alt="">
+      </div>
+
+
+   </div>
+
+   <div class="titleWho">
+      <h3> من هم مستخدمو النظام ؟</h3>
+
+   </div>
+   <div class="box-container">
+      
+
+      <div class="box">
+         
+         <div>
+            <h3>+10k</h3>
+            <p>أولياء الأمور</p>
+         </div>
+         <a href="loginstd.html"><img src="images/par-on.png" alt=""></a>
+      </div>
+
+      <div class="box">
+         
+         <div>
+            <h3>+10k</h3>
+            <p>الطلاب</p>
+         </div>
+         <a href="loginstd.html"><img src="images/std-on.png" alt=""></a>
+      </div>
+
+      <div class="box">
+         
+         <div>
+            <h3>+10k</h3>
+            <p>المعلمين</p>
+         </div>
+         <a href="loginstd.html"><img src="images/teacher.png" alt=""></a>
+      </div>
+
+      <div class="box">
+         
+         <div>
+            <h3>+10k</h3>
+            <p> مدراء المدارس</p>
+         </div>
+         <a href="loginstd.html"><img src="images/manager.png" alt=""></a>
+      </div>
+
+   </div>
+
+</section> 
+
+
+
+
+
+           <!--- footer start-->
+           <footer class="footer">
 
             &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
          

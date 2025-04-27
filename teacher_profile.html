@@ -19,93 +19,47 @@
         <link rel="stylesheet" href="css/rtl.css">
         </head>
         <body>
-            
          <!---header section starts-->
          <header class="header">
-          <section class="flex">
-            <div class="icons">
-              <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
-              <div id="lang-btn" class="fas fa-language" title="تغيير اللغة"></div>
-              <div id="search-btn" class="fas fa-search" title="بحث"></div>
-              <div id="user-btn" class="fas fa-user" title="المستخدم"></div>
-              <div id="bell-btn" class="fas fa-bell" title="الاشعارات"></div>
-              <div id="msg-btn" class="fa-solid fa-message" title="الرسائل"></div>
-            </div>
-            <form action="" method="post" class="search-form">
-              <input type="text" name="search_box" placeholder=".. عن ماذا تبحث" required maxlength="100">
-              <button type="submit" class="fas fa-search" name="search_box"></button>
-            </form>
-            
-            <a href="home.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
-
-                <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
-                    <h3>ميادة مغاري</h3>
-                    <span>معلم</span>
-                    <div class="flex-btn">
-                        <br>
-                        <a href="login.html" class="option-btn">تسجيل خروج</a>
-                    </div>
-                </div>
-            </section>
-        </header>
-        <!---header section ends-->
-    <div class="page d-flex">
-      
-    <div class="content w-full">
+            <section class="flex">
+              <div class="icons">
+                <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
+                <div id="lang-btn" class="fas fa-language" title="تغيير اللغة"></div>
+                <div id="search-btn" class="fas fa-search" title="بحث"></div>
+                <div id="user-btn" class="fas fa-user" title="المستخدم"></div>
+                <div id="bell-btn" class="fas fa-bell" title="الاشعارات"></div>
+                <div id="msg-btn" class="fa-solid fa-message" title="الرسائل"></div>
+              </div>
+              <form action="" method="post" class="search-form">
+                <input type="text" name="search_box" placeholder=".. عن ماذا تبحث" required maxlength="100">
+                <button type="submit" class="fas fa-search" name="search_box"></button>
+              </form>
+              
+              <a href="home.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
   
-    <!-- Start Projects Table -->
-        <div class="projects p-20 bg-white rad-10 m-20">
-          <h2 class="mt-0 mb-20"> المرحلة الابتدائية</h2>
-          <div class="responsive-table">
-            <div class="header_sections_teacher ">
-              <input class="search-box" type="text" placeholder="ابحث">
+                  <div class="profile">
+                      <img src="images/pic-1.jpg" alt="">
+                      <h3>ميادة مغاري</h3>
+                      <span>معلم</span>
+                      <div class="flex-btn">
+                          <br>
+                          <a href="login.html" class="option-btn">تسجيل خروج</a>
+                      </div>
+                  </div>
+              </section>
+          </header>
+          <!---header section ends-->
+
+        <!-- content page starts -->
+            <div class="page d-flex"> 
+                <div class="content w-full">
+
+
+                
+                </div>
             </div>
- 
-            <table class="fs-15 w-full">
-              <thead>
-                <tr>
-                  <td>الاجراءات</td>
-                  <td>عدد الطلاب </td>
-                  <td>عدد الشُعب</td>
-                  <td>الصف</td>
-                  <td>#</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></td>
-                  <td>40</td>
-                  <td>4</td>
-                  <td>الصف الثاني</td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                    <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></td>
-                    <td>40</td>
-                    <td>2</td>
-                    <td>الصف الثالث</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></td>
-                    <td>55</td>
-                    <td>3</td>
-                    <td>الصف الرابع</td>
-                    <td>1</td>
-                  </tr>
-              </tbody>
-            </table>
-          </div>
-    
-        <!-- End Projects Table -->
 
-        
-        </div>
-     
-
-        
-      </div>
+    <!-- sidebar starts -->
 
       <div class="sidebar bg-white p-20 p-relative">
         <ul>
@@ -125,7 +79,7 @@
           </li>
 
           <li class="dropdown">
-            <a href="#" class="active d-flex align-center fs-14 c-black rad-6 p-10">
+            <a href="#" class="d-flex align-center fs-14 c-black rad-6 p-10">
               <i class="fa-solid fa-caret-down arrow"></i> <!-- السهم -->
               <span>المراحل الدراسية</span>
               <i class="fas fa-book-reader"></i>	
@@ -171,9 +125,9 @@
               
             </a>
           </li>
-        
+         
           <li>
-            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
+            <a class="active align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
                 <span>الملف الشخصي</span>
               <i class="fa-solid fa-user"></i>
             </a>
@@ -186,10 +140,10 @@
          <!--- footer start-->
          <footer class="footer">
 
-          &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
-       
-       </footer>
-      <!--- footer ends-->
+            &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
+         
+         </footer>
+        <!--- footer ends-->
 
     <script src="js/script.js" defer></script>
     

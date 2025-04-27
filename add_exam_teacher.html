@@ -20,6 +20,8 @@
         </head>
         <body>
             
+        <!---header section starts-->
+
          <!---header section starts-->
          <header class="header">
           <section class="flex">
@@ -54,56 +56,80 @@
       
     <div class="content w-full">
   
-    <!-- Start Projects Table -->
-        <div class="projects p-20 bg-white rad-10 m-20">
-          <h2 class="mt-0 mb-20"> المرحلة الابتدائية</h2>
-          <div class="responsive-table">
-            <div class="header_sections_teacher ">
-              <input class="search-box" type="text" placeholder="ابحث">
+      
+
+    <form method="POST" enctype="multipart/form-data" class="forms-add">
+        <h1>إضافة اختبار جديد</h1>
+        <div class="form-row full-width">
+            <div class="form-group">
+                <input type="text" id="exam_name" name="exam_name" required placeholder="أدخل اسم الاختبار">
             </div>
- 
-            <table class="fs-15 w-full">
-              <thead>
-                <tr>
-                  <td>الاجراءات</td>
-                  <td>عدد الطلاب </td>
-                  <td>عدد الشُعب</td>
-                  <td>الصف</td>
-                  <td>#</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></td>
-                  <td>40</td>
-                  <td>4</td>
-                  <td>الصف الثاني</td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                    <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></td>
-                    <td>40</td>
-                    <td>2</td>
-                    <td>الصف الثالث</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></td>
-                    <td>55</td>
-                    <td>3</td>
-                    <td>الصف الرابع</td>
-                    <td>1</td>
-                  </tr>
-              </tbody>
-            </table>
-          </div>
-    
-        <!-- End Projects Table -->
-
-        
         </div>
-     
 
+        <div class="form-row">
+            <div class="form-group">
+                <input type="number" id="num_questions" name="num_questions" required placeholder="أدخل عدد الأسئلة">
+            </div>
+
+            <div class="form-group">
+                <select id="exam_grade" name="exam_grade" required>
+                    <option value="" disabled selected> * المرحلة الدراسية</option>
+                    <option value="ابتدائي">ابتدائي</option>
+                    <option value="اعدادي">اعدادي</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+           
+            <!-- الصف -->
+            <div class="form-group">
+                <select id="book_class" name="exam_class" required>
+                    <option value="" disabled selected> * اختر الصف </option>
+                    <option value="الصف الثاني">الصف الثاني</option>
+                    <option value="الصف الثالث">الصف الثالث</option>
+                    <option value="الصف الرابع">الصف الرابع</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select id="exam_section" name="exam_section" required>
+                    <option value="" disabled selected> * اختر الصف </option>
+                    <option value="أ"> أ</option>
+                    <option value=" ب"> ب</option>
+                    <option value=" ج"> ج</option>
+                </select>
+            </div>
+            
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <input type="number" id="exam_duration" name="exam_duration" required placeholder="أدخل مدة الاختبار بالدقائق">
+            </div>
+
+            <div class="form-group">
+                <input type="datetime-local" id="exam_date" name="exam_date" required>
+
+            </div>
+        </div>
+
+       
+
+          <!-- صف وصف الكتاب -->
+          <div class="form-row full-width">
+            <div class="form-group">
+                <textarea id="exam_guidance" name="exam_guidance" placeholder="أدخل الوقت التوجيهي أو التعليمات الخاصة بالاختبار" required></textarea>
+            </div>
+        </div>
+
+
+        <!-- زر الإرسال -->
+        <div class="form-group">
+            <button type="submit">إضافة</button>
+        </div>
+    </form>
         
       </div>
 
@@ -125,7 +151,7 @@
           </li>
 
           <li class="dropdown">
-            <a href="#" class="active d-flex align-center fs-14 c-black rad-6 p-10">
+            <a href="#" class="d-flex align-center fs-14 c-black rad-6 p-10">
               <i class="fa-solid fa-caret-down arrow"></i> <!-- السهم -->
               <span>المراحل الدراسية</span>
               <i class="fas fa-book-reader"></i>	
@@ -159,7 +185,7 @@
           </li>
      
           <li>
-            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_books.html">
+            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_books.html">
                 <span>الكتب</span>
                 <i class="fas fa-book"></i>
             </a>
@@ -171,7 +197,7 @@
               
             </a>
           </li>
-        
+  
           <li>
             <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
                 <span>الملف الشخصي</span>
@@ -183,13 +209,13 @@
       </div>
     </div>
 
-         <!--- footer start-->
-         <footer class="footer">
+     <!--- footer start-->
+     <footer class="footer">
 
-          &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
-       
-       </footer>
-      <!--- footer ends-->
+      &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
+   
+   </footer>
+  <!--- footer ends-->
 
     <script src="js/script.js" defer></script>
     
