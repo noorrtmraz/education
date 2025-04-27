@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>spark education</title>
+
+        <!-- font awsam cdn link -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Square+Peg&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
+        <!-- custom css file link -->
+        <link rel="stylesheet" href="css/rtl.css">
+        </head>
+        <body>
+            
+        <!---header section starts-->
+
+         <!---header section starts-->
+         <header class="header">
+          <section class="flex">
+            <div class="icons">
+              <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
+              <div id="lang-btn" class="fas fa-language" title="تغيير اللغة"></div>
+              <div id="search-btn" class="fas fa-search" title="بحث"></div>
+              <div id="user-btn" class="fas fa-user" title="المستخدم"></div>
+              <div id="bell-btn" class="fas fa-bell" title="الاشعارات"></div>
+              <div id="msg-btn" class="fa-solid fa-message" title="الرسائل"></div>
+            </div>
+            <form action="" method="post" class="search-form">
+              <input type="text" name="search_box" placeholder=".. عن ماذا تبحث" required maxlength="100">
+              <button type="submit" class="fas fa-search" name="search_box"></button>
+            </form>
+            
+            <a href="home.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+
+                <div class="profile">
+                    <img src="images/pic-1.jpg" alt="">
+                    <h3>ميادة مغاري</h3>
+                    <span>معلم</span>
+                    <div class="flex-btn">
+                        <br>
+                        <a href="login.html" class="option-btn">تسجيل خروج</a>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <!---header section ends-->
+    <div class="page d-flex">
+      
+    <div class="content w-full">
+  
+      
+
+    <form method="POST" enctype="multipart/form-data" class="forms-add">
+        <h1> اضافة درس جديد </h1>
+        <div class="form-row">
+            <div class="form-group">
+                <input type="text" id="lesson_title" name="lesson_title" placeholder="أدخل اسم الدرس" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+           
+            <div class="form-group">
+                <select id="subject" name="subject" required>
+                    <option value="">اختر المادة</option>
+                    <option value="رياضيات">رياضيات</option>
+                    <option value="علوم">علوم</option>
+                    <option value="لغة عربية">لغة عربية</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select id="stage" name="stage" required>
+                    <option value="">اختر المرحلة</option>
+                    <option value="ابتدائية">ابتدائية</option>
+                    <option value="اعدادية">اعدادية</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <select id="grade" name="grade" required>
+                    <option value="">اختر الصف</option>
+                    <option value="رابع">رابع</option>
+                    <option value="خامس">خامس</option>
+                    <option value="سادس">سادس</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select id="section" name="section" required>
+                    <option value="">اختر الشعبة</option>
+                    <option value="أ">أ</option>
+                    <option value="ب">ب</option>
+                </select>
+            </div>
+
+            
+        </div>
+
+        <div class="form-row full-width">
+            <div class="form-group">
+                <label for="book_image">ملف الدرس</label>
+                <input type="file" id="lesson_file" name="lesson_file" accept=".doc,.docx,.ppt,.pptx,.txt,.pdf">
+            </div>
+
+            <div class="form-group">
+                <label for="book_image">فيدييو شرح</label>
+                <input type="file" id="video" name="video" accept="video/*" placeholder="اضف فيديو">
+            </div>
+
+
+            <div class="form-group">
+                <input type="url" id="video_link" name="video_link" placeholder="أدخل رابط يوتيوب أو درايف">
+            </div>
+
+
+        </div>
+          <!-- صف وصف الواجب -->
+          <div class="form-row full-width">
+            <div class="form-group">
+                <textarea id="lesson_description" name="lesson_description" placeholder="أدخل وصف الدرس" rows="3"></textarea>
+            </div>
+        </div>
+
+        <!-- زر الإرسال -->
+        <div class="form-group">
+            <button type="submit">اضافة الدرس</button>
+        </div>
+    </form>
+        
+      </div>
+
+      <div class="sidebar bg-white p-20 p-relative">
+        <ul>
+          <li>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_dashboard.html">
+                <span>لوحة التحكم</span>
+                <i class="fa-solid fa-cogs"></i>
+             
+            </a>
+          </li>
+          <li>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_students.html">
+                <span>الطلاب</span>
+              <i class="fa-solid fa-user-graduate"></i>
+             
+            </a>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="d-flex align-center fs-14 c-black rad-6 p-10">
+              <i class="fa-solid fa-caret-down arrow"></i> <!-- السهم -->
+              <span>المراحل الدراسية</span>
+              <i class="fas fa-book-reader"></i>	
+              
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="teacher_primaryGrade.html">الابتدائي</a></li>
+              <li><a href="teacher_middleGrade.html"> الاعدادي</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_classrooms.html">
+                <span>الصفوف</span>
+                <i class="fas fa-book"></i>
+            </a>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="active align-center fs-14 c-black rad-6 p-10">
+              <i class="fa-solid fa-caret-down arrow"></i> <!-- السهم -->
+              <span>المادة الدراسية</span>
+              <i class="fa-solid fa-file-pen"></i>
+              
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="teacher_subjects.html">الدروس</a></li>
+              <li><a href="teacher_hw.html"> الواجبات</a></li>
+              <li><a href="teacher_exams.html">الاختبارات</a></li>
+            </ul>
+          </li>
+     
+          <li>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_books.html">
+                <span>الكتب</span>
+                <i class="fas fa-book"></i>
+            </a>
+          </li>
+          <li>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_meets.html">
+                <span>اللقاءات المباشرة</span>
+              <i class="fa-solid fa-video"></i>
+              
+            </a>
+          </li>
+  
+          <li>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
+                <span>الملف الشخصي</span>
+              <i class="fa-solid fa-user"></i>
+            </a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+
+     <!--- footer start-->
+     <footer class="footer">
+
+      &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
+   
+   </footer>
+  <!--- footer ends-->
+
+    <script src="js/script.js" defer></script>
+    
+  </body>
+</html>
+
+
+
