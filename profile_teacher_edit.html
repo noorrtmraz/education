@@ -53,28 +53,51 @@
         <!-- content page starts -->
             <div class="page d-flex"> 
                 <div class="content w-full">
-
-
                   <div class="profile-container">
 
-                      <div class="profile-image">
-                        <img src="images/avatar.png" alt="صورة المعلم">
-                        <span class="status online"></span>
-                      </div>
-                
-                      <h1 class="profile-name">أحمد خالد</h1>
-                      <p class="profile-role">معلم <i class="fa fa-user"></i></p>
-                
-                      <a href="profile_teacher_edit.html" class="edit-button" >تعديل الملف الشخصي</a>
-                
-                    <div class="tabs">
+                    <form method="POST" enctype="multipart/form-data" class="forms-add">
+                        <h1> تعديل الملف الشخصي </h1>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="lesson_title" name="lesson_title" placeholder="الاسم باللغة العربية" >
+                            </div>
 
-                      <a href="teacher_subjects.html" class="tab">الدروس <i class="fa fa-book-open"></i></a>
-                      <a href="teacher_exams.html" class="tab"> الاختبارات <i class="fa fa-pen-to-square"></i></a>
-                      <a href="teacher_hw.html" class="tab">الواجبات <i class="fa fa-tasks"></i></a>
-                      
-                    </div>
-                
+                            <div class="form-group">
+                                <input type="text" id="lesson_title" name="lesson_title" placeholder="الاسم باللغة الانجليزية" >
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="password" id="lesson_title" name="lesson_title" placeholder="كلمة المرور الحالية" required>
+                            </div>
+                        
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="password" id="lesson_title" name="lesson_title" placeholder="كلمة المرور الجدديدة" required>
+                            </div>
+                        
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="password" id="lesson_title" name="lesson_title" placeholder="تأكيد كلمة المرور" required>
+                            </div>
+                        
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <button type="submit"> تعديل</button>
+                            </div>
+                        </div>
+
+       
+
+                 
+                    </form>
                   </div>
                 
                 </div>
