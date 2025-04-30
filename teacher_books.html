@@ -65,6 +65,16 @@
           <p id="bookDetails"></p>
         </div>
       </div>
+
+          <!-- مودال التأكيد (حذف الكتاب) -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>هل تريد حذف الكتاب؟</p>
+            <button class= "btn1" onclick="confirmDelete()">تأكيد</button>
+            <button class = "btn2" onclick="closeModal()">إلغاء</button>
+            </div>
+        </div>
   
     <!-- Start Projects Table -->
         <div class="projects p-20 bg-white rad-10 m-20">
@@ -82,6 +92,7 @@
                   <td>تارييخ الاضافة</td>
                   <td>الصف</td>
                   <td>المرحلة</td>
+                  <td>المادة</td>
                   <td>اسم الكتاب</td>
                   <td>صورة الكتاب</td>
                   <td>#</td>
@@ -94,7 +105,7 @@
                       <a href="edit_book_teacher.html"><i class="fas fa-edit action-icon edit-icon" title=" تعديل الكتاب"></i></a>
 
                       <i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"
-                        onclick="showStudentDetails(this)"
+                        onclick="showBookDetails(this)"
                         data-name="كتاب الرياضيات"
                         data-grade="ابتدائي"
                         data-classroom="الثاني"
@@ -106,6 +117,7 @@
                     <td>2025-04-20</td>
                     <td>الصف الأول</td>
                     <td>ابتدائي</td>
+                    <td>رياضيات</td>
                     <td>كتاب الرياضيات 1</td>
                     <td>
                       <img src="images/pdf.svg" alt="صورة الكتاب" width="50" height="50" style="cursor: pointer;">
@@ -115,15 +127,7 @@
               </tbody>
             </table>
 
-            <!-- مودال التأكيد (حذف الكتاب) -->
-            <div id="confirmationModal" class="modal">
-                <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <p>هل تريد حذف الكتاب؟</p>
-                <button class= "btn1" onclick="confirmDelete()">تأكيد</button>
-                <button class = "btn2" onclick="closeModal()">إلغاء</button>
-                </div>
-            </div>
+        
     
           </div>
     
@@ -180,7 +184,7 @@
               
             </a>
             <ul class="dropdown-menu">
-              <li><a href="teacher_subjects.html">الدروس</a></li>
+              <li><a href="teacher_lessons.html">الدروس</a></li>
               <li><a href="teacher_hw.html"> الواجبات</a></li>
               <li><a href="teacher_exams.html">الاختبارات</a></li>
             </ul>

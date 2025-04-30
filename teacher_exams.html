@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>spark education</title>
 
-        <!-- font awsam cdn link -->
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
          <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Square+Peg&display=swap" rel="stylesheet">
@@ -15,11 +15,10 @@
         <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
-        <!-- custom css file link -->
+
         <link rel="stylesheet" href="css/rtl.css">
-        </head>
-        <body>
-            
+    </head>
+    <body>
         <!---header section starts-->
         <header class="header">
           <section class="flex">
@@ -36,7 +35,7 @@
               <button type="submit" class="fas fa-search" name="search_box"></button>
             </form>
             
-            <a href="home.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+            <a href="teacher_dashboard.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
                     <img src="images/pic-1.jpg" alt="">
@@ -44,7 +43,7 @@
                     <span>معلم</span>
                     <div class="flex-btn">
                         <br>
-                        <a href="login.html" class="option-btn">تسجيل خروج</a>
+                        <a href="loginTeacher.html" class="option-btn">تسجيل خروج</a>
                     </div>
                 </div>
             </section>
@@ -53,6 +52,26 @@
     <div class="page d-flex">
       
     <div class="content w-full">
+
+
+      <div id="examModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModalExam()">&times;</span>
+          <h3>تفاصيل الاختبار</h3>
+          <img src="images/dll.svg" alt="لا يوجد ملف للواجب">
+          <p id="examDetails"></p>
+        </div>
+      </div>
+
+      <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>هل تريد حذف الاختبار ؟</p>
+            <button class= "btn1" onclick="confirmDelete()">تأكيد</button>
+            <button class = "btn2" onclick="closeModal()">إلغاء</button>
+            </div>
+        </div>
+      
   
     <!-- Start Projects Table -->
         <div class="projects p-20 bg-white rad-10 m-20">
@@ -71,6 +90,7 @@
                   <td> مدة الاختبار </td>
                   <td>الشعبة</td>
                   <td>الصف</td>
+                  <td>المادة</td>
                   <td>اسم الاختبار</td>
                   <td>#</td>
                 </tr>
@@ -78,16 +98,28 @@
               <tbody>
                 <tr>
                   <td>
-                    <a href="#"><i class="fas fa-trash-alt action-icon delete-icon" title="حذف"></i></a>
+                    <a href="#"><i class="fas fa-trash-alt action-icon delete-icon" title="حذف" onclick="openModal(2)"></i></a>
                     <a href="edit_exam_teacher.html"><i class="fas fa-edit action-icon edit-icon" title="تعديل"></i></a>
                     <a href="teacher_questions.html"><i class="fas fa-question-circle action-icon question-icon" title="عرض الاسئلة"></i></a>
-                    <a href="#"><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></a>
+                    <a href="#">
+                      <i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"
+                          onclick="showExamDetails(this)"
+                          data-name="واجب الوحدة الثالثة"
+                          data-subject="علوم"
+                          data-grade="المرحلة الاعدادية"
+                          data-classroom="الصف السابع"
+                          data-section="أ"
+                          data-stdnum="16"
+                          data-desc="وصف الواجب"
+                          data-datend="10-2-2022"></i>
+                    </a>
                     <a href="#"><i class="fas fa-users students-icon action-icon std-icon" title="عرض الطلاب"></i></a>
                   </td>
                   <td>15-12-2025</td>
                   <td>دقيقة 15</td>
                   <td>أ</td>
                   <td>الخامس</td>
+                  <td>لغة عربية</td>
                   <td>اختبار لغة عربية</td>
                   <td>1</td>
                 </tr>
@@ -157,7 +189,7 @@
               
             </a>
             <ul class="dropdown-menu">
-              <li><a href="teacher_subjects.html">الدروس</a></li>
+              <li><a href="teacher_lessons.html">الدروس</a></li>
               <li><a href="teacher_hw.html"> الواجبات</a></li>
               <li><a href="teacher_exams.html">الاختبارات</a></li>
             </ul>

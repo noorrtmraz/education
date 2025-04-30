@@ -151,29 +151,39 @@ function showStudentDetails(icon) {
 
   /**********  end std data *******/
 
-/****** delete modle for boods starts****** */
+  
+/***** lessons data modle**** */
 
-  function openModal(bookId) {
-    // فتح المودال عند الضغط على حذف الكتاب
-    document.getElementById("confirmationModal").style.display = "block";
-    // تخزين معرف الكتاب الذي سيتم حذفه
-    window.selectedBookId = bookId;
+function showLessonDetails(icon) {
+    const name = icon.dataset.name;
+    const subject = icon.dataset.subject;
+    const grade = icon.dataset.grade;
+    const classroom = icon.dataset.clssroom;
+    const section = icon.dataset.section;
+    const url = icon.dataset.url;
+  
+    const details = `
+      <strong>اسم الدرس:</strong> ${name}<br>
+      <strong>المادة :</strong> ${subject}<br>
+      <strong>المرحلة:</strong> ${grade}<br>
+      <strong>الصف:</strong> ${classroom}<br>
+      <strong>الشعبة:</strong> ${section}<br>
+      <strong>رابط الدرس:</strong> ${url}<br>
+    `;
+  
+    document.getElementById("lessonDetails").innerHTML = details;
+    document.getElementById("lessonModal").style.display = "block";
   }
-
-  function closeModal() {
-    // إغلاق المودال
-    document.getElementById("confirmationModal").style.display = "none";
+  
+  function closeModalLesson() {
+    document.getElementById("lessonModal").style.display = "none";
   }
+  
 
-  function confirmDelete(bookId) {
-    // هنا يمكن تنفيذ عملية حذف الكتاب باستخدام bookId
-    alert("تم حذف الكتاب رقم: " + bookId);
-    closeModal(); // إغلاق المودال بعد الحذف
-  }
-
-  /****** delete modle for boods ends****** */
+  /**********  end lesson data *******/
 
 
+  
 
 /***** Books data modle**** */
 
@@ -185,7 +195,7 @@ function showBookDetails(icon) {
     const date = icon.dataset.date;
   
     const details = `
-      <strong>الاسم:</strong> ${name}<br>
+      <strong>اسم الكتاب:</strong> ${name}<br>
       <strong>المرحلة:</strong> ${grade}<br>
       <strong>الصف:</strong> ${classroom}<br>
       <strong>الوصف:</strong> ${description}<br>
@@ -204,6 +214,127 @@ function showBookDetails(icon) {
   /**********  end book data *******/
 
 
+
+//   view hw modle starts
+
+
+function showHwDetails(icon) {
+    const name = icon.dataset.name;
+    const subject = icon.dataset.subject;
+    const grade = icon.dataset.grade;
+    const classroom = icon.dataset.classroom;
+    const section = icon.dataset.section;
+    const stdnum = icon.dataset.stdnum;
+    const desc = icon.dataset.desc;
+    const datend = icon.dataset.datend;
+  
+    const details = `
+      <strong>اسم الواجب:</strong> ${name}<br>
+      <strong>المادة:</strong> ${subject}<br>
+      <strong>المرحلة:</strong> ${grade}<br>
+      <strong>الصف:</strong> ${classroom}<br>
+      <strong>الشعبة:</strong> ${section}<br>
+      <strong>عدد الطلاب المُسلِّمين :</strong> ${stdnum}<br>
+      <strong>الوصف:</strong> ${desc}<br>
+      <strong> اخر موعد تسليم الواجب:</strong> ${datend}
+    `;
+  
+    document.getElementById("hwDetails").innerHTML = details;
+    document.getElementById("hwModal").style.display = "block";
+  }
+  
+  function closeModalHw() {
+    document.getElementById("hwModal").style.display = "none";
+  }
+  
+
+//   view hw modle ends
+
+
+
+//   view exam modle starts
+function showExamDetails(icon) {
+    const name = icon.dataset.name;
+    const subject = icon.dataset.subject;
+    const grade = icon.dataset.grade;
+    const classroom = icon.dataset.classroom;
+    const section = icon.dataset.section;
+    const stdnum = icon.dataset.stdnum;
+    const desc = icon.dataset.desc;
+    const datend = icon.dataset.datend;
+  
+    const details = `
+      <strong>اسم الاختبار:</strong> ${name}<br>
+      <strong>المادة:</strong> ${subject}<br>
+      <strong>المرحلة:</strong> ${grade}<br>
+      <strong>الصف:</strong> ${classroom}<br>
+      <strong>الشعبة:</strong> ${section}<br>
+      <strong>عدد الطلاب المُسلِّمين :</strong> ${stdnum}<br>
+      <strong>الوصف:</strong> ${desc}<br>
+      <strong> اخر موعد تسليم الاختبار:</strong> ${datend}
+    `;
+  
+    document.getElementById("examDetails").innerHTML = details;
+    document.getElementById("examModal").style.display = "block";
+  }
+  
+  function closeModalExam() {
+    document.getElementById("examModal").style.display = "none";
+  }
+  
+
+//   view exam modle ends
+
+
+
+//   view meet modle starts
+function showMeetDetails(icon) {
+    const name = icon.dataset.name;
+    const subject = icon.dataset.subject;
+    const grade = icon.dataset.grade;
+    const classroom = icon.dataset.classroom;
+    const section = icon.dataset.section;
+    const appointment = icon.dataset.appointment;
+    const date = icon.dataset.date;
+  
+    const details = `
+      <strong> عنوان اللقاء:</strong> ${name}<br>
+      <strong>المادة:</strong> ${subject}<br>
+      <strong>المرحلة:</strong> ${grade}<br>
+      <strong>الصف:</strong> ${classroom}<br>
+      <strong>الشعبة:</strong> ${section}<br>
+      <strong>الموعد:</strong> ${appointment}<br>
+      <strong> اخر موعد تسليم الاختبار:</strong> ${date}
+    `;
+  
+    document.getElementById("meetDetails").innerHTML = details;
+    document.getElementById("meetModal").style.display = "block";
+  }
+  
+  function closeModalMeet() {
+    document.getElementById("meetModal").style.display = "none";
+  }
+  
+
+//   view meet modle ends
+
+/****** delete modle starts****** */
+
+function openModal(bookId) {
+    document.getElementById("confirmationModal").style.display = "block";
+    window.selectedBookId = bookId;
+  }
+
+  function closeModal() {
+    document.getElementById("confirmationModal").style.display = "none";
+  }
+
+  function confirmDelete(bookId) {
+    alert("تم حذف الكتاب رقم: " + bookId);
+    closeModal(); 
+  }
+
+  /****** delete modle ends****** */
 
 
 

@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>spark education</title>
 
-        <!-- font awsam cdn link -->
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
          <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Square+Peg&display=swap" rel="stylesheet">
@@ -15,13 +15,12 @@
         <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
-        <!-- custom css file link -->
+
         <link rel="stylesheet" href="css/rtl.css">
-        </head>
-        <body>
-            
+    </head>
+    <body>
         <!---header section starts-->
-         <header class="header">
+        <header class="header">
           <section class="flex">
             <div class="icons">
               <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
@@ -36,7 +35,7 @@
               <button type="submit" class="fas fa-search" name="search_box"></button>
             </form>
             
-            <a href="home.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+            <a href="teacher_dashboard.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
                     <img src="images/pic-1.jpg" alt="">
@@ -44,7 +43,7 @@
                     <span>معلم</span>
                     <div class="flex-btn">
                         <br>
-                        <a href="login.html" class="option-btn">تسجيل خروج</a>
+                        <a href="loginTeacher.html" class="option-btn">تسجيل خروج</a>
                     </div>
                 </div>
             </section>
@@ -59,13 +58,14 @@
           <h2 class="mt-0 mb-20"> الصفوف الدراسية</h2>
           <div class="responsive-table">
             <div class="header_sections_teacher ">
-              <input class="search-box" type="text" placeholder="ابحث">
+              <input class="search-box" type="text" placeholder="  .. ابحث">
             </div>
  
             <table class="fs-15 w-full">
               <thead>
                 <tr>
-                  <td>الاجرءات</td>
+                  <!-- <td>الاجرءات</td> -->
+                   <td>المادة</td>
                   <td>عدد الطلاب</td>
                   <td>الشعبة </td>
                   <td>المرحلة</td>
@@ -75,29 +75,15 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></td>
+                  <!-- <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></td> -->
+                   <td>رياضيات</td>
                   <td>15</td>
                   <td>أ</td>
                   <td>الابتدائي</td>
                   <td>الصف الثاني</td>
                   <td>1</td>
                 </tr>
-                <tr>
-                    <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></td>
-                    <td>18</td>
-                    <td>ب</td>
-                    <td>الابتدائي</td>
-                    <td>الصف الرابع</td>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></td>
-                    <td>11</td>
-                    <td>ج</td>
-                    <td>الاعدادي</td>
-                    <td>الصف التاسع</td>
-                    <td>3</td>
-                  </tr>
+               
               </tbody>
             </table>
           </div>
@@ -157,7 +143,7 @@
               
             </a>
             <ul class="dropdown-menu">
-              <li><a href="teacher_subjects.html">الدروس</a></li>
+              <li><a href="teacher_lessons.html">الدروس</a></li>
               <li><a href="teacher_hw.html"> الواجبات</a></li>
               <li><a href="teacher_exams.html">الاختبارات</a></li>
             </ul>

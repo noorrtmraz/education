@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>spark education</title>
 
-        <!-- font awsam cdn link -->
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
          <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Square+Peg&display=swap" rel="stylesheet">
@@ -15,52 +15,38 @@
         <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
-        
-
-         <!-- custom css file link -->
-          <link rel="stylesheet" href="css/rtl.css">
+        <link rel="stylesheet" href="css/rtl.css">
     </head>
     <body>
-        
         <!---header section starts-->
-
         <header class="header">
-
-            <section class="flex">
-
-                <div class="icons">
-                    <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
-                    <div id="search-btn" class="fas fa-search"></div>
-                    <div id="user-btn" class="fas fa-user"></div>
-                    <div id="bell-btn" class="fas fa-bell"></div>
-                    <div id="msg-btn" class="fa-solid fa-message"></div>
-
-
-                </div>
-                <form action="" method="post" class="search-form">
-                  <input type="text" name="search_box" placeholder=".. عن ماذا تبحث "
-                     required maxlength="100">
-                     <button type="submit" class="fas fa-search" name="search_box"></button>
-                </form>
-                
-                <a href="home.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+          <section class="flex">
+            <div class="icons">
+              <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
+              <div id="lang-btn" class="fas fa-language" title="تغيير اللغة"></div>
+              <div id="search-btn" class="fas fa-search" title="بحث"></div>
+              <div id="user-btn" class="fas fa-user" title="المستخدم"></div>
+              <div id="bell-btn" class="fas fa-bell" title="الاشعارات"></div>
+              <div id="msg-btn" class="fa-solid fa-message" title="الرسائل"></div>
+            </div>
+            <form action="" method="post" class="search-form">
+              <input type="text" name="search_box" placeholder=".. عن ماذا تبحث" required maxlength="100">
+              <button type="submit" class="fas fa-search" name="search_box"></button>
+            </form>
+            
+            <a href="teacher_dashboard.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
                     <img src="images/pic-1.jpg" alt="">
                     <h3>ميادة مغاري</h3>
                     <span>معلم</span>
-                  
                     <div class="flex-btn">
                         <br>
-                        <a href="login.html" class="option-btn">تسجيل خروج</a>
+                        <a href="loginTeacher.html" class="option-btn">تسجيل خروج</a>
                     </div>
                 </div>
-                
             </section>
-
         </header>
         <!---header section ends-->
     <div class="page d-flex">
