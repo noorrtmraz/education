@@ -52,6 +52,16 @@
     <div class="page d-flex">
       
     <div class="content w-full">
+
+      
+           <!-- مربع عرض تفاصيل الطالب -->
+           <div id="studentModal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModalStd()">&times;</span>
+              <h3>تفاصيل الطالب</h3>
+              <p id="studentDetails"></p>
+            </div>
+          </div>
   
     <!-- Start Projects Table -->
         <div class="projects p-20 bg-white rad-10 m-20">
@@ -60,18 +70,6 @@
             <div class="header_sections_teacher ">
               <input class="search-box" type="text" placeholder="ابحث">
             </div>
-
-
-           <!-- مربع عرض تفاصيل الطالب -->
-            <div id="studentModal" class="modal">
-              <div class="modal-content">
-                <span class="close" onclick="closeModalStd()">&times;</span>
-                <h3>تفاصيل الطالب</h3>
-                <p id="studentDetails"></p>
-              </div>
-            </div>
-
-            
             <table class="fs-15 w-full">
               <thead>
                 <tr>

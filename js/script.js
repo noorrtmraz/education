@@ -303,8 +303,7 @@ function showMeetDetails(icon) {
       <strong>المرحلة:</strong> ${grade}<br>
       <strong>الصف:</strong> ${classroom}<br>
       <strong>الشعبة:</strong> ${section}<br>
-      <strong>الموعد:</strong> ${appointment}<br>
-      <strong> اخر موعد تسليم الاختبار:</strong> ${date}
+      <strong>تاريخ ووقت اللقاء:</strong> ${date}
     `;
   
     document.getElementById("meetDetails").innerHTML = details;
