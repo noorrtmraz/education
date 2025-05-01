@@ -117,40 +117,6 @@ function saveDefaultForm(userType) {
 }
 
 
-
-
-
-
-/***** Student data modle**** */
-
-function showStudentDetails(icon) {
-    const name = icon.dataset.name;
-    const id = icon.dataset.id;
-    const gender = icon.dataset.gender;
-    const grade = icon.dataset.grade;
-    const level = icon.dataset.level;
-    const className = icon.dataset.class;
-  
-    const details = `
-      <strong>الاسم:</strong> ${name}<br>
-      <strong>رقم الهوية:</strong> ${id}<br>
-      <strong>الجنس:</strong> ${gender}<br>
-      <strong>الصف:</strong> ${grade}<br>
-      <strong>المرحلة:</strong> ${level}<br>
-      <strong>الشعبة:</strong> ${className}
-    `;
-  
-    document.getElementById("studentDetails").innerHTML = details;
-    document.getElementById("studentModal").style.display = "block";
-  }
-  
-  function closeModalStd() {
-    document.getElementById("studentModal").style.display = "none";
-  }
-  
-
-  /**********  end std data *******/
-
   
 /***** lessons data modle**** */
 

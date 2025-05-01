@@ -51,52 +51,65 @@
             </section>
         </header>
         <!---header section ends-->
-
     <div class="page d-flex">
-      <div class="content w-full">
-        <div class="wrapper d-grid gap-20">
-            <div id="calendar"></div> 
+      
+    <div class="content w-full">
+
+  
+    <!-- Start Projects Table -->
+        <div class="projects p-20 bg-white rad-10 m-20">
+          <h2 class="mt-0 mb-20">بيانات الطالب وولي الامر</h2>
+          <div class="responsive-table">
             
-            <!-- Start Welcome Widget -->
-            <div class="welcome bg-white rad-10 txt-c-mobile block-mobile">
-              <div class="intro p-20 d-flex space-between bg-eee">
-              <img class="hide-mobile" src="images/welcome.png" alt="" />
-              <div>
-                <h2 class="m-0">اهلاً بك</h2>
-                <p class="c-grey mt-5">ميادة مغاري</p>
-              </div>
-            </div>
-            <img src="images/avatar.png" alt="" class="avatar" />
+                <div class="info-boxes">
+
+                    <div class="box father">
+                        <div class="box-header">بيانات ولي الامر </div>
+                        <ul>
+                          <li><strong>اسم وليي الامر  :</strong> عماد علي</li>
+                          <li><strong>رقم الجوال :</strong> 1234567810</li>
+                          <li><strong>مهنة ولي الامر :</strong> مهندس</li>
+                          <li><strong>عنوان ولي الامر :</strong> غزة، الرمال</li>
+                        </ul>
+                      </div>
+                  
+                  <div class="box student">
+                    <div class="box-header">بيانات الطالب </div>
+                    <ul>
+                      <li><strong>اسم الطالب :</strong> محمد علي</li>
+                      <li><strong>رقم الهوية :</strong>9876654477</li>
+                      <li><strong>الجنس :</strong> ذكر</li>
+                      <li><strong>المرحلة :</strong> الابتدائية</li>
+                      <li><strong>الصف :</strong> الاول</li>
+                      <li><strong>الشعبة :</strong>أ</li>
+                      <li><strong>تارييخ الميلاد:</strong>20-11-2010</li>
+                      <li><strong> السنة الدراسية :</strong> 2025/2026</li>
+                    </ul>
+                  </div>
             
-            <div class="tickets p-20 bg-white rad-10">
-              <div class="d-flex txt-c gap-20 f-wrap">
-                <div class="box p-20 rad-10 fs-13 c-grey">
-                  <i class="fa-solid fa-user-graduate fa-2x mb-10 c-orange"></i>
-                  <a href="teacher_students.html"><span class="d-block c-black fw-bold fs-25 mb-5">2500</span></a>
-                    عدد الطلاب
-                </div>
-                <div class="box p-20 rad-10 fs-13 c-grey">
-                  <i class="fa-regular fa-folder-open fa-2x mb-10 c-blue"></i>
-                  <a href="teacher_classrooms.html"><span class="d-block c-black fw-bold fs-25 mb-5">500</span></a>
-                    عدد الصفوف
+                
+            
                 </div>
               </div>
-            </div>
-         </div>
+            
+         
+     
+   
         </div>
+
       </div>
 
       <div class="sidebar bg-white p-20 p-relative">
         <ul>
           <li>
-            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_dashboard.html">
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_dashboard.html">
                 <span>لوحة التحكم</span>
                 <i class="fa-solid fa-cogs"></i>
              
             </a>
           </li>
           <li>
-            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_students.html">
+            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_students.html">
                 <span>الطلاب</span>
               <i class="fa-solid fa-user-graduate"></i>
              
@@ -131,7 +144,7 @@
               
             </a>
             <ul class="dropdown-menu">
-              <li><a href="teacher_lessons.html">الدروس</a></li>
+              <li><a href="teacher_subjects.html">الدروس</a></li>
               <li><a href="teacher_hw.html"> الواجبات</a></li>
               <li><a href="teacher_exams.html">الاختبارات</a></li>
             </ul>
@@ -161,7 +174,7 @@
         </ul>
       </div>
     </div>
-    
+
          <!--- footer start-->
          <footer class="footer">
 
@@ -170,7 +183,10 @@
        </footer>
       <!--- footer ends-->
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
     
   </body>
 </html>
+
+
+
