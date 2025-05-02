@@ -1,12 +1,14 @@
 :root{
     --main-color:#589F43 ;
-    --secondary-color:#072340;
+    --secondary-color:#072340;    ;
     --white:#fff;
     --black:#2c3e50;
     --light-color:#888;
     --light-bg:#eee;
     --border:1rem solid rgba(0,0,0,.2);
     --red:#d35000;
+    --whitegrey: #f0f0f0;
+    --ddd : #ddd;
 }
 
 *{
@@ -89,7 +91,6 @@ body {
 .header .flex .logo img{
     width: 7rem;
     margin-top:2.5rem;   
-    margin-left: 1rem;
 }
 
 .header .flex .navbar a{
@@ -253,6 +254,122 @@ body {
 
 
 
+/**login page teacher starts**/
+
+
+.login-teacher{
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../images/back.png') no-repeat center center;
+    background-size: cover;
+    height: 100%;
+}
+
+.login-teacher .form-container3{
+    
+    justify-content: center;  /* يضع المحتوى في المنتصف أفقيًا */
+    align-items: center;
+    background-color:var(--white);
+    width: 45rem;
+    height: 33rem;
+    border-radius: 30px;
+    padding: 30px;
+    margin:auto
+
+}
+
+.login-teacher .form-container3 .form h3{
+    color: var(--main-color);
+    font-size: 2rem;
+    margin-top: 1rem;
+    text-align: center;
+
+}
+
+.login-teacher .form-container3 .form .input-box-teacher {
+    padding: 7px;
+    margin: 7px 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.login-teacher .form-container3 .form .input-box-teacher2 {
+    padding: 7px;
+    margin-top:2px;
+    margin-bottom: 1rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    text-align: left;
+}
+
+.login-teacher .form-container3 .form .login-btn-teacher{
+
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 7px;
+    border: none;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    margin-top:2px;
+}
+
+.login-teacher .form-container3 .form .login-btn-teacher:hover{
+  background-color: var(--secondary-color);
+  transition: .5s linear;
+}
+
+
+.login-teacher .form-container3 .icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.login-teacher .form-container3 .icon.active-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.login-teacher .form-container3 .icon.active-icon img {
+ 
+  transform: scale(1);
+  opacity: 1;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.login-teacher .form-container3 .icons img {
+  width: 40px;
+  margin-top: 1rem;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.login-teacher .form-container3 .form {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform: translateY(-20px);  /* الحركة الابتدائية (خارج الشاشة) */
+}
+
+.login-teacher .form-container3 .form.active-form {
+  display: block;  /* إظهار النموذج */
+  opacity: 1;
+  transform: translateY(0);  
+}
+
+
+/**login page teacher ends**/
+
+
+
 
 /**about page starts**/
 
@@ -375,138 +492,1344 @@ body {
     margin-right: auto; /* إزالة المسافة الإضافية */
 }
 
-/**about page ens**/
+/**about page ends**/
+
+
+/*********this is actions icon in the tables starts***********/
+.action-icon {
+    margin: 0 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: transform 0.2s;
+  }
+  
+  .action-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  .delete-icon {
+    color: var(--red);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+  }
+  
+  .relode-icon,.question-icon,
+  .std-icon,.edit-icon, .eye-icon, .download-icon{
+    color: var(--main-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+  }
+  
+  
+  
+  /*********the actions icon in the tables ends***********/
+  
+  
+  
+  /**********************************************************************/
+  
+  
+  /***start teacher dashboard**/
+  
+  /******header dashboards teacher starts*******/
+  
+  .header .flex .search-form{
+      width: 40rem;
+      border-radius: .5rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: .5rem 2rem;
+      background-color: var(--light-bg);
+  }
+  
+  .header .flex .search-form input{
+      width: 100%;
+      background: none;
+      font-size: 1.5rem;
+      text-align: left;
+      color: var(--black);
+  }
+  
+  .header .flex .search-form button{
+      font-size: 1.8rem;
+      color: var(--black);
+      cursor: pointer;
+      background: none;
+  }
+  
+
+
+  .header .flex .icons{
+    margin-right: 2rem;
+  }
+  
+  .header .flex .icons div{
+      font-size: 1.6rem;
+      color: var(--black);
+      border-radius: .5rem;
+      height: 3.5rem;
+      cursor: pointer;
+      width: 3.5rem;
+      line-height: 3.5rem;
+      text-align: center;
+      margin-left: 1rem;
+  }
+  
+  
+  #msg-btn {
+    position: relative;
+    font-size: 1.5rem;
+    color: var(--black);
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  
+  #msg-btn::after {
+    content: "1"; /* عدد الإشعارات */
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--red);
+    color: var(--white);
+    font-size: 0.8rem;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+  }
+  
+  
+  #bell-btn {
+      position: relative;
+      font-size: 1.5rem;
+      color: var(--black);
+      margin-left: 1rem;
+      cursor: pointer;
+  }
+  
+  #bell-btn::after {
+      content: "3"; /* عدد الإشعارات */
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.8rem;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-weight: bold;
+  }
+  
+  #bell-btn:hover{
+      background-color: var(--main-color);
+      color: var(--white);
+      transition: background-color .8s ease-in-out;
+  }
+  
+  .header .flex .icons div:hover{
+      background-color: var(--main-color);
+      color: var(--white);
+      transition: background-color .8s ease-in-out;
+  }
+  
+  #search-btn{
+      display: none;
+  }
+  
+  
+  .header .flex .profile{
+      position: absolute;
+      top: 120%; right: 2rem;
+      background-color: var(--white);
+      border-radius: .5rem;
+      border-bottom: 3px solid var(--main-color);
+      padding: 2rem;
+      text-align: center;
+      width: 24rem;
+      transform: scale(0);
+      transform-origin: top right;
+      transition: .2s linear;
+  
+  }
+  
+  .header .flex .profile.active{
+      transform: scale(1);
+  }
+  
+  .header .flex .profile img{
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: .5rem;
+    
+  }
+  
+  .header .flex .profile h3{
+      font-size: 1.7rem;
+      color: var(--black);
+  }
+  
+  .header .flex .profile span{
+      color: var(--light-color);
+      font-size: 1.5rem;
+  }
+  
+  .flex-btn a{
+      background-color: var(--main-color);
+      border-radius: .5rem;
+      padding: .5rem 1rem;
+      font-size: 1.2rem;
+      color: var(--white);
+      cursor: pointer;
+      text-align: center;
+  }
+  
+  .flex-btn a:hover{
+      background-color: var(--secondary-color);
+      transition: .7s linear;
+  }
+  
+  /******header dashboards teacher ends**********/
+  
+  
+  /******* Start Sidebar **********/
+  
+  .sidebar {
+      width: 250px;
+      box-shadow: 0 0 10px var(--ddd);
+    }
+  
+    .sidebar ul{
+      list-style: none;
+    }
+  
+    .sidebar ul li a {
+      transition: 0.3s;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center; /* توسيط العناصر عموديًا */
+      justify-content: flex-end; /* دفع العناصر إلى اليمين */
+      transition: 0.3s;
+      margin-bottom: 5px;
+      color: var(--secondary-color);
+      font-size: 1.7rem;
+     
+    }
+  
+    .sidebar ul li a:hover,
+    .sidebar ul li a.active {
+      background-color: rgba(88, 159, 67, 0.2);
+    }
+    .sidebar ul li a span {
+      font-size: 14px;
+      margin-left: 10px;
+      
+    }
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 0;
+    left: 100%; 
+    background-color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    min-width: 160px;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block; 
+  }
+  
+  .dropdown-menu li {
+    list-style: none;
+  }
+  
+  .dropdown ul li a {
+      padding: 5px 10px; 
+      color: var(--secondary-color);
+      font-size: 14px;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: var(--whitegrey);
+  }
+  
+  .dropdown .arrow {
+    margin-left: 8px;
+    font-size: 14px;
+  }
+  
+  .dropdown:hover .arrow {
+    color: var(--main-color); 
+  }
+  
+  .sidebar ul li a {
+    padding: 10px;
+  }
+  
+    /********** End Sidebar **********8*/
+  
+  /* start contenet teacher dashboard  */
+
+  .page {
+    direction: rtl;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #calendar{
+    border-radius:.5rem ;
+    background-color: var(--white);
+    padding: 1.5rem;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fc-ltr .fc-basic-view .fc-day-top .fc-day-number {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    text-align: center;
+  }
+  
+  
+  
+    .page .wrapper {
+      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+      animation: fadeIn 1s ease-in-out;
+    }
+   
+    .wrapper .welcome {
+      overflow: hidden;
+    }
+  
+    .welcome .intro {
+      background-color: rgba(88, 159, 67, 0.2); 
+      box-shadow:0 0 5px var(--ddd);
+      flex-direction: row-reverse;
+  
+    }
+  
+    .wrapper .welcome .intro img {
+      width: 200px;
+      margin-bottom: -10px;
+    }
+    .wrapper .welcome .avatar {
+      width: 49px;
+      height: 49px;
+      border: 1px solid var(--white);
+      border-radius: 50%;
+      padding: 1px;
+      box-shadow: 0 0 5px var(--ddd);
+      margin-left: 20px;
+      margin-top: -39px;
+    }
+  
+  
+    .tickets .box {
+      width: calc(100% - 10px);
+      height: 12rem;
+      text-align: center;
+      font-size: 1rem;
+      box-shadow: 0 0 5px var(--ddd);
+      
+    }
+  
+    .tickets .box:hover{
+      transition: transform 0.3s;
+      transform: scale(1.05);
+    }
+  
+    .box i {
+      color: var(--main-color);
+      font-size: 2rem;
+      text-shadow: 1px 1px 2px rgba(88, 159, 67, 0.2); 
+    }
+   
+    .box a span {
+      font-weight: bold;
+      font-size: 2rem;
+      line-height: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--secondary-color);
+    }
+  
+    .welcome-teacher h2 {
+      margin: 0;
+      font-size: 2.1rem;
+      color: var(--secondary-color);
+      text-align: right;
+    }
+    
+    
+    .welcome-teacher p {
+      color: var(--grey-color);
+      font-size: 1.1rem;
+      text-align: right;
+    }
+  
+    .sidebar , .projects , .tickets , .box , .intro {
+      padding: 20px;
+    }
+    
+  
+  /*  contenet teacher dashboard ends */
+    
+    /******** Tables design starts in teacher dashboard******/
+  
+  
+    .projects{
+      animation: fadeIn 1s ease-in-out;
+    }
+  
+    .projects h2{
+      text-align: left;
+      font-size: 2rem;
+      color: var(--main-color);
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      gap: 5px;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+     
+    }
+  
+     .projects .responsive-table {
+      overflow-x: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: var(--white);
+      margin: 1rem;
+  
+    }
+    .projects table {
+      min-width: 100%;
+      border-spacing: 0;
+      text-align: center;
+      font-size: 1.3rem;
+      
+    }
+    .projects thead td {
+      background-color: rgba(88, 159, 67, 0.2);
+      font-weight: bold;
+  
+    }
+    .projects table td {
+      padding: 10px;
+    }
+    .projects tbody td {
+      border-bottom: 2px solid var(--light-bg);
+      border-left: 2px solid var(--light-bg);
+      transition: 0.3s;
+    }
+    
+    .projects tbody tr:hover td {
+      background-color: #faf7f7;
+    }
+    
+  
+  /******* Tables design ends in teacher dashboard******/
+  
+  
+  /* forms edit and add for teacher dashboard starts */
+  
+  .page .content .forms-add {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin: 3rem auto;
+    padding: 2rem 3rem 3rem 3rem;
+  }
+  
+  .page .content .forms-add h1 {
+    color: var(--main-color);
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  
+  }
+  
+  .page .content .form-row .form-group label {
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    margin-left: 5px;
+    font-size: 1rem;
+    color: var(--light-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  
+  }
+  
+  
+  .page .content .form-row {
+    display: flex;
+    column-gap: 20px; /* المسافة بين العناصر */
+    flex-wrap: wrap; /* يسمح بتنسيق الأعمدة عند تغيير الحجم */
+  }
+  
+  /* تخصيص الحقول التي تأخذ نصف العرض */
+  .page .content .form-row .form-group {
+    flex: 1 1 calc(50% - 20px); /* تعيين الحقل ليأخذ 1/2 من العرض */
+  }
+  
+  /* تخصيص الحقول التي تكون في سطر واحد */
+  .form-row.full-width .form-group {
+    flex: 1 1 100%; /* جعل الحقول في صف كامل */
+  }
+  
+  /* تخصيص الأزرار */
+  .page .content .forms-add .form-group button {
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: var(--main-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    border: 1px solid #ccc;
+    /* border-top-left-radius:20px; */
+    border-radius:6px;
+    padding: 10px;
+    margin-top: 10px;
+    color: var(--white);
+    text-align: center;
+    width: 100%;
+  }
+  
+  .page .content .forms-add .form-group button:hover {
+    background-color: var(--secondary-color);
+    transition: .8s linear;
+  }
+  .page .content .form-row .form-group input[type="text"]{
+    width: 100%;
+    color: var(--secondary-color);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    box-shadow:0 0 3px rgba(0,0,0,0.2);
+    text-align: left;
+    /* border-top-right-radius:20px;
+    border-bottom-left-radius:20px; */
+    font-size: 1.3rem;
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); */
+  }
+  
+  .page .content .form-row .form-group input[type="password"]{
+    width: 100%;
+    color: var(--secondary-color);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    box-shadow:0 0 3px rgba(0,0,0,0.2);
+    text-align: left;
+    /* border-top-right-radius:20px;
+    border-bottom-left-radius:20px; */
+    font-size: 1.3rem;
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); */
+  }
+  
+  .page .content .form-row .form-group input[type="url"]{
+    width: 100%;
+    color: var(--secondary-color);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    box-shadow:0 0 3px rgba(0,0,0,0.2);
+    text-align: left;
+    /* border-top-right-radius:20px;
+    border-bottom-left-radius:20px; */
+    font-size: 1.3rem;
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); */
+  }
+  
+  
+  .page .content .form-row .form-group input::placeholder{
+    color: var(--light-color);
+  
+  }
+  .page .content .form-row .form-group select{
+    width: 100%;
+    color: var(--light-color);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    box-shadow:0 0 3px rgba(0,0,0,0.2);
+    text-align: left;
+    /* border-top-right-radius:20px;
+    border-bottom-left-radius:20px; */
+    font-size: 1.3rem;
+  }
+  .page .content .form-row .form-group input[type="file"]{
+    width: 100%;
+    color: var(--light-color);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    box-shadow:0 0 3px rgba(0,0,0,0.2);
+    /* border-top-right-radius:20px;
+    border-bottom-left-radius:20px; */
+    font-size: 1.3rem;
+    text-align: left;
+  }
+  .page .content .form-row .form-group textarea {
+    width: 100%;
+    color: var(--light-color);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    box-shadow:0 0 3px rgba(0,0,0,0.2);
+    text-align: left;
+    /* border-top-right-radius:20px;
+    border-bottom-left-radius:20px; */
+    font-size: 1.3rem;
+  }
+  
+  .page .content .form-row .form-group textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  
+  .page .content .form-row .form-group input[type="datetime-local"],
+  .page .content .form-row .form-group input[type="number"]{
+    width: 100%;
+    color: var(--light-color);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    box-shadow:0 0 3px rgba(0,0,0,0.2);
+    text-align: left;
+    /* border-top-right-radius:20px;
+    border-bottom-left-radius:20px; */
+    font-size: 1.3rem;
+  }
+  
+  .inputSubmission{
+    width: 50px;
+    height: 30px;
+    background-color: rgba(88, 159, 67, 0.1);
+    border-radius: 3px;
+    box-shadow:0 0 3px rgba(0,0,0,0.2);
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .buttonSubmission{
+    background-color: var(--main-color);
+      padding: 5px 10px 5px 10px;
+      border-radius: 3px;
+      color: var(--white);
+      font-size: 12px;
+  }
+  
+  /* forms edit and add for teacher dashboard ends */
+  
+  
+  /** start student page in teacher dashboard**/
+  .header_sections_teacher{
+  
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 15px;
+    }
+  
+  .header_sections_teacher .search-box {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 5px 10px;
+      text-align: left;
+  
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+    margin: 15px;
+  }
+  
+  .pagination button {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .pagination .active {
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    border-color: var(--main-color);
+  }
+    
+  
+  /********ends student page in teacher dashboard***********/
+  
+  /***** start books page in teacher dashboard *********/
+  .modal-content p{
+    font-size: 1.5rem;
+  }
+  
+  .modal-content button{
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 6px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 5rem;
+    font-weight: bold;
+  }
+  
+  
+  /***** end books page in teacher dashboard *********/
+  
+  
+  /* جزئية عرض التفاصيل */
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* الخلفية */
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 30%;
+    color: #333;
+    font-size: 1.2rem;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    position: relative;
+    direction: rtl;
+    border-top: 4px solid var(--main-color);
+  }
+  
+  .model-content h2{
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: var(--main-color);
+    margin-bottom: 5px;
+  }
+  
+  .modal-content img{
+    width: 50px;
+  }
+  .close {
+    color: #aaa;
+    font-size: 20px;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: var(--red);
+  }
+  
+  /* جزئية عرض التفاصيل */
+  
+  
+  /* profile teacher page start */
+  
+  .page .content .profile-container {
+    max-width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 1rem;
+    background-color: var(--white);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out; /* انيميشن دخول الصفحة */
+  }
+  
+  .page .content .profile-container form{
+    width: 60%;
+  }
+  
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .page .content .profile-image {
+    position: relative;
+    display: inline-block;
+    margin-top: 4rem;
+    transition: transform 0.3s ease; /* انيميشن تمرير على الصورة */
+  }
+  
+  .page .content .profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .page .content .status {
+    position: absolute;
+    bottom: 11px;
+    right: 14px;
+    width: 14px;
+    height: 14px;
+    background-color: var(--main-color);
+    border: 2px solid var(--white);
+    border-radius: 50%;
+  }
+  
+  .page .content .status.online {
+    background-color: var(--main-color);
+  }
+  
+  
+  .page .content .profile-name {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .page .content .profile-role {
+    color: var(--light-color);
+    margin: 0.5rem 0;
+  }
+  
+  .profile-container .edit-button {
+    display: inline-block; 
+    margin-top: 1rem;
+    background-color: var(--main-color);
+    color: var(--white);
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .page .content .edit-button:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .page .content .tabs {
+    margin-top: 3rem;
+    background-color:rgba(88, 159, 67, 0.2);
+    display: flex;
+    margin: 3rem;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .page .content .tab {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-size: 1.3rem;
+    border-right: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  
+  .page .content .tabProf {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    background-color: rgba(88, 159, 67, 0.2);
+    font-weight: 500;
+    font-size: 1.3rem;
+    border-right: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  .page .content .tab:last-child {
+    border-right: none;
+  }
+  
+  .page .content .tab:hover {
+    background-color: #ddd;
+  }
+  
+  
+  /* profile teacher page end */
+  
+  
+  
+  
+  
+    /* Start Box */
+    .d-flex {
+      display: flex;
+    }
+    .f-wrap {
+      flex-wrap: wrap;
+    }
+    .align-center {
+      align-items: center;
+    }
+    .space-between {
+      justify-content: space-between;
+    }
+    .d-grid {
+      display: grid;
+    }
+    .gap-20 {
+      gap: 20px;
+    }
+    .d-block {
+      display: block;
+    }
+    @media (max-width: 767px) {
+      .block-mobile {
+        display: block;
+      }
+      .hide-mobile {
+        display: none;
+      }
+    }
+    /* End Box */
+  
+  
+    /* Start Position */
+    .p-relative {
+      position: relative;
+    }
+    .p-absolute {
+      position: absolute;
+    }
+    /* End Position */
+    /* Start Font */
+    .txt-c {
+      text-align: center;
+    }
+    .fs-13 {
+      font-size: 13px;
+    }
+    .fs-14 {
+      font-size: 14px;
+    }
+    .fs-15 {
+      font-size: 15px;
+    }
+    .fs-25 {
+      font-size: 25px;
+    }
+   
+    @media (max-width: 767px) {
+      .txt-c-mobile {
+        text-align: center;
+      }
+    }
+    /* End Font */
+    /* Start Border */
+    .rad-6 {
+      border-radius: 6px;
+    }
+    .rad-10 {
+      border-radius: 10px;
+    }
+    .rad-half {
+      border-radius: 50%;
+    }
+    .b-none {
+      border: none;
+    }
+    .border-ccc {
+      border: 1px solid #ccc;
+    }
+    .border-eee {
+      border: 1px solid var(--light-bg);
+    }
+    
+    /* End Border */
+    /* Start Width + Height */
+    .w-full {
+      width: 100%;
+    }
+    .w-100 {
+      width: 100px;
+    }
+    .w-fit {
+      width: fit-content;
+    }
+    .h-full {
+      height: 100%;
+    }
+    .h-100 {
+      height: 100px;
+    }
+    /* End Width + Height */
+    /* Start Components */
+    .center-flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .between-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .btn-shape {
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    /* End Components */
+  
+  /* student data in teacher dashboard starts */
+  
+  
+  .page .content .projects .info-boxes {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .page .content .projects .info-boxes .box {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  .page .content .projects .info-boxes .box-header {
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: white;
+    text-align: left;
+    text-shadow:1px 1px 2px rgba(0, 0, 0, 0.3); ;
+  }
+  
+  .page .content .projects .info-boxes .box.student .box-header {
+    background-color: var(--main-color); /* أزرق */
+  }
+  
+  .page .content .projects .info-boxes .box.father .box-header {
+    background-color: rgba(88, 159, 67, 0.6); /* أخضر */
+  }
+  
+  .page .content .projects .info-boxes .box ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+    text-align: left;
+  }
+  
+  .page .content .projects .info-boxes .box ul li {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .page .content .projects .info-boxes .box ul li:last-child {
+    border-bottom: none;
+  }
+  
+  .page .content .projects .info-boxes .box ul li strong {
+    color: #444;
+  }
+  
+  
+  /* student data in teacher dashboard ends */
+  
+  
+  
+  
+  
+    /******** start admin dashboard ************/
+  
+  .content-admin {
+    background-color: rgba(88, 159, 67, 0.03) ;
+  }
+  
+  .dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px 20px 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .card {
+    flex: 1 1 calc(25% - 20px);
+    background-color: #ffffff;
+    border-top: 3px solid var(--main-color);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease;
+    position: relative;
+    width: 23%;
+    height: 10rem;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .card h2 {
+    font-size: 18px;
+    color: var(--main-color);
+    font-weight: bold;
+    margin-top: 12px;
+  
+  }
+  
+  .details-link {
+    display: inline-block;
+    font-size: 10px;
+    color: var(--main-color);
+    transition: background-color 0.3s ease;
+    border-top: .1px solid rgba(88, 159, 67, 0.3) ;
+    width: 100%;
+    padding-top:3px;
+    padding-right: 5px;
+    margin-top: 12px;
+  }
+  
+  .details-link:hover {
+    color: var(--secondary-color);
+  }
+  
+  
+  .right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .buttons-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    border-top: 3px solid var(--main-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  
+  .button-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .green-btn {
+    flex: 1;
+    padding: 5px;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .green-btn:hover {
+    background-color: var(--secondary-color);
+    transition: .8s linear;
+  }
+  
+  .dashboard-wrapper { 
+    display: flex; 
+    justify-content: space-between; 
+    gap: 20px; 
+    padding: 20px;
+   } 
+   .welcome-box{
+    flex: 1; 
+    background-color: var(--white);
+    border-radius: 10px; 
+    padding: 20px; 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: 16rem;
+    border-top: 3px solid var(--main-color);
+   } 
+  
+   .chart-box {
+    flex: 1; 
+    background-color: var(--white);
+    border-radius: 10px; 
+    padding: 20px; 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    margin: auto;
+    border-top: 3px solid var(--main-color);
+    
+    }
+  
+   .welcome-text {
+     flex: 1; 
+     padding-right: 15px;
+     } 
+    .welcome-text h2 { 
+      font-size: 18px;
+      text-align: right;
+      color: var(--main-color);
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      } 
+    .welcome-text p {
+      font-size: 13px;
+      color: rgba(7, 35, 64, 0.5);
+      text-align: right;
+      }
+  
+    .welcome-text a{
+      display: inline-block;
+      font-size: 10px;
+      color: var(--main-color);
+      transition: background-color 0.3s ease;
+      border-top: .1px solid rgba(88, 159, 67, 0.3) ;
+      width: 100%;
+      padding-top:3px;
+      padding-right: 5px;
+      text-align: right;
+      margin-top: 3rem;
+    }
+  
+    .welcome-text a:hover{
+      color: var(--secondary-color);
+      transition: .8s linear;
+    }
+    .welcome-image img { 
+      width: 170px; 
+      border-radius: 10px; 
+    }
+    .chart-box h3 { 
+      font-size: 18px;
+      text-align: right;
+      color: var(--main-color);
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+     }
+  
+  
+  
+     /******** start classroom page in admin dashboard *****/
+  
+    .admin{
+      border-top: 3px solid var(--main-color);
+     }
+  
+       .header_sections {
+      display: flex;
+      justify-content: space-between; /* توزيع العناصر بين اليسار واليمين */
+      align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+      width: 100%; /* حجز العرض الكامل */
+      padding: 2rem;
+    }
+  
+     .header_sections a{
+      background-color: var(--main-color);
+      padding: 5px 10px 5px 10px;
+      border-radius: 3px;
+      color: var(--white);
+      font-size: 12px;
+  
+     }
+  
+     .header_sections a:hover{
+      background-color: var(--secondary-color);
+      transition: .8s linear;
+     }
+  
+     /* تصميم مربع البحث */
+    .header_sections .search-box {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 5px 10px;
+      text-align: left;
+  
+  }
+     
+  
+     /******** end classroom page in admin dashboard*********/
+           
+  
+  
+  /*** end admin dashboard ***/
+  
+  
+  
+    
 
 
 
-
-/***footer start***/
-
-
+/****** footer section starts ********/
 .footer{
-    position: sticky;
     bottom: 0; right: 0; left: 0;
     background-color: var(--white);
-    border-top: var(--black);
+    box-shadow: 0 0 10px var(--ddd);
     padding: 1rem 2rem;
     text-align: center;
     color: var(--black);
     font-size: 1.5rem;
-    margin-top: 1.5rem;
-    height: 5rem;
+    margin-top: .5rem;
     z-index: 1000;
+    max-height: 6rem;
+
 }
 
 .footer span{
     color: var(--main-color);
 }
 
-/***footer end**/ 
+/****** footer section ends ********/
 
 
-
-
-
-/**login page teacher starts**/
-
-.login0{
-    padding: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('../images/back.png') no-repeat center center;
-    background-size: cover;
-    height: 100%;
-}
-
-.form-container3{
-    
-    justify-content: center;  /* يضع المحتوى في المنتصف أفقيًا */
-    align-items: center;
-    background-color:var(--white);
-    width: 45rem;
-    height: 33rem;
-    border-radius: 30px;
-    padding: 30px;
-    margin:auto
-
-}
-
-.form-container3 .form h3{
-    color: var(--main-color);
-    font-size: 2rem;
-    margin-top: 1rem;
-    text-align: center;
-
-}
-
-.input-box-teacher {
-    padding: 7px;
-    margin: 7px 0;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    text-align: left;
-    margin-top: 20px;
-}
-
-.input-box-teacher2 {
-    padding: 7px;
-    margin-top:2px;
-    margin-bottom: 1rem;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    text-align: left;
-}
-
-.login-btn-teacher{
-
-    background-color: var(--main-color);
-    color: white;
-    padding: 7px;
-    border: none;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 20px;
-    cursor: pointer;
-    width: 100%;
-    margin-top:2px;
-
-}
-
-.login-btn-teacher:hover{
-    background-color: var(--secondary-color);
-    transition: .5s linear;
-}
-
-
-
-/* تأثير الانتقال بين النماذج */
-.form {
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.form.active-form {
-    display: block;
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* تحسين الأيقونات عند التبديل */
-.icon {
-    opacity: 0.6;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.icon.active-icon {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-/**login page teacher ends**/
 
 
 
