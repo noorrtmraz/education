@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Spark Education</title>
-        <link rel="icon" href="images/logo-dark.png" type="image/png">
+        <link rel="icon" href="../images/logo-dark.png" type="image/png">
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,7 +18,7 @@
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
 
-        <link rel="stylesheet" href="css/rtl.css">
+        <link rel="stylesheet" href="../css/rtl.css">
     </head>
     <body>
         <!---header section starts-->
@@ -37,10 +37,10 @@
               <button type="submit" class="fas fa-search" name="search_box"></button>
             </form>
             
-            <a href="teacher_dashboard.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+            <a href="teacher_dashboard.html" class="logo"><img src="../images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
+                    <img src="../images/pic-1.jpg" alt="">
                     <h3>ميادة مغاري</h3>
                     <span>معلم</span>
                     <div class="flex-btn">
@@ -54,49 +54,84 @@
     <div class="page d-flex">
       
     <div class="content w-full">
-
   
-    <!-- Start Projects Table -->
-        <div class="projects p-20 bg-white rad-10 m-20">
-          <h2 class="mt-0 mb-20">بيانات الطالب وولي الامر</h2>
-          <div class="responsive-table">
-            
-                <div class="info-boxes">
+      
 
-                    <div class="box father">
-                        <div class="box-header">بيانات ولي الامر </div>
-                        <ul>
-                          <li><strong>اسم وليي الامر  :</strong> عماد علي</li>
-                          <li><strong>رقم الجوال :</strong> 1234567810</li>
-                          <li><strong>مهنة ولي الامر :</strong> مهندس</li>
-                          <li><strong>عنوان ولي الامر :</strong> غزة، الرمال</li>
-                        </ul>
-                      </div>
-                  
-                  <div class="box student">
-                    <div class="box-header">بيانات الطالب </div>
-                    <ul>
-                      <li><strong>اسم الطالب :</strong> محمد علي</li>
-                      <li><strong>رقم الهوية :</strong>9876654477</li>
-                      <li><strong>الجنس :</strong> ذكر</li>
-                      <li><strong>المرحلة :</strong> الابتدائية</li>
-                      <li><strong>الصف :</strong> الاول</li>
-                      <li><strong>الشعبة :</strong>أ</li>
-                      <li><strong>تارييخ الميلاد:</strong>20-11-2010</li>
-                      <li><strong> السنة الدراسية :</strong> 2025/2026</li>
-                    </ul>
-                  </div>
-            
-                
-            
-                </div>
-              </div>
-            
-         
-     
-   
+    <form method="POST" enctype="multipart/form-data" class="forms-add">
+        <h1>إضافة سؤال جديد</h1>
+      
+        <div class="form-row">
+            <div class="form-group">
+                <select id="exam_name" name="exam_name" required>
+                    <option value="" disabled selected> * اسم الاختبار</option>
+                    <option value="exam_1">اختبار الرياضيات</option>
+                    <option value="exam_2">اختبار اللغة العربية</option>
+                    <option value="exam_3">اختبار الفيزياء</option>
+                    <!-- يمكنك إضافة المزيد من الاختبارات هنا -->
+                </select>
+            </div>
         </div>
 
+          <!-- صف وصف الكتاب -->
+          <div class="form-row ">
+            <div class="form-group">
+                <textarea id="question_text" name="question_text" required placeholder="أدخل نص السؤال"></textarea>
+            </div>
+        </div>
+        <div class="form-row ">
+            <div class="form-group">
+                <label for="question_image">اضافة السؤال كصورة</label>
+                <input type="file" id="question_image" name="question_image" accept=".png,.gif,.jpg" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <input type="text" id="option_b" name="option_b"  placeholder="أدخل الاختيار ب">
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="option_a" name="option_a"  placeholder="أدخل الاختيار أ">
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="option_d" name="option_d"  placeholder="أدخل الاختيار د">
+            </div>
+            
+            <div class="form-group">
+                <input type="text" id="option_c" name="option_c"  placeholder="أدخل الاختيار ج">
+            </div>
+           
+        </div>
+
+        <div class="form-row">
+              <!-- الإجابة الصحيحة -->
+        <div class="form-group">
+            <select id="correct_answer" name="correct_answer" required>
+                <option value="" disabled selected>الاجابة الصحيحة</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="number" id="question_score" name="question_score" required placeholder="أدخل درجة السؤال">
+        </div>
+        </div>
+
+       
+
+        
+
+
+        <!-- زر الإرسال -->
+        <div class="form-group">
+            <button type="submit">إضافة سؤال</button>
+        </div>
+    </form>
+        
       </div>
 
       <div class="sidebar bg-white p-20 p-relative">
@@ -109,7 +144,7 @@
             </a>
           </li>
           <li>
-            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_students.html">
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_students.html">
                 <span>الطلاب</span>
               <i class="fa-solid fa-user-graduate"></i>
              
@@ -137,14 +172,14 @@
           </li>
 
           <li class="dropdown">
-            <a href="#" class="d-flex align-center fs-14 c-black rad-6 p-10">
+            <a href="#" class="active d-flex align-center fs-14 c-black rad-6 p-10">
               <i class="fa-solid fa-caret-down arrow"></i> <!-- السهم -->
               <span>المادة الدراسية</span>
               <i class="fa-solid fa-file-pen"></i>
               
             </a>
             <ul class="dropdown-menu">
-              <li><a href="teacher_subjects.html">الدروس</a></li>
+              <li><a href="teacher_lessons.html">الدروس</a></li>
               <li><a href="teacher_hw.html"> الواجبات</a></li>
               <li><a href="teacher_exams.html">الاختبارات</a></li>
             </ul>
@@ -163,7 +198,7 @@
               
             </a>
           </li>
-         
+  
           <li>
             <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
                 <span>الملف الشخصي</span>
@@ -175,15 +210,15 @@
       </div>
     </div>
 
-         <!--- footer start-->
-         <footer class="footer">
+     <!--- footer start-->
+     <footer class="footer">
 
-          &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
-       
-       </footer>
-      <!--- footer ends-->
+      &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
+   
+   </footer>
+  <!--- footer ends-->
 
-    <script src="js/script.js" defer></script>
+    <script src="../js/script.js" defer></script>
     
   </body>
 </html>

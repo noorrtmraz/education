@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Spark Education</title>
-        <link rel="icon" href="images/logo-dark.png" type="image/png">
+        <link rel="icon" href="../images/logo-dark.png" type="image/png">
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,7 +18,7 @@
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
 
-        <link rel="stylesheet" href="css/rtl.css">
+        <link rel="stylesheet" href="../css/rtl.css">
     </head>
     <body>
         <!---header section starts-->
@@ -37,10 +37,10 @@
               <button type="submit" class="fas fa-search" name="search_box"></button>
             </form>
             
-            <a href="teacher_dashboard.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+            <a href="teacher_dashboard.html" class="logo"><img src="../images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
+                    <img src="../images/pic-1.jpg" alt="">
                     <h3>ميادة مغاري</h3>
                     <span>معلم</span>
                     <div class="flex-btn">
@@ -54,83 +54,98 @@
     <div class="page d-flex">
       
     <div class="content w-full">
+
+
+      
+      <div id="hwModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModalHw()">&times;</span>
+          <h3>تفاصيل الواجب</h3>
+          <img src="../images/dll.svg" alt="لا يوجد ملف للواجب">
+          <p id="hwDetails"></p>
+        </div>
+      </div>
+
+          <!-- مودال التأكيد (حذف الواجب) -->
+      <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>هل تريد حذف الواجب ؟</p>
+            <button class= "btn1" onclick="confirmDelete()">تأكيد</button>
+            <button class = "btn2" onclick="closeModal()">إلغاء</button>
+            </div>
+        </div>
+      
   
-      
+    <!-- Start Projects Table -->
+        <div class="projects p-20 bg-white rad-10 m-20">
+          <h2 class="mt-0 mb-20">الواجبات</h2>
+          <div class="responsive-table">
+            <div class="header_sections ">
+                <a href="add_hw_teacher.html">اضافة واجب جديد</a>
+                <input class="search-box" type="text" placeholder=".. ابحث">
+              </div>
+            <table class="fs-15 w-full">
+              <thead>
+                <tr>
+                  <td>الاجراءات</td>
+                  <td>اخر موعد التسليم</td>
+                  <td>الشعبة</td>
+                  <td>الصف</td>
+                  <td>المرحلة</td>
+                  <td> المادة</td>
+                  <td>اسم الواجب</td>
+                  <td>#</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="#"><i class="fas fa-trash-alt action-icon delete-icon" title="حذف الواجب" onclick="openModal(2)"></i></a>
+                    <a href="edit_hw_teacher.html"><i class="fas fa-edit action-icon edit-icon" title="تعديل الواجب"></i></a>
+                    <a href="#">
+                      <i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"
+                          onclick="showHwDetails(this)"
+                          data-name="واجب الوحدة الثالثة"
+                          data-subject="علوم"
+                          data-grade="المرحلة الاعدادية"
+                          data-classroom="الصف السابع"
+                          data-section="أ"
+                          data-stdnum="16"
+                          data-desc="وصف الواجب"
+                          data-datend="10-2-2022"></i>
+                    </a>
+                    <a href="teacher_hw_submissions.html"><i class="fas fa-users students-icon action-icon std-icon" title="عرض الطلاب"></i></a>
+                    
+                    
+                  </td>
+                  <td>12-3-2025</td>
+                  <td>أ</td>
+                  <td>الخامس</td>
+                  <td>الاعدادي</td>
+                  <td>لغة عربية</td>
+                  <td>واجب الوحدة الاولى</td>
+                  <td>1</td>
+                </tr>
+               
+               
+              </tbody>
+            </table>
 
-    <form method="POST" enctype="multipart/form-data" class="forms-add">
-        <h1>تعديل السؤال</h1>
-      
-        <div class="form-row">
-            <div class="form-group">
-                <select id="exam_name" name="exam_name" required>
-                    <option value="" disabled selected> * اسم الاختبار</option>
-                    <option value="exam_1">اختبار الرياضيات</option>
-                    <option value="exam_2">اختبار اللغة العربية</option>
-                    <option value="exam_3">اختبار الفيزياء</option>
-                    <!-- يمكنك إضافة المزيد من الاختبارات هنا -->
-                </select>
+            <div class="pagination">
+              <button class="inactive">4</button>
+              <button class="inactive">3</button>
+              <button class="inactive">2</button>
+              <button class="active">1</button>
             </div>
-        </div>
-
-          <!-- صف وصف الكتاب -->
-          <div class="form-row ">
-            <div class="form-group">
-                <textarea id="question_text" name="question_text" required placeholder="أدخل نص السؤال"></textarea>
-            </div>
-        </div>
-        <div class="form-row ">
-            <div class="form-group">
-                <label for="question_image">اضافة السؤال كصورة</label>
-                <input type="file" id="question_image" name="question_image" accept=".png,.gif,.jpg" required>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <input type="text" id="option_b" name="option_b"  placeholder="أدخل الاختيار ب">
-            </div>
-
-            <div class="form-group">
-                <input type="text" id="option_a" name="option_a"  placeholder="أدخل الاختيار أ">
-            </div>
-
-            <div class="form-group">
-                <input type="text" id="option_d" name="option_d"  placeholder="أدخل الاختيار د">
-            </div>
-            
-            <div class="form-group">
-                <input type="text" id="option_c" name="option_c"  placeholder="أدخل الاختيار ج">
-            </div>
-           
-        </div>
-
-        <div class="form-row">
-              <!-- الإجابة الصحيحة -->
-        <div class="form-group">
-            <select id="correct_answer" name="correct_answer" required>
-                <option value="" disabled selected>الاجابة الصحيحة</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <input type="number" id="question_score" name="question_score" required placeholder="أدخل درجة السؤال">
-        </div>
-        </div>
-
-       
+          </div>
+    
+        <!-- End Projects Table -->
 
         
-
-
-        <!-- زر الإرسال -->
-        <div class="form-group">
-            <button type="submit">تعديل السؤال</button>
         </div>
-    </form>
+     
+
         
       </div>
 
@@ -198,7 +213,7 @@
               
             </a>
           </li>
-  
+        
           <li>
             <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
                 <span>الملف الشخصي</span>
@@ -210,15 +225,14 @@
       </div>
     </div>
 
-     <!--- footer start-->
-     <footer class="footer">
+         <!--- footer start-->
+         <footer class="footer">
 
-      &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
-   
-   </footer>
-  <!--- footer ends-->
-
-    <script src="js/script.js" defer></script>
+          &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
+       
+       </footer>
+      <!--- footer ends-->
+    <script src="../js/script.js" defer></script>
     
   </body>
 </html>

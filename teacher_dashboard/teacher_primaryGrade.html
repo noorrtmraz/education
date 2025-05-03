@@ -5,11 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Spark Education</title>
-        <link rel="icon" href="images/logo-dark.png" type="image/png">
+        <link rel="icon" href="../images/logo-dark.png" type="image/png">
 
 
-        <!-- font awsam cdn link -->
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
          <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Square+Peg&display=swap" rel="stylesheet">
@@ -17,15 +17,12 @@
         <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
-        <!-- custom css file link -->
-        <link rel="stylesheet" href="css/rtl.css">
-        </head>
-        <body>
-            
-        <!---header section starts-->
 
-         <!---header section starts-->
-         <header class="header">
+        <link rel="stylesheet" href="../css/rtl.css">
+    </head>
+    <body>
+        <!---header section starts-->
+        <header class="header">
           <section class="flex">
             <div class="icons">
               <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
@@ -40,102 +37,60 @@
               <button type="submit" class="fas fa-search" name="search_box"></button>
             </form>
             
-            <a href="home.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+            <a href="teacher_dashboard.html" class="logo"><img src="../images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
+                    <img src="../images/pic-1.jpg" alt="">
                     <h3>ميادة مغاري</h3>
                     <span>معلم</span>
                     <div class="flex-btn">
                         <br>
-                        <a href="login.html" class="option-btn">تسجيل خروج</a>
+                        <a href="loginTeacher.html" class="option-btn">تسجيل خروج</a>
                     </div>
                 </div>
             </section>
         </header>
         <!---header section ends-->
-        <!---header section ends-->
     <div class="page d-flex">
       
     <div class="content w-full">
 
-      <div id="bookModal" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModalBook()">&times;</span>
-          <h2>تفاصيل الكتاب</h2>
-          <img src="images/pdf.svg">
-          <p id="bookDetails"></p>
-        </div>
-      </div>
-
-          <!-- مودال التأكيد (حذف الكتاب) -->
-        <div id="confirmationModal" class="modal">
-            <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <p>هل تريد حذف الكتاب؟</p>
-            <button class= "btn1" onclick="confirmDelete()">تأكيد</button>
-            <button class = "btn2" onclick="closeModal()">إلغاء</button>
-            </div>
-        </div>
+ 
   
     <!-- Start Projects Table -->
         <div class="projects p-20 bg-white rad-10 m-20">
-          <h2 class="mt-0 mb-20">الكتب</h2>
+          <h2 class="mt-0 mb-20"> المرحلة الابتدائية</h2>
           <div class="responsive-table">
-            <div class="header_sections ">
-              <a href="add_book_teacher.html">اضافة كتاب</a>
-              <input class="search-box" type="text" placeholder=".. ابحث">
+            <div class="header_sections_teacher ">
+              <input class="search-box" type="text" placeholder="ابحث">
             </div>
  
             <table class="fs-15 w-full">
               <thead>
                 <tr>
-                  <td>الاجراءات</td>
-                  <td>تارييخ الاضافة</td>
+                  <!-- <td>الاجراءات</td> -->
+                  <td>عدد الطلاب </td>
+                  <td>عدد الشُعب</td>
                   <td>الصف</td>
-                  <td>المرحلة</td>
-                  <td>المادة</td>
-                  <td>اسم الكتاب</td>
-                  <td>صورة الكتاب</td>
                   <td>#</td>
                 </tr>
               </thead>
               <tbody>
                   <tr>
-                    <td>
-                      <a href="#"><i class="fas fa-trash-alt action-icon delete-icon" title="حذف الكتاب" onclick="openModal(1)"></i></a>
-                      <a href="edit_book_teacher.html"><i class="fas fa-edit action-icon edit-icon" title=" تعديل الكتاب"></i></a>
-
-                      <i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"
-                        onclick="showBookDetails(this)"
-                        data-name="كتاب الرياضيات"
-                        data-grade="ابتدائي"
-                        data-classroom="الثاني"
-                        data-description="الابتدائيالابتدائيالابتدائيالابتدائيالابتائيالابتدائي"
-                        data-date="created-at"></i>
-
-                      <a href="#"><i class="fa-solid fa-download action-icon download-icon" title="تنزيل الكتاب" onclick="deleteBook(1)"></i></a>
-                    </td>
-                    <td>2025-04-20</td>
-                    <td>الصف الأول</td>
-                    <td>ابتدائي</td>
-                    <td>رياضيات</td>
-                    <td>كتاب الرياضيات 1</td>
-                    <td>
-                      <img src="images/pdf.svg" alt="صورة الكتاب" width="50" height="50" style="cursor: pointer;">
-                    </td>
-                    <td>2</td>
+                    <!-- <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></td> -->
+                    <td>55</td>
+                    <td>3</td>
+                    <td>الصف الرابع</td>
+                    <td>1</td>
                   </tr>
               </tbody>
             </table>
-
-        
-    
           </div>
     
         <!-- End Projects Table -->
-          </div>
+
         
+        </div>
      
 
         
@@ -159,7 +114,7 @@
           </li>
 
           <li class="dropdown">
-            <a href="#" class="d-flex align-center fs-14 c-black rad-6 p-10">
+            <a href="#" class="active d-flex align-center fs-14 c-black rad-6 p-10">
               <i class="fa-solid fa-caret-down arrow"></i> <!-- السهم -->
               <span>المراحل الدراسية</span>
               <i class="fas fa-book-reader"></i>	
@@ -186,14 +141,14 @@
               
             </a>
             <ul class="dropdown-menu">
-              <li><a href="teacher_lessons.html">الدروس</a></li>
+              <li><a href="teacher_subjects.html">الدروس</a></li>
               <li><a href="teacher_hw.html"> الواجبات</a></li>
               <li><a href="teacher_exams.html">الاختبارات</a></li>
             </ul>
           </li>
      
           <li>
-            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_books.html">
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_books.html">
                 <span>الكتب</span>
                 <i class="fas fa-book"></i>
             </a>
@@ -205,7 +160,7 @@
               
             </a>
           </li>
-  
+        
           <li>
             <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
                 <span>الملف الشخصي</span>
@@ -217,15 +172,15 @@
       </div>
     </div>
 
-     <!--- footer start-->
-     <footer class="footer">
+         <!--- footer start-->
+         <footer class="footer">
 
-      &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
-   
-   </footer>
-  <!--- footer ends-->
+          &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
+       
+       </footer>
+      <!--- footer ends-->
 
-    <script src="js/script.js" defer></script>
+    <script src="../js/script.js" defer></script>
     
   </body>
 </html>

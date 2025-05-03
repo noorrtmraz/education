@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Spark Education</title>
-        <link rel="icon" href="images/logo-dark.png" type="image/png">
+        <link rel="icon" href="../images/logo-dark.png" type="image/png">
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,7 +18,7 @@
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
 
-        <link rel="stylesheet" href="css/rtl.css">
+        <link rel="stylesheet" href="../css/rtl.css">
     </head>
     <body>
         <!---header section starts-->
@@ -37,10 +37,10 @@
               <button type="submit" class="fas fa-search" name="search_box"></button>
             </form>
             
-            <a href="teacher_dashboard.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+            <a href="teacher_dashboard.html" class="logo"><img src="../images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
+                    <img src="../images/pic-1.jpg" alt="">
                     <h3>ميادة مغاري</h3>
                     <span>معلم</span>
                     <div class="flex-btn">
@@ -51,54 +51,38 @@
             </section>
         </header>
         <!---header section ends-->
-    <div class="page d-flex">
-      
-    <div class="content w-full">
-  
-    <!-- Start Projects Table -->
-        <div class="projects p-20 bg-white rad-10 m-20">
-          <h2 class="mt-0 mb-20"> الصفوف الدراسية</h2>
-          <div class="responsive-table">
-            <div class="header_sections_teacher ">
-              <input class="search-box" type="text" placeholder="  .. ابحث">
-            </div>
- 
-            <table class="fs-15 w-full">
-              <thead>
-                <tr>
-                  <!-- <td>الاجرءات</td> -->
-                   <td>المادة</td>
-                  <td>عدد الطلاب</td>
-                  <td>الشعبة </td>
-                  <td>المرحلة</td>
-                  <td>الصف</td>
-                  <td>#</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <!-- <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></td> -->
-                   <td>رياضيات</td>
-                  <td>15</td>
-                  <td>أ</td>
-                  <td>الابتدائي</td>
-                  <td>الصف الثاني</td>
-                  <td>1</td>
-                </tr>
-               
-              </tbody>
-            </table>
-          </div>
-    
-        <!-- End Projects Table -->
+
+        <!-- content page starts -->
+            <div class="page d-flex"> 
+                <div class="content w-full">
 
 
-        
-        </div>
-     
+                  <div class="profile-container">
 
-        
-      </div>
+                      <div class="profile-image">
+                        <img src="../images/avatar.png" alt="صورة المعلم">
+                        <span class="status online"></span>
+                      </div>
+                
+                      <h1 class="profile-name">أحمد خالد</h1>
+                      <p class="profile-role">معلم <i class="fa fa-user"></i></p>
+                
+                      <a href="profile_teacher_edit.html" class="edit-button" >تعديل الملف الشخصي</a>
+                
+                    <div class="tabs">
+
+                      <a href="teacher_subjects.html" class="tab">الدروس <i class="fa fa-book-open"></i></a>
+                      <a href="teacher_exams.html" class="tab"> الاختبارات <i class="fa fa-pen-to-square"></i></a>
+                      <a href="teacher_hw.html" class="tab">الواجبات <i class="fa fa-tasks"></i></a>
+                      
+                    </div>
+                
+                  </div>
+                
+                </div>
+            
+
+    <!-- sidebar starts -->
 
       <div class="sidebar bg-white p-20 p-relative">
         <ul>
@@ -131,7 +115,7 @@
           </li>
 
           <li>
-            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_classrooms.html">
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_classrooms.html">
                 <span>الصفوف</span>
                 <i class="fas fa-book"></i>
             </a>
@@ -145,7 +129,7 @@
               
             </a>
             <ul class="dropdown-menu">
-              <li><a href="teacher_lessons.html">الدروس</a></li>
+              <li><a href="teacher_subjects.html">الدروس</a></li>
               <li><a href="teacher_hw.html"> الواجبات</a></li>
               <li><a href="teacher_exams.html">الاختبارات</a></li>
             </ul>
@@ -164,8 +148,9 @@
               
             </a>
           </li>
+         
           <li>
-            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
+            <a class="active align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
                 <span>الملف الشخصي</span>
               <i class="fa-solid fa-user"></i>
             </a>
@@ -174,16 +159,17 @@
         </ul>
       </div>
     </div>
-
+    
 
          <!--- footer start-->
          <footer class="footer">
 
-          &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
-       
-       </footer>
-      <!--- footer ends-->
-    <script src="js/script.js" defer></script>
+            &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
+         
+         </footer>
+        <!--- footer ends-->
+
+    <script src="../js/script.js" defer></script>
     
   </body>
 </html>

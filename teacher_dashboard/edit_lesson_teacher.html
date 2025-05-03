@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Spark Education</title>
-        <link rel="icon" href="images/logo-dark.png" type="image/png">
+        <link rel="icon" href="../images/logo-dark.png" type="image/png">
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,7 +18,7 @@
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
 
-        <link rel="stylesheet" href="css/rtl.css">
+        <link rel="stylesheet" href="../css/rtl.css">
     </head>
     <body>
         <!---header section starts-->
@@ -37,10 +37,10 @@
               <button type="submit" class="fas fa-search" name="search_box"></button>
             </form>
             
-            <a href="teacher_dashboard.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+            <a href="teacher_dashboard.html" class="logo"><img src="../images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
+                    <img src="../images/pic-1.jpg" alt="">
                     <h3>ميادة مغاري</h3>
                     <span>معلم</span>
                     <div class="flex-btn">
@@ -54,45 +54,87 @@
     <div class="page d-flex">
       
     <div class="content w-full">
-
- 
   
-    <!-- Start Projects Table -->
-        <div class="projects p-20 bg-white rad-10 m-20">
-          <h2 class="mt-0 mb-20"> المرحلة الابتدائية</h2>
-          <div class="responsive-table">
-            <div class="header_sections_teacher ">
-              <input class="search-box" type="text" placeholder="ابحث">
+      
+
+    <form method="POST" enctype="multipart/form-data" class="forms-add">
+        <h1> تعديل الدرس  </h1>
+        <div class="form-row">
+            <div class="form-group">
+                <input type="text" id="lesson_title" name="lesson_title" placeholder="أدخل اسم الدرس" required>
             </div>
- 
-            <table class="fs-15 w-full">
-              <thead>
-                <tr>
-                  <!-- <td>الاجراءات</td> -->
-                  <td>عدد الطلاب </td>
-                  <td>عدد الشُعب</td>
-                  <td>الصف</td>
-                  <td>#</td>
-                </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                    <!-- <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></td> -->
-                    <td>55</td>
-                    <td>3</td>
-                    <td>الصف الرابع</td>
-                    <td>1</td>
-                  </tr>
-              </tbody>
-            </table>
-          </div>
-    
-        <!-- End Projects Table -->
-
-        
         </div>
-     
 
+        <div class="form-row">
+           
+            <div class="form-group">
+                <select id="subject" name="subject" required>
+                    <option value="">اختر المادة</option>
+                    <option value="رياضيات">رياضيات</option>
+                    <option value="علوم">علوم</option>
+                    <option value="لغة عربية">لغة عربية</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select id="stage" name="stage" required>
+                    <option value="">اختر المرحلة</option>
+                    <option value="ابتدائية">ابتدائية</option>
+                    <option value="اعدادية">اعدادية</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <select id="grade" name="grade" required>
+                    <option value="">اختر الصف</option>
+                    <option value="رابع">رابع</option>
+                    <option value="خامس">خامس</option>
+                    <option value="سادس">سادس</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select id="section" name="section" required>
+                    <option value="">اختر الشعبة</option>
+                    <option value="أ">أ</option>
+                    <option value="ب">ب</option>
+                </select>
+            </div>
+
+            
+        </div>
+
+        <div class="form-row full-width">
+            <div class="form-group">
+                <label for="book_image">ملف الدرس</label>
+                <input type="file" id="lesson_file" name="lesson_file" accept=".doc,.docx,.ppt,.pptx,.txt,.pdf">
+            </div>
+
+            <div class="form-group">
+                <label for="book_image">فيدييو شرح</label>
+                <input type="file" id="video" name="video" accept="video/*" placeholder="اضف فيديو">
+            </div>
+
+
+            <div class="form-group">
+                <input type="url" id="video_link" name="video_link" placeholder="أدخل رابط يوتيوب أو درايف">
+            </div>
+
+
+        </div>
+          <!-- صف وصف الواجب -->
+          <div class="form-row full-width">
+            <div class="form-group">
+                <textarea id="lesson_description" name="lesson_description" placeholder="أدخل وصف الدرس" rows="3"></textarea>
+            </div>
+        </div>
+
+        <!-- زر الإرسال -->
+        <div class="form-group">
+            <button type="submit">تعديل الدرس</button>
+        </div>
+    </form>
         
       </div>
 
@@ -114,7 +156,7 @@
           </li>
 
           <li class="dropdown">
-            <a href="#" class="active d-flex align-center fs-14 c-black rad-6 p-10">
+            <a href="#" class="d-flex align-center fs-14 c-black rad-6 p-10">
               <i class="fa-solid fa-caret-down arrow"></i> <!-- السهم -->
               <span>المراحل الدراسية</span>
               <i class="fas fa-book-reader"></i>	
@@ -134,14 +176,14 @@
           </li>
 
           <li class="dropdown">
-            <a href="#" class="d-flex align-center fs-14 c-black rad-6 p-10">
+            <a href="#" class="active align-center fs-14 c-black rad-6 p-10">
               <i class="fa-solid fa-caret-down arrow"></i> <!-- السهم -->
               <span>المادة الدراسية</span>
               <i class="fa-solid fa-file-pen"></i>
               
             </a>
             <ul class="dropdown-menu">
-              <li><a href="teacher_subjects.html">الدروس</a></li>
+              <li><a href="teacher_lessons.html">الدروس</a></li>
               <li><a href="teacher_hw.html"> الواجبات</a></li>
               <li><a href="teacher_exams.html">الاختبارات</a></li>
             </ul>
@@ -160,7 +202,7 @@
               
             </a>
           </li>
-        
+  
           <li>
             <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
                 <span>الملف الشخصي</span>
@@ -172,15 +214,15 @@
       </div>
     </div>
 
-         <!--- footer start-->
-         <footer class="footer">
+     <!--- footer start-->
+     <footer class="footer">
 
-          &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
-       
-       </footer>
-      <!--- footer ends-->
+      &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
+   
+   </footer>
+  <!--- footer ends-->
 
-    <script src="js/script.js" defer></script>
+    <script src="../js/script.js" defer></script>
     
   </body>
 </html>

@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Spark Education</title>
-        <link rel="icon" href="images/logo-dark.png" type="image/png">
+        <link rel="icon" href="../images/logo-dark.png" type="image/png">
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,7 +18,7 @@
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
 
-        <link rel="stylesheet" href="css/rtl.css">
+        <link rel="stylesheet" href="../css/rtl.css">
     </head>
     <body>
         <!---header section starts-->
@@ -37,10 +37,10 @@
               <button type="submit" class="fas fa-search" name="search_box"></button>
             </form>
             
-            <a href="teacher_dashboard.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+            <a href="teacher_dashboard.html" class="logo"><img src="../images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
+                    <img src="../images/pic-1.jpg" alt="">
                     <h3>ميادة مغاري</h3>
                     <span>معلم</span>
                     <div class="flex-btn">
@@ -54,92 +54,81 @@
     <div class="page d-flex">
       
     <div class="content w-full">
-
-
-      <div id="lessonModal" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModalLesson()">&times;</span>
-          <h3>تفاصيل الدرس</h3>
-          <video controls width="200">
-            <source src="images/vid-1.mp4" type="video/mp4">
-          </video>
-          <p id="lessonDetails"></p>
-        </div>
-      </div>
-
-          <!-- مودال التأكيد (حذف الدرس) -->
-      <div id="confirmationModal" class="modal">
-            <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <p>هل تريد حذف الدرس ؟</p>
-            <button class= "btn1" onclick="confirmDelete()">تأكيد</button>
-            <button class = "btn2" onclick="closeModal()">إلغاء</button>
-            </div>
-        </div>
-      
   
-    <!-- Start Projects Table -->
-        <div class="projects p-20 bg-white rad-10 m-20">
-          <h2 class="mt-0 mb-20">الدروس التعليمية</h2>
-          <div class="responsive-table">
-            <div class="header_sections ">
-                <a href="add_lesson_teacher.html">اضافة درس جديد</a>
-                <input class="search-box" type="text" placeholder=".. ابحث">
-              </div>
-            <table class="fs-15 w-full">
-              <thead>
-                <tr>
-                  <td>الاجراءات</td>
-                  <td> تاريخ الاضافة</td>
-                  <td>الشعبة</td>
-                  <td>الصف</td>
-                  <td>المادة</td>
-                  <td> اسم الدرس</td>
-                  <td>#</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <a href="#"><i class="fas fa-trash-alt action-icon delete-icon" title="حذف الدرس" onclick="openModal(2)"></i></a>
-                    <a href="edit_lesson_teacher.html"><i class="fas fa-edit action-icon edit-icon" title="تعديل الدرس"></i></a>
-                    <a href="#">
-                      <i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"
-                          onclick="showLessonDetails(this)"
-                          data-name="درس الكهرباء"
-                          data-subject="علوم"
-                          data-grade="المرحلة الاعدادية"
-                          data-classroom="الصف السابع"
-                          data-section="أ"
-                          data-url="https://"></i>
-                    </a>
-                  </td>
-                  <td>12-3-2025</td>
-                  <td>أ</td>
-                  <td>السابع</td>
-                  <td>لغة عربية</td>
-                  <td>درس الكهرباء</td>
-                  <td>1</td>
-                </tr>
-                
+      
 
-              </tbody>
-            </table>
-
-            <div class="pagination">
-              <button class="inactive">4</button>
-              <button class="inactive">3</button>
-              <button class="inactive">2</button>
-              <button class="active">1</button>
+    <form method="POST" enctype="multipart/form-data" class="forms-add">
+        <h1>تعديل الاختبار</h1>
+        <div class="form-row full-width">
+            <div class="form-group">
+                <input type="text" id="exam_name" name="exam_name" required placeholder="أدخل اسم الاختبار">
             </div>
-          </div>
-    
-        <!-- End Projects Table -->
-
-        
         </div>
-     
 
+        <div class="form-row">
+            <div class="form-group">
+                <input type="number" id="num_questions" name="num_questions" required placeholder="أدخل عدد الأسئلة">
+            </div>
+
+            <div class="form-group">
+                <select id="exam_grade" name="exam_grade" required>
+                    <option value="" disabled selected> * المرحلة الدراسية</option>
+                    <option value="ابتدائي">ابتدائي</option>
+                    <option value="اعدادي">اعدادي</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+           
+            <!-- الصف -->
+            <div class="form-group">
+                <select id="book_class" name="exam_class" required>
+                    <option value="" disabled selected> * اختر الصف </option>
+                    <option value="الصف الثاني">الصف الثاني</option>
+                    <option value="الصف الثالث">الصف الثالث</option>
+                    <option value="الصف الرابع">الصف الرابع</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select id="exam_section" name="exam_section" required>
+                    <option value="" disabled selected> * اختر الصف </option>
+                    <option value="أ"> أ</option>
+                    <option value=" ب"> ب</option>
+                    <option value=" ج"> ج</option>
+                </select>
+            </div>
+            
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <input type="number" id="exam_duration" name="exam_duration" required placeholder="أدخل مدة الاختبار بالدقائق">
+            </div>
+
+            <div class="form-group">
+                <input type="datetime-local" id="exam_date" name="exam_date" required>
+
+            </div>
+        </div>
+
+       
+
+          <!-- صف وصف الكتاب -->
+          <div class="form-row full-width">
+            <div class="form-group">
+                <textarea id="exam_guidance" name="exam_guidance" placeholder="أدخل الوقت التوجيهي أو التعليمات الخاصة بالاختبار" required></textarea>
+            </div>
+        </div>
+
+
+        <!-- زر الإرسال -->
+        <div class="form-group">
+            <button type="submit">تعديل</button>
+        </div>
+    </form>
         
       </div>
 
@@ -207,7 +196,7 @@
               
             </a>
           </li>
-      
+  
           <li>
             <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
                 <span>الملف الشخصي</span>
@@ -219,15 +208,15 @@
       </div>
     </div>
 
-         <!--- footer start-->
-         <footer class="footer">
+     <!--- footer start-->
+     <footer class="footer">
 
-          &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
-       
-       </footer>
-      <!--- footer ends-->
+      &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
+   
+   </footer>
+  <!--- footer ends-->
 
-    <script src="js/script.js" defer></script>
+    <script src="../js/script.js" defer></script>
     
   </body>
 </html>

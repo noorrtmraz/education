@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Spark Education</title>
-        <link rel="icon" href="images/logo-dark.png" type="image/png">
+        <link rel="icon" href="../images/logo-dark.png" type="image/png">
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,7 +18,7 @@
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
 
-        <link rel="stylesheet" href="css/rtl.css">
+        <link rel="stylesheet" href="../css/rtl.css">
     </head>
     <body>
         <!---header section starts-->
@@ -40,7 +40,7 @@
             <a href="teacher_dashboard.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
+                    <img src="../images/pic-1.jpg" alt="">
                     <h3>ميادة مغاري</h3>
                     <span>معلم</span>
                     <div class="flex-btn">
@@ -58,56 +58,45 @@
   
     <!-- Start Projects Table -->
         <div class="projects p-20 bg-white rad-10 m-20">
-          <h2 class="mt-0 mb-20">سجل الطلاب</h2>
+          <h2 class="mt-0 mb-20">بيانات الطالب وولي الامر</h2>
           <div class="responsive-table">
-            <div class="header_sections_teacher ">
-              <input class="search-box" type="text" placeholder="ابحث">
-            </div>
-            <table class="fs-15 w-full">
-              <thead>
-                <tr>
-                  <td>الاجراءات</td>
-                  <td>الشعبة</td>
-                  <td>الصف</td>
-                  <td>المرحلة الدراسية</td>
-                  <td>الجنس</td>
-                  <td>رقم الهوية</td>
-                  <td>الاسم</td>
-                  <td>#</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><a href="teacher_student_parent.html"><i class="fas fa-eye action-icon eye-icon" title="عرض بيانات الطالب" ></i></a>
-                  </td>
-                  <td>أ</td>
-                  <td>الثاني</td>
-                  <td>الابتدائي</td>
-                  <td>ذكر</td>
-                  <td>9999999999</td>
-                  <td>علي</td>
-                  <td>1</td>
-                </tr>
-              </tbody>
-            </table>
-
             
+                <div class="info-boxes">
 
-            <div class="pagination">
-              <button class="inactive">4</button>
-              <button class="inactive">3</button>
-              <button class="inactive">2</button>
-              <button class="active">1</button>
-            </div>
-          </div>
-    
-        <!-- End Projects Table -->
-
-        
-        </div>
+                    <div class="box father">
+                        <div class="box-header">بيانات ولي الامر </div>
+                        <ul>
+                          <li><strong>اسم وليي الامر  :</strong> عماد علي</li>
+                          <li><strong>رقم الجوال :</strong> 1234567810</li>
+                          <li><strong>مهنة ولي الامر :</strong> مهندس</li>
+                          <li><strong>عنوان ولي الامر :</strong> غزة، الرمال</li>
+                        </ul>
+                      </div>
+                  
+                  <div class="box student">
+                    <div class="box-header">بيانات الطالب </div>
+                    <ul>
+                      <li><strong>اسم الطالب :</strong> محمد علي</li>
+                      <li><strong>رقم الهوية :</strong>9876654477</li>
+                      <li><strong>الجنس :</strong> ذكر</li>
+                      <li><strong>المرحلة :</strong> الابتدائية</li>
+                      <li><strong>الصف :</strong> الاول</li>
+                      <li><strong>الشعبة :</strong>أ</li>
+                      <li><strong>تارييخ الميلاد:</strong>20-11-2010</li>
+                      <li><strong> السنة الدراسية :</strong> 2025/2026</li>
+                    </ul>
+                  </div>
+            
+                
+            
+                </div>
+              </div>
+            
+         
      
+   
+        </div>
 
-        
       </div>
 
       <div class="sidebar bg-white p-20 p-relative">
@@ -194,7 +183,7 @@
        </footer>
       <!--- footer ends-->
 
-    <script src="js/script.js" defer></script>
+    <script src="../js/script.js" defer></script>
     
   </body>
 </html>

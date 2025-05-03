@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Spark Education</title>
-        <link rel="icon" href="images/logo-dark.png" type="image/png">
+        <link rel="icon" href="../images/logo-dark.png" type="image/png">
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,7 +18,7 @@
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
 
-        <link rel="stylesheet" href="css/ltr.css">
+        <link rel="stylesheet" href="../css/rtl.css">
     </head>
     <body>
         <!---header section starts-->
@@ -37,10 +37,10 @@
               <button type="submit" class="fas fa-search" name="search_box"></button>
             </form>
             
-            <a href="teacher_dashboard.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+            <a href="teacher_dashboard.html" class="logo"><img src="../images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
+                    <img src="../images/pic-1.jpg" alt="">
                     <h3>ميادة مغاري</h3>
                     <span>معلم</span>
                     <div class="flex-btn">
@@ -51,61 +51,78 @@
             </section>
         </header>
         <!---header section ends-->
+    <div class="page d-flex">
+      
+    <div class="content w-full">
+  
+      
 
-        <!-- content page starts -->
-            <div class="page d-flex"> 
-                <div class="content w-full">
-                  <div class="profile-container">
+    <form method="POST" enctype="multipart/form-data" class="forms-add">
+        <h1>إضافة لقاء مباشر</h1>
+        <div class="form-row full-width">
+            <div class="form-group">
+                <input type="text" name="title" placeholder=" عنوان اللقاء" required>            </div>
+        </div>
 
-                    <form method="POST" enctype="multipart/form-data" class="forms-add">
-                        <h1> تعديل الملف الشخصي </h1>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="text" id="lesson_title" name="lesson_title" placeholder="الاسم باللغة العربية" >
-                            </div>
+        <div class="form-row">
 
-                            <div class="form-group">
-                                <input type="text" id="lesson_title" name="lesson_title" placeholder="الاسم باللغة الانجليزية" >
-                            </div>
-                        </div>
+            <div class="form-group">
+                <select id="subject" name="subject" required>
+                    <option value="">اختر المادة</option>
+                    <option value="رياضيات">رياضيات</option>
+                    <option value="علوم">علوم</option>
+                    <option value="لغة عربية">لغة عربية</option>
+                </select>
+            </div>
+        
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="password" id="lesson_title" name="lesson_title" placeholder="كلمة المرور الحالية" required>
-                            </div>
-                        
-                        </div>
+            <div class="form-group">
+                <select id="stage" name="stage" required>
+                    <option value="">اختر المرحلة</option>
+                    <option value="ابتدائية">ابتدائية</option>
+                    <option value="اعدادية">اعدادية</option>
+                </select>
+            </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="password" id="lesson_title" name="lesson_title" placeholder="كلمة المرور الجدديدة" required>
-                            </div>
-                        
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="password" id="lesson_title" name="lesson_title" placeholder="تأكيد كلمة المرور" required>
-                            </div>
-                        
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <button type="submit"> تعديل</button>
-                            </div>
-                        </div>
-
-       
-
-                 
-                    </form>
-                  </div>
-                
-                </div>
             
+            <div class="form-group">
+                <select id="section" name="section" required>
+                    <option value="">اختر الشعبة</option>
+                    <option value="أ">أ</option>
+                    <option value="ب">ب</option>
+                    <option value="ج">ج</option>
+                    <!-- أضف شعب أخرى -->
+                </select>
+            </div>  
 
-    <!-- sidebar starts -->
+            <div class="form-group">
+                <select id="grade" name="grade" required>
+                    <option value="">اختر الصف</option>
+                    <option value="رابع">رابع</option>
+                    <option value="خامس">خامس</option>
+                    <option value="سادس">سادس</option>
+                </select>
+            </div> 
+        </div>
+        <div class="form-row full-width">
+            <div class="form-group">
+                <label for="book_image">تاريخ ووقت اللقاء</label>
+                <input type="datetime-local" id="start_date" name="start_meet" required>
+            </div>
+        </div>
+        <div class="form-row full-width">
+            <div class="form-group">
+                <input type="url" id="video_link" name="video_link" placeholder="أدخل رابط االلقاء">
+            </div>
+        </div>
+
+        <!-- زر الإرسال -->
+        <div class="form-group">
+            <button type="submit">إضافة لقاء مباشر</button>
+        </div>
+    </form>
+        
+      </div>
 
       <div class="sidebar bg-white p-20 p-relative">
         <ul>
@@ -165,15 +182,15 @@
             </a>
           </li>
           <li>
-            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_meets.html">
+            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_meets.html">
                 <span>اللقاءات المباشرة</span>
               <i class="fa-solid fa-video"></i>
               
             </a>
           </li>
-         
+  
           <li>
-            <a class="active align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
                 <span>الملف الشخصي</span>
               <i class="fa-solid fa-user"></i>
             </a>
@@ -182,17 +199,16 @@
         </ul>
       </div>
     </div>
-    
 
-         <!--- footer start-->
-         <footer class="footer">
+     <!--- footer start-->
+     <footer class="footer">
 
-            &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
-         
-         </footer>
-        <!--- footer ends-->
+      &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
+   
+   </footer>
+  <!--- footer ends-->
 
-    <script src="js/script.js" defer></script>
+    <script src="../js/script.js" defer></script>
     
   </body>
 </html>

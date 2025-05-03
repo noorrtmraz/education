@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Spark Education</title>
-        <link rel="icon" href="images/logo-dark.png" type="image/png">
+        <link rel="icon" href="../images/logo-dark.png" type="image/png">
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,7 +18,7 @@
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
 
-        <link rel="stylesheet" href="css/rtl.css">
+        <link rel="stylesheet" href="../css/rtl.css">
     </head>
     <body>
         <!---header section starts-->
@@ -37,10 +37,10 @@
               <button type="submit" class="fas fa-search" name="search_box"></button>
             </form>
             
-            <a href="teacher_dashboard.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+            <a href="teacher_dashboard.html" class="logo"><img src="../images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
+                    <img src="../images/pic-1.jpg" alt="">
                     <h3>ميادة مغاري</h3>
                     <span>معلم</span>
                     <div class="flex-btn">
@@ -51,45 +51,104 @@
             </section>
         </header>
         <!---header section ends-->
-
     <div class="page d-flex">
-      <div class="content w-full">
-        <div class="wrapper d-grid gap-20">
-            <div id="calendar"></div> 
-            
-            <!-- Start Welcome Widget -->
-            <div class="welcome bg-white rad-10 txt-c-mobile block-mobile">
-              <div class="intro p-20 d-flex space-between bg-eee">
-                <img class="hide-mobile" src="images/welcome.png" alt="" />
-                <div>
-                   <h2 class="m-0">اهلاً بك</h2>
-                   <p class="c-grey mt-5">ميادة مغاري</p>
-                </div>
-              </div>
-                <img src="images/avatar.png" alt="" class="avatar" />
-            
-              <div class="tickets p-20 bg-white rad-10">
-                <div class="d-flex txt-c gap-20 f-wrap">
-                  <div class="box p-20 rad-10 fs-13 c-grey">
-                    <i class="fa-solid fa-user-graduate fa-2x mb-10 c-orange"></i>
-                    <a href="teacher_students.html"><span class="d-block c-black fw-bold fs-25 mb-5">2500</span></a>
-                    عدد الطلاب
-                  </div>
-                  <div class="box p-20 rad-10 fs-13 c-grey">
-                    <i class="fa-regular fa-folder-open fa-2x mb-10 c-blue"></i>
-                    <a href="teacher_classrooms.html"><span class="d-block c-black fw-bold fs-25 mb-5">500</span></a>
-                      عدد الصفوف
-                  </div>
-              </div>
-            </div>
-         </div>
+      
+    <div class="content w-full">
+
+      
+
+      <div id="meetModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModalMeet()">&times;</span>
+          <h3>تفاصيل اللقاء</h3>
+          <p id="meetDetails"></p>
         </div>
+      </div>
+
+          <!-- مودال التأكيد (حذف الدرس) -->
+      <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>هل تريد حذف اللقاء ؟</p>
+            <button class= "btn1" onclick="confirmDelete()">تأكيد</button>
+            <button class = "btn2" onclick="closeModal()">إلغاء</button>
+            </div>
+        </div>
+      
+  
+    <!-- Start Projects Table -->
+        <div class="projects p-20 bg-white rad-10 m-20">
+          <h2 class="mt-0 mb-20">اللقاءات المباشرة</h2>
+          <div class="responsive-table">
+            <div class="header_sections ">
+                <a href="add_meet_teacher.html">اضافة لقاء جديد</a>
+                <input class="search-box" type="text" placeholder="ابحث">
+              </div>
+            <table class="fs-15 w-full">
+              <thead>
+                <tr>
+                  <td>الاجراءات</td>
+                  <td>رابط اللقاء</td>
+                  <td>تاريخ وموعد اللقاء</td>
+                  <td> الشعبة</td>
+                  <td>الصف</td>
+                  <td>المادة</td>
+                  <td>عنوان اللقاء </td>
+                  <td>#</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                <td>
+                     <a href="#"><i class="fas fa-trash-alt action-icon delete-icon" title="حذف" onclick="openModal(2)"></i></a>
+                     <a href="edit_meet_teacher.html"><i class="fas fa-edit action-icon edit-icon" title="تعديل"></i></a>       
+                     <a href="#">
+                      <i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"
+                          onclick="showMeetDetails(this)"
+                          data-name="لقاء في الوحدة الثالثة"
+                          data-subject="علوم"
+                          data-grade="المرحلة الاعدادية"
+                          data-classroom="الصف السابع"
+                          data-section="أ"
+                          data-stdnum="16"
+                          data-appointment="12:30pm"
+                          data-date="10-2-2022"></i>
+                     </a>
+               
+                 </td>
+                  <td><a href="#">https://meet.google.com/qxz-ybjo-biq</a></td>
+                  <td>12-3-2025 3:30 pm</td>
+                  <td>أ</td>
+                  <td>السابع</td>
+                  <td>رياضيات</td>
+                  <td>درس في الوحدة الاولى</td>
+                  <td>1</td>
+                </tr>
+      
+              </tbody>
+            </table>
+
+            <div class="pagination">
+              <button class="inactive">4</button>
+              <button class="inactive">3</button>
+              <button class="inactive">2</button>
+              <button class="active">1</button>
+            </div>
+          </div>
+    
+        <!-- End Projects Table -->
+
+        
+        </div>
+     
+
+        
       </div>
 
       <div class="sidebar bg-white p-20 p-relative">
         <ul>
           <li>
-            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_dashboard.html">
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_dashboard.html">
                 <span>لوحة التحكم</span>
                 <i class="fa-solid fa-cogs"></i>
              
@@ -144,7 +203,7 @@
             </a>
           </li>
           <li>
-            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_meets.html">
+            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_meets.html">
                 <span>اللقاءات المباشرة</span>
               <i class="fa-solid fa-video"></i>
               
@@ -161,7 +220,7 @@
         </ul>
       </div>
     </div>
-    
+
          <!--- footer start-->
          <footer class="footer">
 
@@ -170,7 +229,10 @@
        </footer>
       <!--- footer ends-->
 
-    <script src="js/script.js"></script>
+    <script src="../js/script.js" defer></script>
     
   </body>
 </html>
+
+
+

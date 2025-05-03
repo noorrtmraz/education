@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Spark Education</title>
-        <link rel="icon" href="images/logo-dark.png" type="image/png">
+        <link rel="icon" href="../images/logo-dark.png" type="image/png">
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,7 +18,7 @@
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
 
-        <link rel="stylesheet" href="css/rtl.css">
+        <link rel="stylesheet" href="../css/rtl.css">
     </head>
     <body>
         <!---header section starts-->
@@ -37,10 +37,10 @@
               <button type="submit" class="fas fa-search" name="search_box"></button>
             </form>
             
-            <a href="teacher_dashboard.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+            <a href="teacher_dashboard.html" class="logo"><img src="../images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
+                    <img src="../images/pic-1.jpg" alt="">
                     <h3>ميادة مغاري</h3>
                     <span>معلم</span>
                     <div class="flex-btn">
@@ -58,14 +58,15 @@
       
 
     <form method="POST" enctype="multipart/form-data" class="forms-add">
-        <h1>تعديل اللقاء المباشر</h1>
-        <div class="form-row full-width">
+        <h1> اضافة درس جديد </h1>
+        <div class="form-row">
             <div class="form-group">
-                <input type="text" name="title" placeholder=" عنوان اللقاء" required>            </div>
+                <input type="text" id="lesson_title" name="lesson_title" placeholder="أدخل اسم الدرس" required>
+            </div>
         </div>
 
         <div class="form-row">
-
+           
             <div class="form-group">
                 <select id="subject" name="subject" required>
                     <option value="">اختر المادة</option>
@@ -74,7 +75,6 @@
                     <option value="لغة عربية">لغة عربية</option>
                 </select>
             </div>
-        
 
             <div class="form-group">
                 <select id="stage" name="stage" required>
@@ -84,16 +84,6 @@
                 </select>
             </div>
 
-            
-            <div class="form-group">
-                <select id="section" name="section" required>
-                    <option value="">اختر الشعبة</option>
-                    <option value="أ">أ</option>
-                    <option value="ب">ب</option>
-                    <option value="ج">ج</option>
-                    <!-- أضف شعب أخرى -->
-                </select>
-            </div>  
 
             <div class="form-group">
                 <select id="grade" name="grade" required>
@@ -102,23 +92,47 @@
                     <option value="خامس">خامس</option>
                     <option value="سادس">سادس</option>
                 </select>
-            </div> 
-        </div>
-        <div class="form-row full-width">
-            <div class="form-group">
-                <label for="book_image">تاريخ ووقت اللقاء</label>
-                <input type="datetime-local" id="start_date" name="start_meet" required>
             </div>
+
+            <div class="form-group">
+                <select id="section" name="section" required>
+                    <option value="">اختر الشعبة</option>
+                    <option value="أ">أ</option>
+                    <option value="ب">ب</option>
+                </select>
+            </div>
+
+            
         </div>
+
         <div class="form-row full-width">
             <div class="form-group">
-                <input type="url" id="video_link" name="video_link" placeholder="أدخل رابط االلقاء">
+                <label for="book_image">ملف الدرس</label>
+                <input type="file" id="lesson_file" name="lesson_file" accept=".doc,.docx,.ppt,.pptx,.txt,.pdf">
+            </div>
+
+            <div class="form-group">
+                <label for="book_image">فيدييو شرح</label>
+                <input type="file" id="video" name="video" accept="video/*" placeholder="اضف فيديو">
+            </div>
+
+
+            <div class="form-group">
+                <input type="url" id="video_link" name="video_link" placeholder="أدخل رابط يوتيوب أو درايف">
+            </div>
+
+
+        </div>
+          <!-- صف وصف الواجب -->
+          <div class="form-row full-width">
+            <div class="form-group">
+                <textarea id="lesson_description" name="lesson_description" placeholder="أدخل وصف الدرس" rows="3"></textarea>
             </div>
         </div>
 
         <!-- زر الإرسال -->
         <div class="form-group">
-            <button type="submit">تعديل اللقاء المباشر</button>
+            <button type="submit">اضافة الدرس</button>
         </div>
     </form>
         
@@ -162,7 +176,7 @@
           </li>
 
           <li class="dropdown">
-            <a href="#" class="d-flex align-center fs-14 c-black rad-6 p-10">
+            <a href="#" class="active align-center fs-14 c-black rad-6 p-10">
               <i class="fa-solid fa-caret-down arrow"></i> <!-- السهم -->
               <span>المادة الدراسية</span>
               <i class="fa-solid fa-file-pen"></i>
@@ -182,7 +196,7 @@
             </a>
           </li>
           <li>
-            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_meets.html">
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_meets.html">
                 <span>اللقاءات المباشرة</span>
               <i class="fa-solid fa-video"></i>
               
@@ -208,7 +222,7 @@
    </footer>
   <!--- footer ends-->
 
-    <script src="js/script.js" defer></script>
+    <script src="../js/script.js" defer></script>
     
   </body>
 </html>

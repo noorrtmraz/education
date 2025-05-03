@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Spark Education</title>
-        <link rel="icon" href="images/logo-dark.png" type="image/png">
+        <link rel="icon" href="../images/logo-dark.png" type="image/png">
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,7 +18,7 @@
         <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
 
-        <link rel="stylesheet" href="css/rtl.css">
+        <link rel="stylesheet" href="../css/rtl.css">
     </head>
     <body>
         <!---header section starts-->
@@ -37,10 +37,10 @@
               <button type="submit" class="fas fa-search" name="search_box"></button>
             </form>
             
-            <a href="teacher_dashboard.html" class="logo"><img src="images/spark.png" alt="spark education"></a>
+            <a href="teacher_dashboard.html" class="logo"><img src="../images/spark.png" alt="spark education"></a>
 
                 <div class="profile">
-                    <img src="images/pic-1.jpg" alt="">
+                    <img src="../images/pic-1.jpg" alt="">
                     <h3>ميادة مغاري</h3>
                     <span>معلم</span>
                     <div class="flex-btn">
@@ -55,72 +55,48 @@
       
     <div class="content w-full">
   
-      
-
-    <form method="POST" enctype="multipart/form-data" class="forms-add">
-        <h1>إضافة لقاء مباشر</h1>
-        <div class="form-row full-width">
-            <div class="form-group">
-                <input type="text" name="title" placeholder=" عنوان اللقاء" required>            </div>
-        </div>
-
-        <div class="form-row">
-
-            <div class="form-group">
-                <select id="subject" name="subject" required>
-                    <option value="">اختر المادة</option>
-                    <option value="رياضيات">رياضيات</option>
-                    <option value="علوم">علوم</option>
-                    <option value="لغة عربية">لغة عربية</option>
-                </select>
+    <!-- Start Projects Table -->
+        <div class="projects p-20 bg-white rad-10 m-20">
+          <h2 class="mt-0 mb-20"> الصفوف الدراسية</h2>
+          <div class="responsive-table">
+            <div class="header_sections_teacher ">
+              <input class="search-box" type="text" placeholder="  .. ابحث">
             </div>
+ 
+            <table class="fs-15 w-full">
+              <thead>
+                <tr>
+                  <!-- <td>الاجرءات</td> -->
+                   <td>المادة</td>
+                  <td>عدد الطلاب</td>
+                  <td>الشعبة </td>
+                  <td>المرحلة</td>
+                  <td>الصف</td>
+                  <td>#</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <!-- <td><i class="fa-solid fa-eye action-icon eye-icon" title="عرض التفاصيل"></i></td> -->
+                   <td>رياضيات</td>
+                  <td>15</td>
+                  <td>أ</td>
+                  <td>الابتدائي</td>
+                  <td>الصف الثاني</td>
+                  <td>1</td>
+                </tr>
+               
+              </tbody>
+            </table>
+          </div>
+    
+        <!-- End Projects Table -->
+
+
         
-
-            <div class="form-group">
-                <select id="stage" name="stage" required>
-                    <option value="">اختر المرحلة</option>
-                    <option value="ابتدائية">ابتدائية</option>
-                    <option value="اعدادية">اعدادية</option>
-                </select>
-            </div>
-
-            
-            <div class="form-group">
-                <select id="section" name="section" required>
-                    <option value="">اختر الشعبة</option>
-                    <option value="أ">أ</option>
-                    <option value="ب">ب</option>
-                    <option value="ج">ج</option>
-                    <!-- أضف شعب أخرى -->
-                </select>
-            </div>  
-
-            <div class="form-group">
-                <select id="grade" name="grade" required>
-                    <option value="">اختر الصف</option>
-                    <option value="رابع">رابع</option>
-                    <option value="خامس">خامس</option>
-                    <option value="سادس">سادس</option>
-                </select>
-            </div> 
         </div>
-        <div class="form-row full-width">
-            <div class="form-group">
-                <label for="book_image">تاريخ ووقت اللقاء</label>
-                <input type="datetime-local" id="start_date" name="start_meet" required>
-            </div>
-        </div>
-        <div class="form-row full-width">
-            <div class="form-group">
-                <input type="url" id="video_link" name="video_link" placeholder="أدخل رابط االلقاء">
-            </div>
-        </div>
+     
 
-        <!-- زر الإرسال -->
-        <div class="form-group">
-            <button type="submit">إضافة لقاء مباشر</button>
-        </div>
-    </form>
         
       </div>
 
@@ -155,7 +131,7 @@
           </li>
 
           <li>
-            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_classrooms.html">
+            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_classrooms.html">
                 <span>الصفوف</span>
                 <i class="fas fa-book"></i>
             </a>
@@ -182,13 +158,12 @@
             </a>
           </li>
           <li>
-            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_meets.html">
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_meets.html">
                 <span>اللقاءات المباشرة</span>
               <i class="fa-solid fa-video"></i>
               
             </a>
           </li>
-  
           <li>
             <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
                 <span>الملف الشخصي</span>
@@ -200,15 +175,15 @@
       </div>
     </div>
 
-     <!--- footer start-->
-     <footer class="footer">
 
-      &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
-   
-   </footer>
-  <!--- footer ends-->
+         <!--- footer start-->
+         <footer class="footer">
 
-    <script src="js/script.js" defer></script>
+          &copy; جميع الحقوق محفوظة  | <span>spark eucation</span>  حقوق الطبع والنشر بواسطة 
+       
+       </footer>
+      <!--- footer ends-->
+    <script src="../js/script.js" defer></script>
     
   </body>
 </html>
