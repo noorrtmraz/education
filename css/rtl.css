@@ -66,6 +66,10 @@ html{
 
 /*** header starts ***/
 
+#menu-btn , #mobile-menu {
+  display: none; /* إخفاءه في الوضع الطبيعي */
+}
+
 header.header {
   position: fixed;
   top: 0;
@@ -127,8 +131,6 @@ header.header {
     display: flex;
     gap: 2.5rem;
 }
-
-
 
 
 /*****header ends*******/
@@ -784,6 +786,7 @@ transform: scale(1.1);
   .sidebar ul li a span {
     font-size: 14px;
     margin-right: 10px;
+    text-align: right;
     
   }
 .dropdown {
@@ -1850,4 +1853,177 @@ transform: scale(1.1);
 
 
 
+@media (max-width:1170px){
+
+  .wrapper {
+    display: flex;
+    flex-direction: column-reverse; 
+  }
+
+}
+
+@media (max-width: 991px) {
+  .login .container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+  }
+
   
+  .login .container .left-section,
+  .login .container .right-section {
+    flex: unset;
+    width: 90%;
+    margin: 1rem 0;
+    justify-content: center;
+  }
+
+  .login .container .left-section .image-container .student-img {
+    margin-left: 0;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .login .container .right-section {
+    margin-right: 0;
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .login .container .right-section .login-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .page .wrapper {
+    grid-template-columns: 1fr; /* عمود واحد فقط في الشاشات الصغيرة */
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .login .container .right-section .login-box .input-box,
+  .login .container .right-section .login-box .input-box2,
+  .login .container .right-section .login-box .login-btn {
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .header .flex .icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .header .flex .icons > div:not(#menu-btn):not(#user-btn) {
+    display: none; /* إخفاء كل شيء ما عدا menu-btn و user-btn */
+  }
+
+  #menu-btn,
+  #user-btn {
+    display: block;
+    cursor: pointer;
+  }
+  
+/* القائمة المنسدلة للموبايل */
+.mobile-menu {
+  position: absolute;
+  top: 60px; /* حسب ارتفاع الهيدر */
+  left: 10px; /* تظهر على اليسار */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 1000;
+  text-align: right;
+}
+
+.mobile-menu a {
+  padding: 10px 15px;
+  text-align: right;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.mobile-menu a:hover {
+  background-color: #f5f5f5;
+}
+
+  .sidebar {
+    width: 58px;
+    padding: 10px;
+  }
+  .sidebar > h3 {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  .sidebar > h3::before,
+  .sidebar > h3::after {
+    display: none;
+  }
+  .sidebar ul li a span {
+    display: none;
+    text-align: right;
+  }
+
+  .welcome .intro{
+    height: 12rem;
+  }
+  .wrapper .welcome .intro img{
+    display: inline-block;
+  }
+
+  #search-btn{
+    display: inline-block;
+ }
+
+ .header .flex .search-form{
+    position: absolute;
+    top: 99%; left: 0; right: 0;
+    border-top:  var(--border);
+    border-bottom: 3px var(--border);
+    background-color: var(--white);
+    border-radius: 0;
+    width: auto;
+    padding: 2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: .2s linear;
+ }
+
+ .header .flex .search-form.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+ }
+}
+
+@media (max-width: 395px) {
+
+  .wrapper .welcome .intro img{
+    display: none;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* هذا يجعل المحتوى يذهب لليمين */
+  }
+
+  .intro img {
+    display: none; /* إخفاء الصورة على الجوال */
+  }
+
+  .intro div {
+    text-align: right; /* محاذاة النص لليمين داخل الـ div */
+    width: 100%;
+  }
+
+}
+
+
+
