@@ -601,12 +601,12 @@ header.header {
     content: "1"; /* عدد الإشعارات */
     position: absolute;
     top: -5px;
-    right: -5px;
+    right: -9px;
     background: var(--red);
     color: var(--white);
     font-size: 0.8rem;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -627,12 +627,12 @@ header.header {
       content: "3"; /* عدد الإشعارات */
       position: absolute;
       top: -5px;
-      right: -5px;
+      right: -9px;
       background: var(--red);
       color: var(--white);
       font-size: 0.8rem;
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       display: flex;
       justify-content: center;
       align-items: center;
