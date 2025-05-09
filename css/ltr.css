@@ -1,17 +1,20 @@
 :root{
-    --main-color:#589F43 ;
-    --secondary-color:#072340;    ;
-    --white:#fff;
-    --black:#2c3e50;
-    --light-color:#888;
-    --light-bg:#eee;
-    --border:1rem solid rgba(0,0,0,.2);
-    --red:#d35000;
-    --whitegrey: #f0f0f0;
-    --ddd : #ddd;
+  --main-color:#589F43 ;
+  --secondary-color:#072340;    ;
+  --white:#fff;
+  --black:#2c3e50;
+  --light-color:#888;
+  --light-bg:#eee;
+  --border:1rem solid rgba(0,0,0,.2);
+  --red:#d35000;
+  --whitegrey: #f0f0f0;
+  --ddd : #ddd;
 }
 
+
+
 *{
+
     font-family: "Cairo", serif;   
     margin: 0; 
     padding: 0;
@@ -19,11 +22,12 @@
     outline: none;
     border: none;
     text-decoration: none;
+
 }
 
 *::selection{
     background-color: var(--main-color);
-    color: #fff;
+    color: var(--white);
 }
 
 *::-webkit-scrollbar{
@@ -46,70 +50,87 @@ html{
     scroll-padding-top: .8rem;
 }
 
-body {
+
+ body {
+
+  background-color: var(--white);
     height: 100%;
     margin: 0;
+    padding-top: 65px;
     overflow-x: hidden;
-    overflow: auto;
-    text-align: left;
-    padding-top: 66px;
+    overflow: auto; /* لتمكين التمرير عند الحاجة */
+   
 }
 
 /*** header starts ***/
-.header .flex {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    height: 65px;
-    justify-content: space-between;
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    flex-direction: row-reverse;
+#menu-btn , #mobile-menu {
+  display: none; /* إخفاءه في الوضع الطبيعي */
 }
+
+header.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 65px;
+  flex-direction: row-reverse;
+}
+
 
 
 
 .header .flex .navbar {
-    display: flex;
-    gap: 2.5rem;  
-    flex-direction: row-reverse;
-  
+  display:flex;
+  gap: 1.5rem;
+  margin-left: 1.5rem;
 }
 
 .header .flex .logo{
     font-size: 6rem;
     color: var(--main-color);
     font-weight: bolder;
-    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .header .flex .logo img{
     width: 7rem;
-    margin-top:2.5rem;   
+    margin-top:2.5rem; 
+    margin-left: 1rem;  
 }
 
 .header .flex .navbar a{
-    font-size: 1.6rem;
-    color: var(--black);
-    border-radius: .5rem;
-    cursor: pointer;
-    width: 3.5rem;
-    height: 3.5rem;
-    line-height: 3.5rem;
-    text-align: center;
-    margin-right: 1rem;
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  border-radius: .5rem;
+   cursor: pointer;
+  width: 2.5rem;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  text-align: center;
+    /* margin-right: 1rem; */
 }
 
 .header .flex .navbar a:hover{
-    background-color: var(--main-color);
-    color: var(--white);
-    transition: background-color .8s ease-in-out;
+  color: var(--main-color);
+  /* color: var(--white); */
+  transition: background-color .8s ease-in-out;
 }
+
+.header .navbar {
+  display: flex;
+  gap: 2.5rem;
+}
+
 
 .menu-icon {
     font-size: 2rem;
@@ -120,12 +141,9 @@ body {
     color: var(--black);
 }
 
-.header .navbar {
-    display: flex;
-    gap: 2.5rem;
-}
+/*****header ends*******/
 
-/*** login section starts ***/
+/***student & parent login section starts**/
 .login{
     display: flex;
     justify-content: center;
@@ -534,13 +552,13 @@ body {
   /******header dashboards teacher starts*******/
   
   .header .flex .search-form{
-      width: 40rem;
-      border-radius: .5rem;
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      padding: .5rem 2rem;
-      background-color: var(--light-bg);
+    width: 40rem;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: .5rem 2rem;
+    background-color: var(--light-bg);
   }
   
   .header .flex .search-form input{
@@ -557,32 +575,26 @@ body {
       cursor: pointer;
       background: none;
   }
+  .header .flex .search-form button:hover{
+    color: var(--main-color);
+}
   
 
 
-  .header .flex .icons{
-    margin-right: 2rem;
-  }
-  
-  .header .flex .icons div{
-      font-size: 1.6rem;
-      color: var(--black);
-      border-radius: .5rem;
-      height: 3.5rem;
-      cursor: pointer;
-      width: 3.5rem;
-      line-height: 3.5rem;
-      text-align: center;
-      margin-left: 1rem;
-  }
   
   
   #msg-btn {
     position: relative;
     font-size: 1.5rem;
     color: var(--black);
-    margin-left: 1rem;
+    margin-right: 1rem;
     cursor: pointer;
+  }
+
+  #msg-btn:hover{
+    color: var(--main-color);
+      /* color: var(--white); */
+      transition: background-color .8s ease-in-out;
   }
   
   #msg-btn::after {
@@ -607,7 +619,7 @@ body {
       position: relative;
       font-size: 1.5rem;
       color: var(--black);
-      margin-left: 1rem;
+      margin-right: 1rem;
       cursor: pointer;
   }
   
@@ -629,15 +641,9 @@ body {
   }
   
   #bell-btn:hover{
-      background-color: var(--main-color);
-      color: var(--white);
-      transition: background-color .8s ease-in-out;
-  }
-  
-  .header .flex .icons div:hover{
-      background-color: var(--main-color);
-      color: var(--white);
-      transition: background-color .8s ease-in-out;
+      color: var(--main-color);
+        /* color: var(--white); */
+        transition: background-color .8s ease-in-out;
   }
   
   #search-btn{
@@ -722,6 +728,7 @@ body {
       margin-bottom: 5px;
       color: var(--secondary-color);
       font-size: 1.7rem;
+      padding: 10px;
      
     }
   
@@ -777,18 +784,119 @@ body {
     color: var(--main-color); 
   }
   
-  .sidebar ul li a {
-    padding: 10px;
-  }
+
   
     /********** End Sidebar **********8*/
   
   /* start contenet teacher dashboard  */
+  
+  
+#calendar{
+  border-radius:.5rem ;
+  background-color: var(--white);
+  padding: 1.5rem;
+  text-align: right;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.fc-ltr .fc-basic-view .fc-day-top .fc-day-number {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+
+
+  .page .wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    animation: fadeIn 1s ease-in-out;;
+  }
+ 
+  .wrapper .welcome {
+    overflow: hidden;
+  }
+
+  .welcome .intro {
+    background-color: rgba(88, 159, 67, 0.2); 
+    box-shadow:0 0 5px var(--ddd);
+
+  }
+
+  .wrapper .welcome .intro img {
+    width: 200px;
+    margin-bottom: -10px;
+  }
+  .wrapper .welcome .avatar {
+    width: 49px;
+    height: 49px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    padding: 1px;
+    box-shadow: 0 0 5px var(--ddd);
+    margin-left: 20px;
+    margin-top: -39px;
+    float: left;
+  }
+
+
+  .tickets .box {
+    width: calc(100% - 10px);
+    height: 12rem;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0 0 5px var(--ddd);
+    
+  }
+
+  .tickets .box:hover{
+    transition: transform 0.3s;
+    transform: scale(1.05);
+  }
+
+  .box i {
+    color: var(--main-color);
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px rgba(88, 159, 67, 0.2); 
+  }
+ 
+  .box a span {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+  }
+
+  .welcome-teacher h2 {
+    margin: 0;
+    font-size: 2.1rem;
+    color: var(--secondary-color);
+    text-align: right;
+  }
+  
+  
+  .welcome-teacher p {
+    color: var(--grey-color);
+    font-size: 1.1rem;
+    text-align: right;
+  }
+
+  .sidebar , .projects , .tickets , .box , .intro {
+    padding: 20px;
+  }
 
   .page {
     direction: rtl;
     display: flex;
     justify-content: space-between;
+
   }
 
   #calendar{
@@ -816,6 +924,7 @@ body {
       margin-bottom: 20px;
       margin-top: 30px;
       animation: fadeIn 1s ease-in-out;
+
     }
    
     .wrapper .welcome {
@@ -825,7 +934,6 @@ body {
     .welcome .intro {
       background-color: rgba(88, 159, 67, 0.2); 
       box-shadow:0 0 5px var(--ddd);
-      flex-direction: row-reverse;
   
     }
   
@@ -1847,297 +1955,220 @@ body {
 
 /* Media Queries for Responsiveness */
 
-@media (max-width:1200px){
-
-    .container {
-        flex-direction: column;
-        height: auto;
-        margin-top: 4rem;
-        margin-bottom: 4rem;
-    }
-
-    .left-section {
-        display: none;
-    }
-
-    
-
-    .right-section {
-        width: 90%;
-        margin-left: 0;
-        height: auto;
-        padding: 15px;
-    }
-
-    .login-box h2 {
-        font-size: 1.5rem; /* تعديل حجم العنوان */
-    }
-
-    .input-box,
-    .input-box2,
-    .login-btn {
-        width: 90%;  /* تعديل عرض الحقول والأزرار */
-    }
 
 
-    .about .row .image {
-        flex: 0 0 100%;
-        margin: 0 auto;
-    }
-    .about .row .image img {
-        height: auto;
-    }
-    .about .row .content {
-        flex: 0 0 100%;
-        text-align: center;
-    }
-    .about .row .content h3 {
-        width: 90%;
-        margin: 0 auto 1rem;
+@media (max-width:1170px){
+
+  .wrapper {
+    display: flex;
+    flex-direction: column-reverse; 
+  }
+
+}
+
+@media (max-width: 991px) {
+  .login .container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+  }
+
   
-    }
-    .about .row .content p {
-        width: 90%;
-        margin: 1rem auto 0;
-        text-align: justify;
-    }
+  .login .container .left-section,
+  .login .container .right-section {
+    flex: unset;
+    width: 90%;
+    margin: 1rem 0;
+    justify-content: center;
+  }
+
+  .login .container .left-section .image-container .student-img {
+    margin-left: 0;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .login .container .right-section {
+    margin-right: 0;
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .login .container .right-section .login-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .page .wrapper {
+    grid-template-columns: 1fr; /* عمود واحد فقط في الشاشات الصغيرة */
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .login .container .right-section .login-box .input-box,
+  .login .container .right-section .login-box .input-box2,
+  .login .container .right-section .login-box .login-btn {
+    width: 90%;
+  }
 }
 
 
-@media (max-width:991px) {
-    html{
-        font-size: 55%;
-    }
+@media (max-width: 767px) {
 
-    .footer {
-        height: 5rem;
-        bottom: 0;
-    }
-    
+  
+  #bell-btn::after {
+    content: "3"; /* عدد الإشعارات */
+    position: absolute;
+    top: 12px;
+   right: 66px;
+    background: var(--red);
+    color: var(--white);
+    font-size: 0.8rem;
+    width: 13px;
+    height: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
 }
 
-@media (max-width: 768px) {
-
-    
-    .container {
-        flex-direction: column;
-        height: auto;
-        margin-top: 4rem;
-    }
-
-    .left-section {
-        justify-content: center;
-        margin-bottom: 2rem;
-    }
-
-    .student-img {
-        width: 20rem;  /* تغيير حجم الصورة للهواتف أو الأجهزة اللوحية */
-        margin-left: 0;
-    }
-
-    .right-section {
-        width: 90%;
-        margin-right: 0;
-        height: auto;
-        padding: 15px;
-    }
-
-    .login-box h2 {
-        font-size: 1.5rem; /* تعديل حجم العنوان */
-    }
-
-
-    .input-box,
-    .input-box2,
-    .login-btn {
-        width: 90%;  /* تعديل عرض الحقول والأزرار */
-    }
-
-    
-
-    .flex .logo {
-        font-size: 3rem;  /* تصغير حجم الشعار ليصبح مناسبًا للشاشات الصغيرة */
-        margin-right: 0;  /* إزالة الهامش الكبير على اليمين */
-        order: 0; /* تعديل حجم الشعار */
-    }
-
-    .flex .icons {
-        justify-content: flex-start;  /* تعديل توزيع الأيقونات */
-    }
-
-
-     .menu-icon {
-        display: block; /* إظهار زر الهامبرغر */
-    }
-
-    .header {
-        position: relative; /* تأكد من أن الهيدر هو المرجع للقائمة */
-    }
-
-    .header .navbar {
-        position: absolute;
-        top: 65px;
-        right: 0;
-        width: 32%;
-        background: #fff;
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        transform: scaleY(0);
-        transform-origin: top;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    /* عند تفعيل القائمة */
-    .header .navbar.active {
-        transform: scaleY(1);
-    }
-
-    .titleWho h3 {
-        text-align: left; /* توسيط العنوان */
-        font-size: 2rem;
-        margin-left: 3.5rem;
-    }
-
-    .about .box-container {
-        flex-direction: column; /* ترتيب الصناديق عموديًا */
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .about .box-container .box {
-        width: 85%; /* جعل الصناديق تمتد بعرض أكبر */
-        flex-direction: column; /* ترتيب المحتوى داخل الصندوق عموديًا */
-        text-align: center;
-        justify-content: center;
-        padding: 1rem;
-    }
-
-    .about .box-container .box img {
-        width: 6rem; /* تقليل حجم الصورة */
-        margin: 0 auto 1rem;
-    }
-
-    .about .box-container .box h3 {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .about .box-container .box p {
-        font-size: 1.8rem;
-        text-align: center;
-    }
-
-
-    
-    .form-container3 {
-        width: 90%;
-        height: auto;
-        padding: 20px;
-        border-radius: 20px;
-    }
-
-    .input-box, .input-box2 {
-        padding: 10px;
-        font-size: 1rem;
-    }
-
-    .login-btn {
-        padding: 10px;
-        font-size: 1rem;
-    }
-
-    .icons a img {
-        width: 40px;
-        height: 40px;
-    }
+  
+#msg-btn::after {
+  content: "1"; /* عدد الإشعارات */
+  position: absolute;
+  top: 12px;
+  right: 80px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 0.8rem;
+  width: 13px;
+  height: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: bold;
 }
 
-@media (max-width: 450px) {
 
-    html{
-        font-size: 55%;
-    }
+  .header .flex .navbar a{
+    display: none;
+  }
 
+  .header .flex .icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
 
-    .login {
-        height: auto;
-        padding: 20px;
-    }
+  .header .flex .icons > div:not(#menu-btn):not(#user-btn) {
+    display: none; /* إخفاء كل شيء ما عدا menu-btn و user-btn */
+  }
 
-    .student-img {
-        width: 16rem;  /* تغيير حجم الصورة أكثر للأجهزة الصغيرة */
-    }
-
-    .right-section {
-        width: 100%;
-        margin-left: 0;
-        height: auto;
-        padding: 10px;
-    }
-
-    .login-box h2 {
-        font-size: 1.3rem;  /* تقليل حجم العنوان */
-    }
-
-    .input-box,
-    .input-box2,
-    .login-btn {
-        width:90%;  /* جعل الأزرار والحقول عرض 100% */
-    }
-
-    .icons img {
-        width: 35px;  /* تقليل حجم الأيقونات للأجهزة الصغيرة */
-    }
-
-    .flex .logo {
-        font-size: 1.6rem;  /* تقليل حجم الشعار على الشاشات الصغيرة */
-    }
-
-   
-    .flex {
-        padding: 10px;  /* إضافة بعض الحشو للهيدر */
-    }
-
-    .about .row .image img{
-        height: 25rem;
-     }
- 
- 
-     .about .box-container .box {
-         flex: 1 1 100%;
-         justify-content: space-between; /* لضمان توزيع النص والصورة على كامل عرض الصندوق */
-         padding: 0.8rem;
-     }
- 
-     .about .box-container .box h3 {
-         font-size: 1.5rem;
-     }
- 
-     .about .box-container .box p {
-         font-size: 1rem;
-     }
- 
-     .about .box-container .box img {
-         width: 3.5rem;
-     }
- 
-     .titleWho h3 {
-         font-size: 1.2rem;
-         margin: 1rem;
-     }
- 
- 
-     .about .row {
-         gap: 1rem;
-     }
-     .about .row .content h3 {
-         font-size: 1.5rem;
-         width: 100%;
-     }
-     .about .row .content p {
-         font-size: 1.1rem;
-         width: 95%;
-     }
+  #menu-btn,
+  #user-btn {
+    display: block;
+    cursor: pointer;
+  }
+  
+/* القائمة المنسدلة للموبايل */
+.mobile-menu {
+  position: absolute;
+  top: 60px; /* حسب ارتفاع الهيدر */
+  right: 10px; /* تظهر على اليسار */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 1000;
+  text-align: left;
 }
+
+.mobile-menu a {
+  padding: 10px 15px;
+  text-align: left;
+  color: var(--secondary-color);
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.mobile-menu a:hover {
+  background-color: #f5f5f5;
+}
+
+  .sidebar {
+    width: 58px;
+    padding: 10px;
+  }
+  .sidebar > h3 {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  .sidebar > h3::before,
+  .sidebar > h3::after {
+    display: none;
+  }
+  .sidebar ul li a span {
+    display: none;
+    text-align: right;
+  }
+
+  .welcome .intro{
+    height: 12rem;
+  }
+  .wrapper .welcome .intro img{
+    display: inline-block;
+  }
+
+  #search-btn{
+    display: inline-block;
+ }
+
+ .header .flex .search-form{
+    position: absolute;
+    top: 99%; left: 0; right: 0;
+    border-top:  var(--border);
+    border-bottom: 3px var(--border);
+    background-color: var(--white);
+    border-radius: 0;
+    width: auto;
+    padding: 2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: .2s linear;
+ }
+
+ .header .flex .search-form.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+ }
+}
+
+@media (max-width: 395px) {
+
+  .wrapper .welcome .intro img{
+    display: none;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* هذا يجعل المحتوى يذهب لليمين */
+  }
+
+  .intro img {
+    display: none; /* إخفاء الصورة على الجوال */
+  }
+
+  .intro div {
+    text-align: left; /* محاذاة النص لليمين داخل الـ div */
+    width: 100%;
+  }
+
+}
+
+
+

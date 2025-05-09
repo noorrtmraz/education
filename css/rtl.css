@@ -1,14 +1,14 @@
 :root{
-    --main-color:#589F43 ;
-    --secondary-color:#072340;    ;
-    --white:#fff;
-    --black:#2c3e50;
-    --light-color:#888;
-    --light-bg:#eee;
-    --border:1rem solid rgba(0,0,0,.2);
-    --red:#d35000;
-    --whitegrey: #f0f0f0;
-    --ddd : #ddd;
+  --main-color:#589F43 ;
+  --secondary-color:#072340;    ;
+  --white:#fff;
+  --black:#2c3e50;
+  --light-color:#888;
+  --light-bg:#eee;
+  --border:1rem solid rgba(0,0,0,.2);
+  --red:#d35000;
+  --whitegrey: #f0f0f0;
+  --ddd : #ddd;
 }
 
 
@@ -90,7 +90,8 @@ header.header {
 
 .header .flex .navbar {
     display:flex;
-    gap: 2.5rem;
+    gap: 1.5rem;
+    margin-left: 1.5rem;
 }
 
 
@@ -111,25 +112,34 @@ header.header {
 
 .header .flex .navbar a{
     font-size: 1.6rem;
-    color: var(--black);
+    color: var(--secondary-color);
     border-radius: .5rem;
      cursor: pointer;
-    width: 3.5rem;
+    width: 2.5rem;
     height: 3.5rem;
     line-height: 3.5rem;
     text-align: center;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
 }
 
  .header .flex .navbar a:hover{
-    background-color: var(--main-color);
-    color: var(--white);
+    color: var(--main-color);
+    /* color: var(--white); */
     transition: background-color .8s ease-in-out;
  }
 
 .header .navbar {
     display: flex;
     gap: 2.5rem;
+}
+
+.menu-icon {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  color: var(--black);
 }
 
 
@@ -139,14 +149,7 @@ header.header {
 
 /***student & parent login section starts**/
 
- .menu-icon {
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: none;
-    color: var(--black);
-}
+
 
 .login{
     display: flex;
@@ -618,18 +621,6 @@ transform: scale(1.1);
     color: var(--main-color);
 }
 
-.header .flex .icons div{
-    font-size: 1.6rem;
-    color: var(--black);
-    border-radius: .5rem;
-    height: 3.5rem;
-    cursor: pointer;
-    width: 3.5rem;
-    line-height: 3.5rem;
-    text-align: center;
-    margin-left: 1rem;
-}
-
 
 #msg-btn {
   position: relative;
@@ -637,6 +628,13 @@ transform: scale(1.1);
   color: var(--black);
   margin-left: 1rem;
   cursor: pointer;
+}
+
+#msg-btn:hover{
+  color: var(--main-color);
+    /* color: var(--white); */
+    transition: background-color .8s ease-in-out;
+
 }
 
 #msg-btn::after {
@@ -683,14 +681,8 @@ transform: scale(1.1);
 }
 
 #bell-btn:hover{
-    background-color: var(--main-color);
-    color: var(--white);
-    transition: background-color .8s ease-in-out;
-}
-
-.header .flex .icons div:hover{
-    background-color: var(--main-color);
-    color: var(--white);
+    color: var(--main-color);
+    /* color: var(--white); */
     transition: background-color .8s ease-in-out;
 }
 
@@ -1911,6 +1903,48 @@ transform: scale(1.1);
 
 
 @media (max-width: 767px) {
+
+  #bell-btn::after {
+    content: "3"; /* عدد الإشعارات */
+    position: absolute;
+    top: 1px;
+    right: 60px;
+    background: var(--red);
+    color: var(--white);
+    font-size: 0.8rem;
+    width: 13px;
+    height: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+  
+#msg-btn::after {
+  content: "1"; /* عدد الإشعارات */
+  position: absolute;
+  top: 1px;
+  right: 60px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 0.8rem;
+  width: 13px;
+  height: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+
+
+  .header .flex .navbar a{
+    display: none;
+  }
+
   .header .flex .icons {
     display: flex;
     gap: 10px;
@@ -1946,8 +1980,7 @@ transform: scale(1.1);
 .mobile-menu a {
   padding: 10px 15px;
   text-align: right;
-  color: #333;
-  text-decoration: none;
+  color: var(--secondary-color);
   border-bottom: 1px solid #eee;
   font-size: 14px;
 }
