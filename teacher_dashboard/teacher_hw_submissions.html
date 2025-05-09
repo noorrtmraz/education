@@ -25,24 +25,10 @@
         <header class="header">
           <section class="flex">
             <nav class="navbar">
-              <a href="#" id="menu-btn" title="القائمة" class="fas fa-bars"></a>
               <a href="#" id="lang-btn" title="تغيير اللغة" class="fas fa-language"></a>
-              <a href="#" id="search-btn" title="بحث" class="fas fa-search"></a>
               <a href="#" id="user-btn" title="المستخدم" class="fas fa-user"></a>
               <a href="#" id="bell-btn" title="الاشعارات" class="fas fa-bell"></a>
-              <a href="#" id="msg-btn" title=" الرسائل" class="fa-solid fa-message"></a>
-          </nav>
-
-          <div id="mobile-menu" class="mobile-menu">
-            <a href="#" id="lang-btn" title="تغيير اللغة" >تغيير اللغة</a>
-            <a href="#" id="bell-btn" title="الاشعارات" >الاشعارات</a>
-            <a href="#" id="msg-btn" title=" الرسائل" >الرسائل</a>
-          </div>
-            
-            <form action="" method="post" class="search-form">
-              <input type="text" name="search_box" placeholder=".. عن ماذا تبحث" required maxlength="100">
-              <button type="submit" class="fas fa-search" name="search_box"></button>
-            </form>
+            </nav>
             
             <a href="teacher_dashboard.html" class="logo"><img src="../images/spark.png" alt="spark education"></a>
 
@@ -125,6 +111,13 @@
              
             </a>
           </li>
+          <li class="chat-icon">
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_chat.html">
+              <span id="msg-btn">الدردشة</span>
+              <i class="fa-solid fa-message"></i>
+              <span class="badge">1</span>
+            </a>
+          </li>
           <li>
             <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_students.html">
                 <span>الطلاب</span>
@@ -162,17 +155,13 @@
             </a>
             <ul class="dropdown-menu">
               <li><a href="teacher_lessons.html">الدروس</a></li>
+              <li><a href="teacher_books.html">الكتب</a></li>
               <li><a href="teacher_hw.html"> الواجبات</a></li>
               <li><a href="teacher_exams.html">الاختبارات</a></li>
             </ul>
           </li>
      
-          <li>
-            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_books.html">
-                <span>الكتب</span>
-                <i class="fas fa-book"></i>
-            </a>
-          </li>
+          
           <li>
             <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_meets.html">
                 <span>اللقاءات المباشرة</span>
